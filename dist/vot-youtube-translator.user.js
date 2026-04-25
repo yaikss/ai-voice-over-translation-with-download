@@ -391,6 +391,8 @@
         const existing = document.getElementById('vot-segmented-button');
         if (existing) return existing;
 
+        console.log('[VOT] Creating button element...');
+
         const container = document.createElement('div');
         container.className = 'vot-segmented-button';
         container.id = 'vot-segmented-button';
@@ -459,6 +461,8 @@
         menuBtn.onclick = () => alert('Settings: Use GM menu (Tampermonkey icon) to configure');
 
         container.append(translateBtn, sep1, downloadBtn, downloadVideoBtn, sep2, pipBtn, sep3, menuBtn);
+        
+        console.log('[VOT] Button element created with children:', container.children.length);
 
         return container;
     }
@@ -685,18 +689,23 @@
         const selectors = [
             '#movie_player',
             '.html5-video-player',
-            '#player-container .ytd-player',
-            'ytd-player #container'
+            '#player-container.ytd-player',
+            'ytd-player#ytd-player',
+            '.ytd-player'
         ];
 
         for (const selector of selectors) {
             const el = document.querySelector(selector);
-            if (el) return el;
+            if (el) {
+                console.log('[VOT] Found container:', selector, el);
+                return el;
+            }
         }
 
         // Fallback: find video and use its parent
         const video = document.querySelector('video');
         if (video) {
+            console.log('[VOT] Found video element, using parent');
             return video.closest('#movie_player, .html5-video-player') || video.parentElement;
         }
         return null;
@@ -723,14 +732,25 @@
             // Make container position-relative if it isn't
             const computedStyle = window.getComputedStyle(container);
             if (computedStyle.position === 'static') {
+                console.log('[VOT] Setting container to position: relative');
                 container.style.position = 'relative';
             }
             container.appendChild(button);
-            console.log('[VOT] Successfully injected into:', container.tagName, container.id || container.className);
+            console.log('[VOT] Successfully injected! Button is now in DOM.');
+            
+            // Verify button is visible
+            const btn = document.getElementById('vot-segmented-button');
+            if (btn) {
+                const rect = btn.getBoundingClientRect();
+                console.log('[VOT] Button position:', rect);
+                if (rect.width === 0 || rect.height === 0) {
+                    console.log('[VOT] Warning: Button has zero size!');
+                }
+            }
             return true;
         }
 
-        console.log('[VOT] Could not find video container');
+        console.log('[VOT] Could not find video container. Selectors tried: #movie_player, .html5-video-player, video');
         return false;
     }
 
