@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         VOT YouTube Translator
 // @namespace    http://tampermonkey.net/
-// @version      1.1
-// @description  YouTube video translation with download feature
+// @version      1.2
+// @description  YouTube video translation with download feature - overlay button like original VOT
 // @author       You
 // @match        https://www.youtube.com/*
 // @grant        GM_setValue
@@ -38,31 +38,40 @@
     };
 
     // ============================================
-    // UI STYLES
+    // UI STYLES - Overlay style like original VOT
     // ============================================
     const STYLES = `
-        .vot-container {
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 8px !important;
-            margin-left: 8px !important;
+        .vot-overlay-container {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            pointer-events: none !important;
+            z-index: 9999 !important;
         }
 
-        .vot-container[data-position="bottom"] {
-            position: fixed !important;
+        .vot-button-wrapper {
+            position: absolute !important;
+            top: 12px !important;
+            left: 12px !important;
+            pointer-events: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            align-items: flex-start !important;
+        }
+
+        .vot-button-wrapper[data-position="bottom"] {
+            top: auto !important;
             bottom: 80px !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
-            z-index: 999999 !important;
-            margin-left: 0 !important;
-        }
-
-        .vot-container[data-position="bottom"] .vot-btn {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+            flex-direction: row !important;
         }
 
         .vot-btn {
-            background: #ff0000 !important;
+            background: rgba(0, 0, 0, 0.6) !important;
             color: white !important;
             border: none !important;
             border-radius: 18px !important;
@@ -75,30 +84,42 @@
             gap: 6px !important;
             transition: all 0.2s !important;
             font-family: "YouTube Noto", Roboto, Arial, sans-serif !important;
-            height: 36px !important;
+            backdrop-filter: blur(4px) !important;
+            -webkit-backdrop-filter: blur(4px) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            white-space: nowrap !important;
         }
 
         .vot-btn:hover {
-            background: #cc0000 !important;
+            background: rgba(0, 0, 0, 0.8) !important;
             transform: scale(1.05) !important;
         }
 
         .vot-btn:disabled {
-            background: #666 !important;
+            background: rgba(100, 100, 100, 0.6) !important;
             cursor: not-allowed !important;
             transform: none !important;
         }
 
+        .vot-btn.primary {
+            background: #ff0000 !important;
+        }
+
+        .vot-btn.primary:hover {
+            background: #cc0000 !important;
+        }
+
         .vot-btn.secondary {
-            background: #3ea6ff !important;
+            background: rgba(62, 166, 255, 0.9) !important;
         }
 
         .vot-btn.secondary:hover {
-            background: #2a8fd8 !important;
+            background: rgba(42, 143, 216, 0.9) !important;
         }
 
         .vot-btn.processing {
-            background: #ff9500 !important;
+            background: rgba(255, 149, 0, 0.9) !important;
         }
 
         .vot-spinner {
@@ -125,7 +146,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 999999;
+            z-index: 100000;
         }
 
         .vot-quality-dialog-content {
@@ -205,6 +226,17 @@
             background: transparent;
             color: #aaa;
         }
+
+        /* Hide when video controls are hidden */
+        .html5-video-player:not(.ytp-autohide) .vot-overlay-container,
+        .html5-video-player.ytp-autohide .vot-overlay-container {
+            opacity: 1;
+        }
+
+        .html5-video-player.ytp-autohide-active .vot-overlay-container {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
     `;
 
     // ============================================
@@ -277,7 +309,7 @@
     // ============================================
     function createTranslateButton() {
         const btn = document.createElement('button');
-        btn.className = 'vot-btn';
+        btn.className = 'vot-btn primary';
         btn.id = 'vot-translate-btn';
         btn.innerHTML = `
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -301,7 +333,7 @@
 
     function createDownloadAudioButton() {
         const btn = document.createElement('button');
-        btn.className = 'vot-btn secondary';
+        btn.className = 'vot-btn';
         btn.id = 'vot-download-audio-btn';
         btn.innerHTML = `
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -537,76 +569,67 @@
     }
 
     // ============================================
-    // MAIN UI INJECTION - ROBUST VERSION
+    // MAIN UI INJECTION - Overlay style like original VOT
     // ============================================
-    function createVOTContainer() {
-        const existing = document.getElementById('vot-container');
+    function createVOTOverlay() {
+        const existing = document.getElementById('vot-overlay-container');
         if (existing) {
-            console.log('[VOT] Container already exists');
+            console.log('[VOT] Overlay already exists');
             return existing;
         }
 
-        const container = document.createElement('div');
-        container.className = 'vot-container';
-        container.id = 'vot-container';
-        container.setAttribute('data-position', CONFIG.buttonPosition);
+        // Create overlay container
+        const overlay = document.createElement('div');
+        overlay.className = 'vot-overlay-container';
+        overlay.id = 'vot-overlay-container';
 
-        container.appendChild(createTranslateButton());
-        container.appendChild(createDownloadVideoButton());
-        container.appendChild(createDownloadAudioButton());
+        // Create button wrapper
+        const buttonWrapper = document.createElement('div');
+        buttonWrapper.className = 'vot-button-wrapper';
+        buttonWrapper.id = 'vot-button-wrapper';
+        buttonWrapper.setAttribute('data-position', CONFIG.buttonPosition);
 
-        console.log('[VOT] Container created');
-        return container;
+        // Add buttons
+        buttonWrapper.appendChild(createTranslateButton());
+        buttonWrapper.appendChild(createDownloadVideoButton());
+        buttonWrapper.appendChild(createDownloadAudioButton());
+
+        overlay.appendChild(buttonWrapper);
+        console.log('[VOT] Overlay created');
+        return overlay;
     }
 
-    function updateButtonPosition() {
-        const container = document.getElementById('vot-container');
-        if (container) {
-            container.setAttribute('data-position', CONFIG.buttonPosition);
-        }
-    }
-
-    function findBestInjectionTarget() {
-        // YouTube's button bar selectors - order matters
+    function findVideoContainer() {
+        // Try to find YouTube's video player container
         const selectors = [
-            // New 2024 layout - actions bar
-            '#actions ytd-menu-renderer',
-            '#actions #menu',
-            'ytd-watch-metadata #actions #menu',
-            // Alternative layouts
-            '#top-level-buttons-computed',
-            '#menu > ytd-menu-renderer',
-            '#menu ytd-button-renderer:first-child',
-            // Older layouts
-            'ytd-menu-renderer[has-items]',
-            '#info #menu',
-            // Video primary info
-            'ytd-watch-metadata #top-level-buttons',
-            'ytd-video-primary-info-renderer #menu',
+            // Primary: movie player container
+            '#movie_player',
+            '.html5-video-player',
+            // Video container
+            '#player-container',
+            '.ytd-player',
+            // Player API
+            '#player-api',
+            // Fallback: any video's parent
+            'video'
         ];
 
         for (const selector of selectors) {
             const el = document.querySelector(selector);
             if (el) {
-                console.log('[VOT] Found target:', selector);
+                // For video element, return its parent container
+                if (el.tagName === 'VIDEO') {
+                    const container = el.closest('#movie_player, .html5-video-player, #player-container');
+                    if (container) return container;
+                    return el.parentElement;
+                }
                 return el;
             }
         }
-
-        // Try to find by text content (Share button area)
-        const allMenus = document.querySelectorAll('ytd-menu-renderer');
-        for (const menu of allMenus) {
-            if (menu.textContent.includes('Share') || menu.textContent.includes('Clip')) {
-                console.log('[VOT] Found target by content: ytd-menu-renderer');
-                return menu;
-            }
-        }
-
-        console.log('[VOT] No standard target found');
         return null;
     }
 
-    function injectVOTButtons() {
+    function injectVOTOverlay() {
         const videoId = getVideoId();
         if (!videoId) {
             console.log('[VOT] No video ID, skipping injection');
@@ -614,34 +637,22 @@
         }
 
         // Check if already injected
-        if (document.getElementById('vot-container')) {
+        if (document.getElementById('vot-overlay-container')) {
             console.log('[VOT] Already injected');
             return true;
         }
 
         console.log('[VOT] Attempting injection for video:', videoId);
 
-        const target = findBestInjectionTarget();
-        if (target) {
-            const container = createVOTContainer();
-            target.appendChild(container);
-            updateButtonPosition();
-            console.log('[VOT] Successfully injected!');
+        const videoContainer = findVideoContainer();
+        if (videoContainer) {
+            const overlay = createVOTOverlay();
+            videoContainer.appendChild(overlay);
+            console.log('[VOT] Successfully injected into video container!');
             return true;
         }
 
-        // Fallback: inject below title
-        const titleArea = document.querySelector('ytd-watch-metadata #title, h1.ytd-watch-metadata, #container h1');
-        if (titleArea) {
-            const container = createVOTContainer();
-            container.style.marginTop = '12px';
-            titleArea.parentNode.insertBefore(container, titleArea.nextSibling);
-            updateButtonPosition();
-            console.log('[VOT] Injected in fallback position');
-            return true;
-        }
-
-        console.log('[VOT] Could not find injection point');
+        console.log('[VOT] Could not find video container');
         return false;
     }
 
@@ -650,7 +661,7 @@
     // ============================================
     let lastVideoId = null;
     let injectionAttempts = 0;
-    const MAX_ATTEMPTS = 10;
+    const MAX_ATTEMPTS = 15;
 
     function tryInjectWithRetry() {
         if (injectionAttempts >= MAX_ATTEMPTS) {
@@ -659,7 +670,7 @@
         }
 
         injectionAttempts++;
-        const success = injectVOTButtons();
+        const success = injectVOTOverlay();
 
         if (!success) {
             console.log(`[VOT] Retry ${injectionAttempts}/${MAX_ATTEMPTS} in 500ms...`);
@@ -689,15 +700,15 @@
                 selectedQuality: null
             };
 
-            // Remove old container
-            const old = document.getElementById('vot-container');
+            // Remove old overlay
+            const old = document.getElementById('vot-overlay-container');
             if (old) old.remove();
 
             // Try to inject with retries
             tryInjectWithRetry();
-        } else if (videoId && !document.getElementById('vot-container')) {
-            // Video hasn't changed but buttons are missing - reinject
-            console.log('[VOT] Buttons missing, reinjecting...');
+        } else if (videoId && !document.getElementById('vot-overlay-container')) {
+            // Video hasn't changed but overlay is missing - reinject
+            console.log('[VOT] Overlay missing, reinjecting...');
             tryInjectWithRetry();
         }
     }
@@ -728,7 +739,7 @@
         }).observe(document, { subtree: true, childList: true });
 
         // Initial check
-        setTimeout(onPageChange, 1000);
+        setTimeout(onPageChange, 1500);
         console.log('[VOT] Init complete');
     }
 
