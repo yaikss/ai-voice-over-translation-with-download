@@ -1,17 +1,20 @@
 // ==UserScript==
 // @name         VOT YouTube Translator
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  YouTube video translation with download feature
 // @author       You
 // @match        https://www.youtube.com/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_registerMenuCommand
+// @run-at       document-end
 // ==/UserScript==
 
 (function() {
     'use strict';
+
+    console.log('[VOT] Script loaded');
 
     // ============================================
     // CONFIGURATION & STATE
@@ -39,10 +42,10 @@
     // ============================================
     const STYLES = `
         .vot-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: 8px;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-left: 8px !important;
         }
 
         .vot-container[data-position="bottom"] {
@@ -50,51 +53,52 @@
             bottom: 80px !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
-            z-index: 10000 !important;
+            z-index: 999999 !important;
             margin-left: 0 !important;
         }
 
         .vot-container[data-position="bottom"] .vot-btn {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
         }
 
         .vot-btn {
-            background: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 18px;
-            padding: 8px 16px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s;
-            font-family: "YouTube Noto", Roboto, Arial, sans-serif;
+            background: #ff0000 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 18px !important;
+            padding: 8px 16px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            transition: all 0.2s !important;
+            font-family: "YouTube Noto", Roboto, Arial, sans-serif !important;
+            height: 36px !important;
         }
 
         .vot-btn:hover {
-            background: #cc0000;
-            transform: scale(1.05);
+            background: #cc0000 !important;
+            transform: scale(1.05) !important;
         }
 
         .vot-btn:disabled {
-            background: #666;
-            cursor: not-allowed;
-            transform: none;
+            background: #666 !important;
+            cursor: not-allowed !important;
+            transform: none !important;
         }
 
         .vot-btn.secondary {
-            background: #3ea6ff;
+            background: #3ea6ff !important;
         }
 
         .vot-btn.secondary:hover {
-            background: #2a8fd8;
+            background: #2a8fd8 !important;
         }
 
         .vot-btn.processing {
-            background: #ff9500;
+            background: #ff9500 !important;
         }
 
         .vot-spinner {
@@ -121,7 +125,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10000;
+            z-index: 999999;
         }
 
         .vot-quality-dialog-content {
@@ -212,6 +216,7 @@
         style.id = 'vot-styles';
         style.textContent = STYLES;
         document.head.appendChild(style);
+        console.log('[VOT] Styles injected');
     }
 
     function getVideoId() {
@@ -221,7 +226,7 @@
 
     function extractVideoInfo() {
         const video = document.querySelector('video');
-        const title = document.querySelector('h1.ytd-watch-metadata yt-formatted-string, #title h1')?.textContent?.trim() || 'Unknown';
+        const title = document.querySelector('h1.ytd-watch-metadata yt-formatted-string, #title h1, h1.title')?.textContent?.trim() || 'Unknown';
         return {
             videoId: getVideoId(),
             title: title,
@@ -234,18 +239,15 @@
     // SERVER API (MOCK - Replace with real endpoints)
     // ============================================
     async function requestTranslation(videoId, targetLang = 'en') {
-        // Mock response - replace with actual API call
         return { job_id: 'mock-job-' + Date.now() };
     }
 
     async function checkTranslationStatus(jobId) {
-        // Mock progress - replace with actual API call
         await new Promise(r => setTimeout(r, 1000));
         return { status: 'completed', audio_url: 'https://example.com/audio.mp3', segments: [] };
     }
 
     async function getAvailableQualities(videoId) {
-        // Mock qualities - replace with actual yt-dlp call
         return [
             { label: '1080p', format: '137+140', resolution: '1920x1080', fps: 60 },
             { label: '1080p', format: '137+140', resolution: '1920x1080', fps: 30 },
@@ -535,11 +537,14 @@
     }
 
     // ============================================
-    // MAIN UI INJECTION
+    // MAIN UI INJECTION - ROBUST VERSION
     // ============================================
     function createVOTContainer() {
         const existing = document.getElementById('vot-container');
-        if (existing) return existing;
+        if (existing) {
+            console.log('[VOT] Container already exists');
+            return existing;
+        }
 
         const container = document.createElement('div');
         container.className = 'vot-container';
@@ -550,6 +555,7 @@
         container.appendChild(createDownloadVideoButton());
         container.appendChild(createDownloadAudioButton());
 
+        console.log('[VOT] Container created');
         return container;
     }
 
@@ -560,57 +566,120 @@
         }
     }
 
-    function injectVOTButtons() {
-        if (!getVideoId()) return;
-
-        // Try different YouTube UI layouts
-        const targets = [
-            '#menu ytd-button-renderer',
+    function findBestInjectionTarget() {
+        // YouTube's button bar selectors - order matters
+        const selectors = [
+            // New 2024 layout - actions bar
+            '#actions ytd-menu-renderer',
+            '#actions #menu',
+            'ytd-watch-metadata #actions #menu',
+            // Alternative layouts
             '#top-level-buttons-computed',
-            '#menu > ytd-menu-renderer > #top-level-buttons',
-            'ytd-watch-metadata #menu',
-            '#actions > #menu',
+            '#menu > ytd-menu-renderer',
+            '#menu ytd-button-renderer:first-child',
+            // Older layouts
+            'ytd-menu-renderer[has-items]',
+            '#info #menu',
+            // Video primary info
+            'ytd-watch-metadata #top-level-buttons',
+            'ytd-video-primary-info-renderer #menu',
         ];
 
-        let injected = false;
-        for (const selector of targets) {
-            const target = document.querySelector(selector);
-            if (target) {
-                const container = createVOTContainer();
-                target.appendChild(container);
-                injected = true;
-                console.log('VOT: Injected into', selector);
-                break;
+        for (const selector of selectors) {
+            const el = document.querySelector(selector);
+            if (el) {
+                console.log('[VOT] Found target:', selector);
+                return el;
             }
         }
 
-        // Fallback: inject near video title
-        if (!injected) {
-            const titleArea = document.querySelector('ytd-watch-metadata #title');
-            if (titleArea) {
-                const container = createVOTContainer();
-                container.style.marginTop = '12px';
-                titleArea.parentNode.insertBefore(container, titleArea.nextSibling);
-                injected = true;
+        // Try to find by text content (Share button area)
+        const allMenus = document.querySelectorAll('ytd-menu-renderer');
+        for (const menu of allMenus) {
+            if (menu.textContent.includes('Share') || menu.textContent.includes('Clip')) {
+                console.log('[VOT] Found target by content: ytd-menu-renderer');
+                return menu;
             }
         }
 
-        updateButtonPosition();
-        return injected;
+        console.log('[VOT] No standard target found');
+        return null;
+    }
+
+    function injectVOTButtons() {
+        const videoId = getVideoId();
+        if (!videoId) {
+            console.log('[VOT] No video ID, skipping injection');
+            return false;
+        }
+
+        // Check if already injected
+        if (document.getElementById('vot-container')) {
+            console.log('[VOT] Already injected');
+            return true;
+        }
+
+        console.log('[VOT] Attempting injection for video:', videoId);
+
+        const target = findBestInjectionTarget();
+        if (target) {
+            const container = createVOTContainer();
+            target.appendChild(container);
+            updateButtonPosition();
+            console.log('[VOT] Successfully injected!');
+            return true;
+        }
+
+        // Fallback: inject below title
+        const titleArea = document.querySelector('ytd-watch-metadata #title, h1.ytd-watch-metadata, #container h1');
+        if (titleArea) {
+            const container = createVOTContainer();
+            container.style.marginTop = '12px';
+            titleArea.parentNode.insertBefore(container, titleArea.nextSibling);
+            updateButtonPosition();
+            console.log('[VOT] Injected in fallback position');
+            return true;
+        }
+
+        console.log('[VOT] Could not find injection point');
+        return false;
     }
 
     // ============================================
     // OBSERVER & INIT
     // ============================================
     let lastVideoId = null;
+    let injectionAttempts = 0;
+    const MAX_ATTEMPTS = 10;
+
+    function tryInjectWithRetry() {
+        if (injectionAttempts >= MAX_ATTEMPTS) {
+            console.log('[VOT] Max injection attempts reached');
+            return;
+        }
+
+        injectionAttempts++;
+        const success = injectVOTButtons();
+
+        if (!success) {
+            console.log(`[VOT] Retry ${injectionAttempts}/${MAX_ATTEMPTS} in 500ms...`);
+            setTimeout(tryInjectWithRetry, 500);
+        } else {
+            injectionAttempts = 0;
+        }
+    }
 
     function onPageChange() {
         const videoId = getVideoId();
 
-        if (videoId !== lastVideoId) {
+        if (videoId && videoId !== lastVideoId) {
+            console.log('[VOT] Video changed to:', videoId);
             lastVideoId = videoId;
+            injectionAttempts = 0;
+
+            // Reset state
             currentState = {
-                videoId: null,
+                videoId: videoId,
                 isTranslating: false,
                 isMakingVideo: false,
                 downloadProgress: 0,
@@ -620,29 +689,50 @@
                 selectedQuality: null
             };
 
+            // Remove old container
             const old = document.getElementById('vot-container');
             if (old) old.remove();
 
-            if (videoId) {
-                setTimeout(() => {
-                    injectVOTButtons();
-                    if (CONFIG.autoTranslate) {
-                        handleTranslateClick();
-                    }
-                }, 1000);
-            }
+            // Try to inject with retries
+            tryInjectWithRetry();
+        } else if (videoId && !document.getElementById('vot-container')) {
+            // Video hasn't changed but buttons are missing - reinject
+            console.log('[VOT] Buttons missing, reinjecting...');
+            tryInjectWithRetry();
         }
     }
 
     function init() {
+        console.log('[VOT] Init started');
         injectStyles();
 
-        const observer = new MutationObserver(onPageChange);
-        observer.observe(document.body, { childList: true, subtree: true });
+        // Watch for URL and DOM changes
+        const observer = new MutationObserver(() => {
+            onPageChange();
+        });
 
-        onPageChange();
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Also watch for navigation (YouTube SPA)
+        let lastUrl = location.href;
+        new MutationObserver(() => {
+            const url = location.href;
+            if (url !== lastUrl) {
+                lastUrl = url;
+                console.log('[VOT] URL changed');
+                setTimeout(onPageChange, 500);
+            }
+        }).observe(document, { subtree: true, childList: true });
+
+        // Initial check
+        setTimeout(onPageChange, 1000);
+        console.log('[VOT] Init complete');
     }
 
+    // Start
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
