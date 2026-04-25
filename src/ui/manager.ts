@@ -196,6 +196,9 @@ export class UIManager {
       .addEventListener("click:downloadTranslation", async () => {
         await this.handleDownloadTranslationClick();
       })
+      .addEventListener("click:downloadVideoMixed", async () => {
+        await this.handleDownloadVideoMixedClick();
+      })
       .addEventListener("click:downloadSubtitles", async () => {
         await this.handleDownloadSubtitlesClick();
       })
@@ -580,6 +583,9 @@ export class UIManager {
     if (this.votOverlayView?.downloadTranslationButton) {
       this.votOverlayView.downloadTranslationButton.hidden = true;
     }
+    if (this.votOverlayView?.downloadVideoMixedButton) {
+      this.votOverlayView.downloadVideoMixedButton.hidden = true;
+    }
   }
 
   private async downloadTranslationAudio(
@@ -633,6 +639,86 @@ export class UIManager {
     const saveOptions: DownloadBlobOptions = { preferShare: isMobile };
 
     await downloadBlob(blob, targetFilename, saveOptions);
+  }
+
+  private async handleDownloadVideoMixedClick() {
+    const overlayView = this.votOverlayView;
+    const videoHandler = this.videoHandler;
+    const download = videoHandler?.downloadTranslation;
+    if (!overlayView?.isInitialized() || !download || !videoHandler.videoData) {
+      return;
+    }
+
+    const downloadVideoData = await this.getDownloadVideoData(
+      videoHandler,
+      download.videoId,
+    );
+    if (!downloadVideoData) {
+      return;
+    }
+
+    // Check if mixing is supported
+    const { isVideoMixingSupported } = await import("../videoDownloadMixer");
+    if (!isVideoMixingSupported()) {
+      this.notifier.error(
+        localizationProvider.get("VOTDownloadVideoMixedNotSupported"),
+      );
+      return;
+    }
+
+    const downloadButton = overlayView.downloadVideoMixedButton;
+    const audioUrl = download.url;
+    const videoUrl = videoHandler.video?.currentSrc || videoHandler.video?.src;
+
+    if (!videoUrl) {
+      this.notifier.error(localizationProvider.get("VOTFailedGetVideo"));
+      return;
+    }
+
+    const filename = this.data.downloadWithName
+      ? clearFileName(downloadVideoData.downloadTitle)
+      : `mixed_${downloadVideoData.videoId}`;
+
+    const setProgress = (stage: string, progress: number) => {
+      if (downloadButton) {
+        downloadButton.progress = Math.round(progress * 100);
+      }
+    };
+
+    downloadButton?.setAttribute("disabled", "true");
+    try {
+      const { downloadVideoWithMixedAudio } = await import(
+        "../videoDownloadMixer"
+      );
+      const result = await downloadVideoWithMixedAudio({
+        videoUrl,
+        audioUrl,
+        filename,
+        originalVolume: 0.5,
+        translationVolume: 1.0,
+        onProgress: setProgress,
+      });
+
+      if (result.success && result.blob) {
+        const isMobile = this.isLikelyMobileDownloadContext();
+        const saveOptions: DownloadBlobOptions = { preferShare: isMobile };
+        await downloadBlob(result.blob, `${filename}.webm`, saveOptions);
+
+        if (result.error) {
+          this.notifier.warn(result.error);
+        }
+      } else {
+        throw new Error(result.error || "Download failed");
+      }
+    } catch (err) {
+      console.error("[VOT] Download mixed video failed:", err);
+      this.notifier.error(
+        localizationProvider.get("VOTDownloadVideoMixedError"),
+      );
+    } finally {
+      setProgress("", 0);
+      downloadButton?.removeAttribute("disabled");
+    }
   }
 
   async reloadMenu() {

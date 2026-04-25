@@ -19,17 +19,17 @@ export default class DownloadButton {
   };
   private _progress = 0;
 
-  constructor() {
-    const elements = this.createElements();
+  constructor(ariaLabel?: string) {
+    const elements = this.createElements(ariaLabel);
     this.button = elements.button;
     this.loaderMain = elements.loaderMain;
     this.loaderCircle = elements.loaderCircle;
     this.progress = 0;
   }
 
-  private createElements() {
+  private createElements(ariaLabel?: string) {
     const button = UI.createIconButton(DOWNLOAD_ICON, {
-      ariaLabel: "Download translation",
+      ariaLabel: ariaLabel || "Download translation",
     });
     const loaderMain = button.querySelector<SVGPathElement>(".vot-loader-main");
     if (!loaderMain) {

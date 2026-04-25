@@ -103,6 +103,7 @@ export class OverlayView {
   votMenu?: VOTMenu;
   downloadTranslationButton?: DownloadButton;
   downloadSubtitlesButton?: HTMLElement;
+  downloadVideoMixedButton?: DownloadButton; // New button for video download
   openSettingsButton?: HTMLElement;
   languagePairSelect?: LanguagePairSelect<RequestLang, ResponseLang>;
   subtitlesSelectLabel?: Label;
@@ -188,6 +189,7 @@ export class OverlayView {
     votMenu: VOTMenu;
     downloadTranslationButton: DownloadButton;
     downloadSubtitlesButton: HTMLElement;
+    downloadVideoMixedButton: DownloadButton; // New button
     openSettingsButton: HTMLElement;
     languagePairSelect: LanguagePairSelect<RequestLang, ResponseLang>;
     subtitlesSelectLabel: Label;
@@ -364,6 +366,11 @@ export class OverlayView {
     this.downloadTranslationButton = new DownloadButton();
     this.downloadTranslationButton.hidden = true;
 
+    this.downloadVideoMixedButton = new DownloadButton(
+      "Download video with translation",
+    );
+    this.downloadVideoMixedButton.hidden = true;
+
     this.downloadSubtitlesButton = ui.createIconButton(SUBTITLES_ICON, {
       ariaLabel: "Download subtitles",
     });
@@ -375,6 +382,7 @@ export class OverlayView {
 
     this.votMenu.headerContainer.append(
       this.downloadTranslationButton.button,
+      this.downloadVideoMixedButton.button,
       this.downloadSubtitlesButton,
       this.openSettingsButton,
     );
@@ -664,6 +672,10 @@ export class OverlayView {
     // #region [Events] VOT Menu Header
     this.downloadTranslationButton.addEventListener("click", () => {
       this.events["click:downloadTranslation"].dispatch();
+    });
+
+    this.downloadVideoMixedButton.addEventListener("click", () => {
+      this.events["click:downloadVideoMixed"].dispatch();
     });
 
     this.downloadSubtitlesButton.addEventListener(

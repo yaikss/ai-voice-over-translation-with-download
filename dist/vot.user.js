@@ -154,14 +154,43 @@
 // @match          *://*/*.mp4*
 // @match          *://*/*.webm*
 // @match          *://*.yewtu.be/*
-// @match          *://inv.nadeko.net/*
-// @match          *://invidious.nerdvpn.de/*
-// @match          *://invidious.protokolla.fi/*
-// @match          *://invidious.materialio.us/*
+// @match          *://yt.artemislena.eu/*
+// @match          *://invidious.flokinet.to/*
 // @match          *://iv.melmac.space/*
+// @match          *://inv.nadeko.net/*
+// @match          *://inv.tux.pizza/*
+// @match          *://invidious.private.coffee/*
+// @match          *://yt.drgnz.club/*
+// @match          *://vid.puffyan.us/*
+// @match          *://invidious.dhusch.de/*
 // @match          *://*.piped.video/*
-// @match          *://piped.kavin.rocks/*
-// @match          *://piped.private.coffee/*
+// @match          *://piped.tokhmi.xyz/*
+// @match          *://piped.moomoo.me/*
+// @match          *://piped.syncpundit.io/*
+// @match          *://piped.mha.fi/*
+// @match          *://watch.whatever.social/*
+// @match          *://piped.garudalinux.org/*
+// @match          *://efy.piped.pages.dev/*
+// @match          *://watch.leptons.xyz/*
+// @match          *://piped.lunar.icu/*
+// @match          *://yt.dc09.ru/*
+// @match          *://piped.mint.lgbt/*
+// @match          *://*.il.ax/*
+// @match          *://piped.privacy.com.de/*
+// @match          *://piped.esmailelbob.xyz/*
+// @match          *://piped.projectsegfau.lt/*
+// @match          *://piped.in.projectsegfau.lt/*
+// @match          *://piped.us.projectsegfau.lt/*
+// @match          *://piped.privacydev.net/*
+// @match          *://piped.palveluntarjoaja.eu/*
+// @match          *://piped.smnz.de/*
+// @match          *://piped.adminforge.de/*
+// @match          *://piped.qdi.fi/*
+// @match          *://piped.hostux.net/*
+// @match          *://piped.chauvet.pro/*
+// @match          *://piped.jotoma.de/*
+// @match          *://piped.pfcd.me/*
+// @match          *://piped.frontendfriendly.xyz/*
 // @match          *://proxitok.pabloferreiro.es/*
 // @match          *://proxitok.pussthecat.org/*
 // @match          *://tok.habedieeh.re/*
@@ -173,24 +202,24 @@
 // @match          *://cringe.whatever.social/*
 // @match          *://proxitok.lunar.icu/*
 // @match          *://proxitok.privacy.com.de/*
-// @match          *://peertube.tmp.rcp.tf/*
-// @match          *://*.dalek.zone/*
-// @match          *://video.sadmin.io/*
-// @match          *://videos.viorsan.com/*
 // @match          *://peertube.1312.media/*
 // @match          *://tube.shanti.cafe/*
 // @match          *://*.bee-tube.fr/*
-// @match          *://video.blender.org/*
-// @match          *://*.beetoons.tv/*
-// @match          *://*.makertube.net/*
-// @match          *://*.peertube.tv/*
-// @match          *://*.framatube.org/*
-// @match          *://*.tilvids.com/*
-// @match          *://*.diode.zone/*
-// @match          *://*.fedimovie.com/*
-// @match          *://video.hardlimit.com/*
-// @match          *://*.share.tube/*
+// @match          *://video.sadmin.io/*
+// @match          *://*.dalek.zone/*
+// @match          *://review.peertube.biz/*
 // @match          *://*.peervideo.club/*
+// @match          *://tube.la-dina.net/*
+// @match          *://peertube.tmp.rcp.tf/*
+// @match          *://*.peertube.su/*
+// @match          *://video.blender.org/*
+// @match          *://videos.viorsan.com/*
+// @match          *://tube-sciences-technologies.apps.education.fr/*
+// @match          *://tube-numerique-educatif.apps.education.fr/*
+// @match          *://tube-arts-lettres-sciences-humaines.apps.education.fr/*
+// @match          *://*.beetoons.tv/*
+// @match          *://comics.peertube.biz/*
+// @match          *://*.makertube.net/*
 // @match          *://*.coursehunter.net/*
 // @match          *://*.coursetrain.net/*
 // @exclude        file://*/*.mp4*
@@ -283,17 +312,51 @@ var vot = (function(exports) {
 	//#endregion
 	//#region node_modules/@vot.js/shared/dist/data/config.js
 	var config_default$1 = {
-		"host": "api.browser.yandex.ru",
-		"hostVOT": "vot.toil.cc/v1",
-		"hostWorker": "vot-worker.toil.cc",
-		"mediaProxy": "media-proxy.transly.eu.cc",
-		"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 YaBrowser/26.3.3.869 Yowser/2.5 Safari/537.36",
-		"componentVersion": "26.3.3.869",
-		"hmac": "bt8xH3VOlb4mqf0nqAibnDOoiPlXsisf",
-		"defaultDuration": 310,
-		"minChunkSize": 5295308,
-		"loggerLevel": 1,
-		"version": "2.4.17"
+		host: "api.browser.yandex.ru",
+		hostVOT: "vot.toil.cc/v1",
+		hostWorker: "vot-worker.toil.cc",
+		mediaProxy: "media-proxy.toil.cc",
+		userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 YaBrowser/25.4.0.0 Safari/537.36",
+		componentVersion: "25.6.0.2259",
+		hmac: "bt8xH3VOlb4mqf0nqAibnDOoiPlXsisf",
+		defaultDuration: 343,
+		minChunkSize: 5295308,
+		loggerLevel: 1,
+		version: "2.4.12"
+	};
+	//#endregion
+	//#region node_modules/@vot.js/shared/dist/types/logger.js
+	var LoggerLevel;
+	(function(LoggerLevel) {
+		LoggerLevel[LoggerLevel["DEBUG"] = 0] = "DEBUG";
+		LoggerLevel[LoggerLevel["INFO"] = 1] = "INFO";
+		LoggerLevel[LoggerLevel["WARN"] = 2] = "WARN";
+		LoggerLevel[LoggerLevel["ERROR"] = 3] = "ERROR";
+		LoggerLevel[LoggerLevel["SILENCE"] = 4] = "SILENCE";
+	})(LoggerLevel || (LoggerLevel = {}));
+	//#endregion
+	//#region node_modules/@vot.js/shared/dist/utils/logger.js
+	var Logger = class Logger {
+		static prefix = `[vot.js v${config_default$1.version}]`;
+		static canLog(level) {
+			return config_default$1.loggerLevel <= level;
+		}
+		static log(...messages) {
+			if (!Logger.canLog(LoggerLevel.DEBUG)) return;
+			console.log(Logger.prefix, ...messages);
+		}
+		static info(...messages) {
+			if (!Logger.canLog(LoggerLevel.INFO)) return;
+			console.info(Logger.prefix, ...messages);
+		}
+		static warn(...messages) {
+			if (!Logger.canLog(LoggerLevel.WARN)) return;
+			console.warn(Logger.prefix, ...messages);
+		}
+		static error(...messages) {
+			if (!Logger.canLog(LoggerLevel.ERROR)) return;
+			console.error(Logger.prefix, ...messages);
+		}
 	};
 	//#endregion
 	//#region node_modules/@bufbuild/protobuf/dist/esm/wire/varint.js
@@ -2577,45 +2640,6 @@ var vot = (function(exports) {
 		return value !== null && value !== void 0;
 	}
 	//#endregion
-	//#region node_modules/@vot.js/shared/dist/types/logger.js
-	var LoggerLevel;
-	(function(LoggerLevel) {
-		LoggerLevel[LoggerLevel["DEBUG"] = 0] = "DEBUG";
-		LoggerLevel[LoggerLevel["INFO"] = 1] = "INFO";
-		LoggerLevel[LoggerLevel["WARN"] = 2] = "WARN";
-		LoggerLevel[LoggerLevel["ERROR"] = 3] = "ERROR";
-		LoggerLevel[LoggerLevel["SILENCE"] = 4] = "SILENCE";
-	})(LoggerLevel || (LoggerLevel = {}));
-	//#endregion
-	//#region node_modules/@vot.js/shared/dist/utils/logger.js
-	var prefix = `[vot.js v${config_default$1.version}]`;
-	function canLog(level) {
-		return config_default$1.loggerLevel <= level;
-	}
-	function log(...messages) {
-		if (!canLog(LoggerLevel.DEBUG)) return;
-		console.log(prefix, ...messages);
-	}
-	function info(...messages) {
-		if (!canLog(LoggerLevel.INFO)) return;
-		console.info(prefix, ...messages);
-	}
-	function warn(...messages) {
-		if (!canLog(LoggerLevel.WARN)) return;
-		console.warn(prefix, ...messages);
-	}
-	function error(...messages) {
-		if (!canLog(LoggerLevel.ERROR)) return;
-		console.error(prefix, ...messages);
-	}
-	var Logger = {
-		canLog,
-		log,
-		info,
-		warn,
-		error
-	};
-	//#endregion
 	//#region src/shims/nodeCrypto.ts
 	var nodeCrypto_exports = /* @__PURE__ */ __exportAll({
 		default: () => webCrypto,
@@ -2659,7 +2683,6 @@ var vot = (function(exports) {
 			[`X-${secType}-Sk`]: secretKey,
 			[`X-${secType}-Token`]: `${tokenSign}:${token}`
 		};
-		if (!body) throw new TypeError(`Body is required for sec type ${secType}`);
 		const sign = await getSignature(body);
 		return {
 			[`${secType}-Signature`]: sign,
@@ -2686,8 +2709,8 @@ var vot = (function(exports) {
 		}
 	}
 	var browserSecHeaders = {
-		"sec-ch-ua": `"Chromium";v="146", "YaBrowser";v="${componentVersion.slice(0, 5)}", "Not?A_Brand";v="26", "Yowser";v="2.5"`,
-		"sec-ch-ua-full-version-list": `"Chromium";v="146.0.7680.154", "YaBrowser";v="${componentVersion}", "Not?A_Brand";v="26.0.0.0", "Yowser";v="2.5"`,
+		"sec-ch-ua": `"Chromium";v="134", "YaBrowser";v="${componentVersion.slice(0, 5)}", "Not?A_Brand";v="24", "Yowser";v="2.5"`,
+		"sec-ch-ua-full-version-list": `"Chromium";v="134.0.6998.543", "YaBrowser";v="${componentVersion}", "Not?A_Brand";v="24.0.0.0", "Yowser";v="2.5"`,
 		"Sec-Fetch-Mode": "no-cors"
 	};
 	//#endregion
@@ -2811,24 +2834,15 @@ var vot = (function(exports) {
 		zul: "zu"
 	};
 	async function fetchWithTimeout(url, options = { headers: { "User-Agent": config_default$1.userAgent } }) {
-		const { timeout = 3e3, signal, ...fetchOptions } = options;
-		if (!signal && (!timeout || timeout <= 0)) return await fetch(url, fetchOptions);
+		const { timeout = 3e3, ...fetchOptions } = options;
 		const controller = new AbortController();
-		const abort = (reason) => {
-			if (!controller.signal.aborted) controller.abort(reason);
-		};
-		if (signal) if (signal.aborted) abort(signal.reason);
-		else signal.addEventListener("abort", () => abort(signal.reason), { once: true });
-		let timeoutId;
-		if (timeout && timeout > 0) timeoutId = setTimeout(() => abort(/* @__PURE__ */ new Error("Fetch timeout")), timeout);
-		try {
-			return await fetch(url, {
-				...fetchOptions,
-				signal: controller.signal
-			});
-		} finally {
-			if (timeoutId) clearTimeout(timeoutId);
-		}
+		const timeoutId = setTimeout(() => controller.abort(), timeout);
+		const response = await fetch(url, {
+			signal: controller.signal,
+			...fetchOptions
+		});
+		clearTimeout(timeoutId);
+		return response;
 	}
 	function getTimestamp$1() {
 		return Math.floor(Date.now() / 1e3);
@@ -2844,110 +2858,96 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region node_modules/@vot.js/core/dist/protobuf.js
-	function encodeTranslationRequest(url, duration, requestLang, responseLang, translationHelp, { forceSourceLang = false, wasStream = false, videoTitle = "", bypassCache = false, useLivelyVoice = false, firstRequest = true } = {}) {
-		return VideoTranslationRequest.encode({
-			url,
-			firstRequest,
-			duration,
-			unknown0: 1,
-			language: requestLang,
-			forceSourceLang,
-			unknown1: 0,
-			translationHelp: translationHelp ?? [],
-			responseLanguage: responseLang,
-			wasStream,
-			unknown2: 1,
-			unknown3: 2,
-			bypassCache,
-			useLivelyVoice,
-			videoTitle
-		}).finish();
-	}
-	function decodeTranslationResponse(response) {
-		return VideoTranslationResponse.decode(new Uint8Array(response));
-	}
-	function encodeTranslationCacheRequest(url, duration, requestLang, responseLang) {
-		return VideoTranslationCacheRequest.encode({
-			url,
-			duration,
-			language: requestLang,
-			responseLanguage: responseLang
-		}).finish();
-	}
-	function decodeTranslationCacheResponse(response) {
-		return VideoTranslationCacheResponse.decode(new Uint8Array(response));
-	}
-	function isPartialAudioBuffer(audioBuffer) {
-		return "chunkId" in audioBuffer;
-	}
-	function encodeTranslationAudioRequest(url, translationId, audioBuffer, partialAudio) {
-		if (partialAudio && isPartialAudioBuffer(audioBuffer)) return VideoTranslationAudioRequest.encode({
-			url,
-			translationId,
-			partialAudioInfo: {
-				...partialAudio,
-				audioBuffer
-			}
-		}).finish();
-		return VideoTranslationAudioRequest.encode({
-			url,
-			translationId,
-			audioInfo: audioBuffer
-		}).finish();
-	}
-	function decodeTranslationAudioResponse(response) {
-		return VideoTranslationAudioResponse.decode(new Uint8Array(response));
-	}
-	function encodeSubtitlesRequest(url, requestLang) {
-		return SubtitlesRequest.encode({
-			url,
-			language: requestLang
-		}).finish();
-	}
-	function decodeSubtitlesResponse(response) {
-		return SubtitlesResponse.decode(new Uint8Array(response));
-	}
-	function encodeStreamPingRequest(pingId) {
-		return StreamPingRequest.encode({ pingId }).finish();
-	}
-	function encodeStreamRequest(url, requestLang, responseLang) {
-		return StreamTranslationRequest.encode({
-			url,
-			language: requestLang,
-			responseLanguage: responseLang,
-			unknown0: 1,
-			unknown1: 0
-		}).finish();
-	}
-	function decodeStreamResponse(response) {
-		return StreamTranslationResponse.decode(new Uint8Array(response));
-	}
-	var YandexVOTProtobuf = {
-		encodeTranslationRequest,
-		decodeTranslationResponse,
-		encodeTranslationCacheRequest,
-		decodeTranslationCacheResponse,
-		isPartialAudioBuffer,
-		encodeTranslationAudioRequest,
-		decodeTranslationAudioResponse,
-		encodeSubtitlesRequest,
-		decodeSubtitlesResponse,
-		encodeStreamPingRequest,
-		encodeStreamRequest,
-		decodeStreamResponse
+	var YandexVOTProtobuf = class YandexVOTProtobuf {
+		static encodeTranslationRequest(url, duration, requestLang, responseLang, translationHelp, { forceSourceLang = false, wasStream = false, videoTitle = "", bypassCache = false, useLivelyVoice = false, firstRequest = true } = {}) {
+			return VideoTranslationRequest.encode({
+				url,
+				firstRequest,
+				duration,
+				unknown0: 1,
+				language: requestLang,
+				forceSourceLang,
+				unknown1: 0,
+				translationHelp: translationHelp ?? [],
+				responseLanguage: responseLang,
+				wasStream,
+				unknown2: 1,
+				unknown3: 2,
+				bypassCache,
+				useLivelyVoice,
+				videoTitle
+			}).finish();
+		}
+		static decodeTranslationResponse(response) {
+			return VideoTranslationResponse.decode(new Uint8Array(response));
+		}
+		static encodeTranslationCacheRequest(url, duration, requestLang, responseLang) {
+			return VideoTranslationCacheRequest.encode({
+				url,
+				duration,
+				language: requestLang,
+				responseLanguage: responseLang
+			}).finish();
+		}
+		static decodeTranslationCacheResponse(response) {
+			return VideoTranslationCacheResponse.decode(new Uint8Array(response));
+		}
+		static isPartialAudioBuffer(audioBuffer) {
+			return "chunkId" in audioBuffer;
+		}
+		static encodeTranslationAudioRequest(url, translationId, audioBuffer, partialAudio) {
+			if (partialAudio && YandexVOTProtobuf.isPartialAudioBuffer(audioBuffer)) return VideoTranslationAudioRequest.encode({
+				url,
+				translationId,
+				partialAudioInfo: {
+					...partialAudio,
+					audioBuffer
+				}
+			}).finish();
+			return VideoTranslationAudioRequest.encode({
+				url,
+				translationId,
+				audioInfo: audioBuffer
+			}).finish();
+		}
+		static decodeTranslationAudioResponse(response) {
+			return VideoTranslationAudioResponse.decode(new Uint8Array(response));
+		}
+		static encodeSubtitlesRequest(url, requestLang) {
+			return SubtitlesRequest.encode({
+				url,
+				language: requestLang
+			}).finish();
+		}
+		static decodeSubtitlesResponse(response) {
+			return SubtitlesResponse.decode(new Uint8Array(response));
+		}
+		static encodeStreamPingRequest(pingId) {
+			return StreamPingRequest.encode({ pingId }).finish();
+		}
+		static encodeStreamRequest(url, requestLang, responseLang) {
+			return StreamTranslationRequest.encode({
+				url,
+				language: requestLang,
+				responseLanguage: responseLang,
+				unknown0: 1,
+				unknown1: 0
+			}).finish();
+		}
+		static decodeStreamResponse(response) {
+			return StreamTranslationResponse.decode(new Uint8Array(response));
+		}
 	};
-	function encodeSessionRequest(uuid, module) {
-		return YandexSessionRequest.encode({
-			uuid,
-			module
-		}).finish();
-	}
-	function decodeSessionResponse(response) {
-		return YandexSessionResponse.decode(new Uint8Array(response));
-	}
-	var YandexSessionProtobuf = {
-		encodeSessionRequest,
-		decodeSessionResponse
+	var YandexSessionProtobuf = class {
+		static encodeSessionRequest(uuid, module) {
+			return YandexSessionRequest.encode({
+				uuid,
+				module
+			}).finish();
+		}
+		static decodeSessionResponse(response) {
+			return YandexSessionResponse.decode(new Uint8Array(response));
+		}
 	};
 	//#endregion
 	//#region node_modules/@vot.js/core/dist/types/yandex.js
@@ -2980,10 +2980,8 @@ var vot = (function(exports) {
 		VideoService["custom"] = "custom";
 		VideoService["directlink"] = "custom";
 		VideoService["youtube"] = "youtube";
-		VideoService["preservetube"] = "preservetube";
 		VideoService["piped"] = "piped";
 		VideoService["invidious"] = "invidious";
-		VideoService["niconico"] = "niconico";
 		VideoService["vk"] = "vk";
 		VideoService["nine_gag"] = "nine_gag";
 		VideoService["gag"] = "nine_gag";
@@ -2992,11 +2990,6 @@ var vot = (function(exports) {
 		VideoService["tiktok"] = "tiktok";
 		VideoService["vimeo"] = "vimeo";
 		VideoService["xvideos"] = "xvideos";
-		VideoService["xhamster"] = "xhamster";
-		VideoService["spankbang"] = "spankbang";
-		VideoService["rule34video"] = "rule34video";
-		VideoService["picarto"] = "picarto";
-		VideoService["olympicsreplay"] = "olympics_replay";
 		VideoService["pornhub"] = "pornhub";
 		VideoService["twitter"] = "twitter";
 		VideoService["x"] = "twitter";
@@ -3018,7 +3011,6 @@ var vot = (function(exports) {
 		VideoService["googledrive"] = "googledrive";
 		VideoService["bannedvideo"] = "bannedvideo";
 		VideoService["weverse"] = "weverse";
-		VideoService["weibo"] = "weibo";
 		VideoService["newgrounds"] = "newgrounds";
 		VideoService["egghead"] = "egghead";
 		VideoService["youku"] = "youku";
@@ -3029,24 +3021,23 @@ var vot = (function(exports) {
 		VideoService["kick"] = "kick";
 		VideoService["apple_developer"] = "apple_developer";
 		VideoService["appledeveloper"] = "apple_developer";
+		VideoService["poketube"] = "poketube";
 		VideoService["epicgames"] = "epicgames";
 		VideoService["odysee"] = "odysee";
 		VideoService["coursehunterLike"] = "coursehunterLike";
 		VideoService["sap"] = "sap";
 		VideoService["watchpornto"] = "watchpornto";
-		VideoService["jove"] = "jove";
 		VideoService["linkedin"] = "linkedin";
+		VideoService["ricktube"] = "ricktube";
 		VideoService["incestflix"] = "incestflix";
 		VideoService["porntn"] = "porntn";
 		VideoService["dzen"] = "dzen";
-		VideoService["bunnystream"] = "bunnystream";
 		VideoService["cloudflarestream"] = "cloudflarestream";
 		VideoService["loom"] = "loom";
 		VideoService["rtnews"] = "rtnews";
 		VideoService["bitview"] = "bitview";
 		VideoService["thisvid"] = "thisvid";
 		VideoService["ign"] = "ign";
-		VideoService["zdf"] = "zdf";
 		VideoService["bunkr"] = "bunkr";
 		VideoService["imdb"] = "imdb";
 		VideoService["telegram"] = "telegram";
@@ -3071,6 +3062,7 @@ var vot = (function(exports) {
 			super(message);
 			this.data = data;
 			this.name = "VOTJSError";
+			this.message = message;
 		}
 	};
 	var MinimalClient = class {
@@ -3264,7 +3256,7 @@ var vot = (function(exports) {
 					translationId,
 					translated: false,
 					status,
-					remainingTime: translationData.remainingTime ?? -1
+					remainingTime: translationData.remainingTime
 				};
 				case VideoTranslationStatus.AUDIO_REQUESTED:
 					if (url.startsWith("https://youtu.be/") && shouldSendFailedAudio) {
@@ -3333,11 +3325,7 @@ var vot = (function(exports) {
 		}
 		async requestVtransAudio(url, translationId, audioBuffer, partialAudio, headers = {}) {
 			const session = await this.getSession("video-translation");
-			let body;
-			if (YandexVOTProtobuf.isPartialAudioBuffer(audioBuffer)) {
-				if (!partialAudio) throw new VOTJSError("Partial audio metadata is required for partial audio buffer", audioBuffer);
-				body = YandexVOTProtobuf.encodeTranslationAudioRequest(url, translationId, audioBuffer, partialAudio);
-			} else body = YandexVOTProtobuf.encodeTranslationAudioRequest(url, translationId, audioBuffer, void 0);
+			const body = YandexVOTProtobuf.isPartialAudioBuffer(audioBuffer) ? YandexVOTProtobuf.encodeTranslationAudioRequest(url, translationId, audioBuffer, partialAudio) : YandexVOTProtobuf.encodeTranslationAudioRequest(url, translationId, audioBuffer, void 0);
 			const path = this.paths.videoTranslationAudio;
 			const vtransHeaders = await getSecYaHeaders("Vtrans", session, body, path);
 			const res = await this.request(path, body, {
@@ -3477,14 +3465,12 @@ var vot = (function(exports) {
 					interval,
 					message: interval === StreamInterval.NO_CONNECTION ? "streamNoConnectionToServer" : "translationTakeFewMinutes"
 				};
-				case StreamInterval.STREAMING:
-					if (translateResponse.pingId === void 0) throw new VOTJSError("Stream ping id wasn't received from Yandex response", translateResponse);
-					return {
-						translated: true,
-						interval,
-						pingId: translateResponse.pingId,
-						result: translateResponse.translatedInfo
-					};
+				case StreamInterval.STREAMING: return {
+					translated: true,
+					interval,
+					pingId: translateResponse.pingId,
+					result: translateResponse.translatedInfo
+				};
 				default:
 					Logger.error("Unknown response", translateResponse);
 					throw new VOTJSError("Unknown response from Yandex", translateResponse);
@@ -3572,6 +3558,7 @@ var vot = (function(exports) {
 		constructor(message) {
 			super(message);
 			this.name = "VideoDataError";
+			this.message = message;
 		}
 	};
 	var localLinkRe = /(file:\/\/(\/)?|(http(s)?:\/\/)(127\.0\.0\.1|localhost|192\.168\.(\d){1,3}\.(\d){1,3}))/;
@@ -3579,16 +3566,45 @@ var vot = (function(exports) {
 	//#region node_modules/@vot.js/shared/dist/data/alternativeUrls.js
 	var sitesInvidious = [
 		"yewtu.be",
+		"yt.artemislena.eu",
+		"invidious.flokinet.to",
+		"iv.melmac.space",
 		"inv.nadeko.net",
-		"invidious.nerdvpn.de",
-		"invidious.protokolla.fi",
-		"invidious.materialio.us",
-		"iv.melmac.space"
+		"inv.tux.pizza",
+		"invidious.private.coffee",
+		"yt.drgnz.club",
+		"vid.puffyan.us",
+		"invidious.dhusch.de"
 	];
 	var sitesPiped = [
 		"piped.video",
-		"piped.kavin.rocks",
-		"piped.private.coffee"
+		"piped.tokhmi.xyz",
+		"piped.moomoo.me",
+		"piped.syncpundit.io",
+		"piped.mha.fi",
+		"watch.whatever.social",
+		"piped.garudalinux.org",
+		"efy.piped.pages.dev",
+		"watch.leptons.xyz",
+		"piped.lunar.icu",
+		"yt.dc09.ru",
+		"piped.mint.lgbt",
+		"il.ax",
+		"piped.privacy.com.de",
+		"piped.esmailelbob.xyz",
+		"piped.projectsegfau.lt",
+		"piped.in.projectsegfau.lt",
+		"piped.us.projectsegfau.lt",
+		"piped.privacydev.net",
+		"piped.palveluntarjoaja.eu",
+		"piped.smnz.de",
+		"piped.adminforge.de",
+		"piped.qdi.fi",
+		"piped.hostux.net",
+		"piped.chauvet.pro",
+		"piped.jotoma.de",
+		"piped.pfcd.me",
+		"piped.frontendfriendly.xyz"
 	];
 	var sitesProxiTok = [
 		"proxitok.pabloferreiro.es",
@@ -3604,25 +3620,33 @@ var vot = (function(exports) {
 		"proxitok.privacy.com.de"
 	];
 	var sitesPeertube = [
-		"peertube.tmp.rcp.tf",
-		"dalek.zone",
-		"video.sadmin.io",
-		"videos.viorsan.com",
 		"peertube.1312.media",
 		"tube.shanti.cafe",
 		"bee-tube.fr",
+		"video.sadmin.io",
+		"dalek.zone",
+		"review.peertube.biz",
+		"peervideo.club",
+		"tube.la-dina.net",
+		"peertube.tmp.rcp.tf",
+		"peertube.su",
 		"video.blender.org",
+		"videos.viorsan.com",
+		"tube-sciences-technologies.apps.education.fr",
+		"tube-numerique-educatif.apps.education.fr",
+		"tube-arts-lettres-sciences-humaines.apps.education.fr",
 		"beetoons.tv",
-		"makertube.net",
-		"peertube.tv",
-		"framatube.org",
-		"tilvids.com",
-		"diode.zone",
-		"fedimovie.com",
-		"video.hardlimit.com",
-		"share.tube",
-		"peervideo.club"
+		"comics.peertube.biz",
+		"makertube.net"
 	];
+	var sitesPoketube = [
+		"poketube.fun",
+		"pt.sudovanilla.org",
+		"poke.ggtyler.dev",
+		"poke.uk2.littlekai.co.uk",
+		"poke.blahai.gay"
+	];
+	var sitesRicktube = ["ricktube.ru"];
 	var sitesCoursehunterLike = ["coursehunter.net", "coursetrain.net"];
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/types/service.js
@@ -3633,12 +3657,9 @@ var vot = (function(exports) {
 		ExtVideoService["douyin"] = "douyin";
 		ExtVideoService["artstation"] = "artstation";
 		ExtVideoService["kickstarter"] = "kickstarter";
-		ExtVideoService["datacamp"] = "datacamp";
 		ExtVideoService["oraclelearn"] = "oraclelearn";
 		ExtVideoService["deeplearningai"] = "deeplearningai";
 		ExtVideoService["netacad"] = "netacad";
-		ExtVideoService["mediafile"] = "mediafile";
-		ExtVideoService["skilljar"] = "skilljar";
 	})(ExtVideoService || (ExtVideoService = {}));
 	({
 		...VideoService$1,
@@ -3646,16 +3667,6 @@ var vot = (function(exports) {
 	});
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/data/sites.js
-	var sharedSelectors = {
-		bilibiliPlayer: ".bpx-player-video-wrap, div.player-mobile-box.player-mobile-autoplay",
-		flowplayer: ".fp-player, div.flowplayer",
-		idPlayer: "#player",
-		jwPlayer: ".jwplayer, .jw-media",
-		player: ".player",
-		shakaPlayer: ".shaka-video-container, [id^=\"shaka-video-container-\"]",
-		videoJsUniversal: "[id^='vjs_video_']:not([id*='_html5_api']):not(video), video-js:not([id*='_html5_api']), .video-js:not(video):not([id*='_html5_api']), .vjs-player:not([id*='_html5_api']), [data-vjs-player]:not([id*='_html5_api'])",
-		vkVideoPlayer: ".videoplayer_media, vk-video-player"
-	};
 	var sites_default = [
 		{
 			additionalData: "mobile",
@@ -3668,80 +3679,58 @@ var vot = (function(exports) {
 		{
 			host: VideoService$1.youtube,
 			url: "https://youtu.be/",
-			match: (enteredUrl) => /^(www.)?youtube(-nocookie|kids)?.com$/.test(enteredUrl.hostname) && enteredUrl.pathname.startsWith("/tv"),
-			selector: "#container",
-			needExtraData: true
-		},
-		{
-			host: VideoService$1.youtube,
-			url: "https://youtu.be/",
-			match: (url) => /^(www.)?youtube(-nocookie|kids)?.com$/.test(url.host) && !url.pathname.startsWith("/embed/"),
+			match: /^(www.)?youtube(-nocookie|kids)?.com$/,
 			selector: ".html5-video-container:not(#inline-player *)",
-			needExtraData: true
-		},
-		{
-			host: VideoService$1.youtube,
-			url: "https://youtu.be/",
-			additionalData: "embed",
-			match: (url) => /^(www.)?youtube(-nocookie|kids)?.com$/.test(url.host) && url.pathname.startsWith("/embed/"),
-			selector: "html",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.invidious,
 			url: "https://youtu.be/",
 			match: sitesInvidious,
-			selector: sharedSelectors.idPlayer,
+			selector: "#player",
 			needBypassCSP: true
 		},
 		{
 			host: VideoService$1.piped,
 			url: "https://youtu.be/",
 			match: sitesPiped,
-			selector: sharedSelectors.shakaPlayer,
+			selector: ".shaka-video-container",
 			needBypassCSP: true
 		},
 		{
-			host: VideoService$1.preservetube,
-			url: "https://preservetube.com/",
-			match: /^preservetube\.com$/,
-			selector: "div.video-wrapper",
-			needExtraData: true
+			host: VideoService$1.poketube,
+			url: "https://youtu.be/",
+			match: sitesPoketube,
+			selector: ".video-player-container"
 		},
 		{
-			host: VideoService$1.zdf,
-			url: "https://www.zdf.de/play/",
-			match: [/^zdf.de$/, /^(www.)?zdf.de$/],
-			selector: "div.zdfplayer-app.zdfplayer-desktop, div.zdfplayer-app"
-		},
-		{
-			host: VideoService$1.niconico,
-			url: "https://www.nicovideo.jp/watch/",
-			match: [/^(www\.|sp\.)?nicovideo\.jp$/, /^nico\.ms$/],
-			selector: `[class*="grid-area_[player]"] > div`
+			host: VideoService$1.ricktube,
+			url: "https://youtu.be/",
+			match: sitesRicktube,
+			selector: "#oframeplayer > pjsdiv:has(video)"
 		},
 		{
 			additionalData: "mobile",
 			host: VideoService$1.vk,
-			url: "https://vk.com/",
+			url: "https://vk.com/video?z=",
 			match: [/^m.vk.(com|ru)$/, /^m.vkvideo.ru$/],
-			selector: sharedSelectors.vkVideoPlayer,
+			selector: "vk-video-player",
 			shadowRoot: true,
 			needExtraData: true
 		},
 		{
 			additionalData: "clips",
 			host: VideoService$1.vk,
-			url: "https://vk.com/",
+			url: "https://vk.com/video?z=",
 			match: /^(www.|m.)?vk.(com|ru)$/,
 			selector: "div[data-testid=\"clipcontainer-video\"]",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.vk,
-			url: "https://vk.com/",
-			match: [/^(www\.|m\.)?vk\.(com|ru)$/, /^(.*\.)?vkvideo\.ru$/],
-			selector: sharedSelectors.vkVideoPlayer,
+			url: "https://vk.com/video?z=",
+			match: [/^(www.|m.)?vk.(com|ru)$/, /^(www.|m.)?vkvideo.ru$/],
+			selector: ".videoplayer_media",
 			needExtraData: true
 		},
 		{
@@ -3786,9 +3775,9 @@ var vot = (function(exports) {
 		{
 			host: VideoService$1.vimeo,
 			url: "https://vimeo.com/",
-			match: /^(www\.|m\.)?vimeo.com$/,
+			match: /^vimeo.com$/,
 			needExtraData: true,
-			selector: sharedSelectors.player
+			selector: ".player"
 		},
 		{
 			host: VideoService$1.vimeo,
@@ -3797,7 +3786,7 @@ var vot = (function(exports) {
 			additionalData: "embed",
 			needExtraData: true,
 			needBypassCSP: true,
-			selector: sharedSelectors.player
+			selector: ".player"
 		},
 		{
 			host: VideoService$1.xvideos,
@@ -3811,36 +3800,6 @@ var vot = (function(exports) {
 			needBypassCSP: true
 		},
 		{
-			host: VideoService$1.xhamster,
-			url: "https://xhamster.com/",
-			match: (url) => /^(?:[^.]+\.)?(?:xhamster\.(?:com|desi)|xhamster\d+\.(?:com|desi)|xhvid\.com)$/.test(url.host) && /\/(?:videos\/[^/]+-[\dA-Za-z]+)\/?$/.test(url.pathname),
-			selector: "#player-container"
-		},
-		{
-			host: VideoService$1.spankbang,
-			url: "https://spankbang.com/",
-			match: (url) => /^(?:[^.]+\.)?spankbang\.com$/.test(url.host) && /\/(?:[\da-z]+\/(?:video|play|embed)(?:\/[^/]+)?|[\da-z]+-[\da-z]+\/playlist\/[^/?#&]+)\/?$/i.test(url.pathname),
-			selector: "#main_video_player"
-		},
-		{
-			host: VideoService$1.rule34video,
-			url: "https://rule34video.com/video/",
-			match: (url) => /^(www\.)?rule34video\.com$/.test(url.host) && /\/videos?\/\d+/.test(url.pathname),
-			selector: sharedSelectors.flowplayer
-		},
-		{
-			host: VideoService$1.picarto,
-			url: "https://picarto.tv/",
-			match: (url) => /^(www\.)?picarto\.tv$/.test(url.host) && /^(?:\/[^/]+\/(?:profile\/)?videos\/[^/?#&]+|\/videopopout\/[^/?#&]+|\/[^/#?]+\/?)$/.test(url.pathname),
-			selector: `[class*="VideosTab__PlayerWrapper"]`
-		},
-		{
-			host: VideoService$1.olympicsreplay,
-			url: "https://olympics.com/",
-			match: (url) => /^(www\.)?olympics\.com$/.test(url.host) && /^\/[a-z]{2}\/(?:[a-z0-9-]+\/)?(?:replay|videos?|original-series\/episode)\/[\w-]+\/?$/i.test(url.pathname),
-			selector: sharedSelectors.videoJsUniversal
-		},
-		{
 			host: VideoService$1.pornhub,
 			url: "https://rt.pornhub.com/view_video.php?viewkey=",
 			match: /^[a-z]+.pornhub.(com|org)$/,
@@ -3852,20 +3811,21 @@ var vot = (function(exports) {
 			host: VideoService$1.pornhub,
 			url: "https://rt.pornhub.com/view_video.php?viewkey=",
 			match: (url) => /^[a-z]+.pornhub.(com|org)$/.exec(url.host) && url.pathname.startsWith("/embed/"),
-			selector: sharedSelectors.idPlayer
+			selector: "#player"
 		},
 		{
 			host: VideoService$1.twitter,
 			url: "https://twitter.com/i/status/",
 			match: /^(twitter|x).com$/,
-			selector: "div[data-testid=\"videoComponent\"]",
+			selector: "div[data-testid=\"videoComponent\"] > div:nth-child(1) > div",
+			eventSelector: "div[data-testid=\"videoPlayer\"]",
 			needBypassCSP: true
 		},
 		{
 			host: VideoService$1.rumble,
 			url: "https://rumble.com/",
 			match: /^rumble.com$/,
-			selector: `[id^="vid_"] > div`
+			selector: "#videoPlayer > .videoPlayer-Rumble-cls > div"
 		},
 		{
 			host: VideoService$1.facebook,
@@ -3886,7 +3846,7 @@ var vot = (function(exports) {
 			host: VideoService$1.rutube,
 			url: "https://rutube.ru/video/",
 			match: /^rutube.ru$/,
-			selector: `div[class*="videoWrapper"]`
+			selector: ".video-player > div > div > div:nth-child(2)"
 		},
 		{
 			additionalData: "embed",
@@ -3899,13 +3859,7 @@ var vot = (function(exports) {
 			host: VideoService$1.bilibili,
 			url: "https://www.bilibili.com/",
 			match: /^(www|m|player).bilibili.com$/,
-			selector: sharedSelectors.bilibiliPlayer
-		},
-		{
-			host: VideoService$1.bilibili,
-			url: "https://www.bilibili.tv/",
-			match: /^(?:www\.|m\.)?bilibili\.tv$/,
-			selector: sharedSelectors.bilibiliPlayer
+			selector: ".bpx-player-video-wrap"
 		},
 		{
 			additionalData: "old",
@@ -3924,25 +3878,25 @@ var vot = (function(exports) {
 			host: VideoService$1.bitchute,
 			url: "https://www.bitchute.com/video/",
 			match: /^(www.)?bitchute.com$/,
-			selector: sharedSelectors.videoJsUniversal
+			selector: ".video-js"
 		},
 		{
 			host: VideoService$1.eporner,
 			url: "https://www.eporner.com/",
 			match: /^(www.)?eporner.com$/,
-			selector: sharedSelectors.videoJsUniversal
+			selector: ".vjs-v7"
 		},
 		{
 			host: VideoService$1.peertube,
 			url: "stub",
 			match: sitesPeertube,
-			selector: sharedSelectors.videoJsUniversal
+			selector: ".vjs-v7"
 		},
 		{
 			host: VideoService$1.dailymotion,
-			url: "https://www.dailymotion.com/video/",
-			match: /^((www\.|player\.)?dailymotion\.com|geo(\d+)?\.dailymotion\.com|dai\.ly)$/,
-			selector: sharedSelectors.player
+			url: "https://dai.ly/",
+			match: /^geo([\d]+)?.dailymotion.com$/,
+			selector: ".player"
 		},
 		{
 			host: VideoService$1.trovo,
@@ -3955,6 +3909,7 @@ var vot = (function(exports) {
 			url: "https://yadi.sk/",
 			match: /^disk.yandex.(ru|kz|com(\.(am|ge|tr))?|by|az|co\.il|ee|lt|lv|md|net|tj|tm|uz)$/,
 			selector: ".video-player__player > div:nth-child(1)",
+			eventSelector: ".video-player__player",
 			needBypassCSP: true,
 			needExtraData: true
 		},
@@ -3962,20 +3917,20 @@ var vot = (function(exports) {
 			host: VideoService$1.okru,
 			url: "https://ok.ru/video/",
 			match: /^ok.ru$/,
-			selector: sharedSelectors.vkVideoPlayer,
+			selector: "vk-video-player",
 			shadowRoot: true
 		},
 		{
 			host: VideoService$1.googledrive,
 			url: "https://drive.google.com/file/d/",
 			match: /^youtube.googleapis.com$/,
-			selector: "html"
+			selector: ".html5-video-container"
 		},
 		{
 			host: VideoService$1.bannedvideo,
 			url: "https://madmaxworld.tv/watch?id=",
 			match: /^(www.)?banned.video|madmaxworld.tv$/,
-			selector: sharedSelectors.videoJsUniversal,
+			selector: ".vjs-v7",
 			needExtraData: true
 		},
 		{
@@ -3984,12 +3939,6 @@ var vot = (function(exports) {
 			match: /^weverse.io$/,
 			selector: ".webplayer-internal-source-wrapper",
 			needExtraData: true
-		},
-		{
-			host: VideoService$1.weibo,
-			url: "https://weibo.com/",
-			match: (url) => /^(?:www\.)?weibo\.com$/.test(url.host) && /^\/(?:\d+\/[A-Za-z0-9]+|0\/[A-Za-z0-9]+|tv\/show\/\d+:(?:[\da-f]{32}|\d{16,}))\/?$/.test(url.pathname) || /^video\.weibo\.com$/.test(url.host) && /^\/show\/?$/.test(url.pathname) && /^\d+:(?:[\da-f]{32}|\d{16,})$/i.test(url.searchParams.get("fid") ?? "") || /^(?:www\.)?weibo\.com$/.test(url.host) && /^\/newlogin\/?$/.test(url.pathname) && (url.searchParams.has("url") || /^[A-Za-z0-9]+$/.test(url.searchParams.get("layerid") ?? "")),
-			selector: sharedSelectors.videoJsUniversal || "#playVideo"
 		},
 		{
 			host: VideoService$1.newgrounds,
@@ -4013,14 +3962,13 @@ var vot = (function(exports) {
 			host: VideoService$1.archive,
 			url: "https://archive.org/details/",
 			match: /^archive.org$/,
-			selector: sharedSelectors.jwPlayer,
-			needExtraData: true
+			selector: ".jw-media"
 		},
 		{
 			host: VideoService$1.kodik,
 			url: "stub",
-			match: /^kodikplayer.com$/,
-			selector: sharedSelectors.flowplayer,
+			match: /^kodik.(info|biz|cc)$/,
+			selector: ".fp-player",
 			needExtraData: true
 		},
 		{
@@ -4067,21 +4015,21 @@ var vot = (function(exports) {
 			host: VideoService$1.epicgames,
 			url: "https://dev.epicgames.com/community/learning/",
 			match: /^dev.epicgames.com$/,
-			selector: sharedSelectors.videoJsUniversal,
+			selector: ".vjs-v7",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.odysee,
 			url: "stub",
 			match: /^odysee.com$/,
-			selector: ".video-js-parent",
+			selector: ".vjs-v7",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.coursehunterLike,
 			url: "stub",
 			match: sitesCoursehunterLike,
-			selector: null,
+			selector: "#oframeplayer > pjsdiv:has(video)",
 			needExtraData: true
 		},
 		{
@@ -4097,40 +4045,27 @@ var vot = (function(exports) {
 			host: ExtVideoService.udemy,
 			url: "https://www.udemy.com/",
 			match: /udemy.com$/,
-			selector: sharedSelectors.shakaPlayer,
-			needExtraData: true
-		},
-		{
-			host: ExtVideoService.datacamp,
-			url: "https://www.datacamp.com/courses/",
-			match: (url) => /^(?:campus\.|projector\.)?datacamp\.com$/.test(url.hostname),
-			selector: sharedSelectors.videoJsUniversal,
+			selector: "div[data-purpose=\"curriculum-item-viewer-content\"] > section > div > div > div > div:nth-of-type(2)",
 			needExtraData: true
 		},
 		{
 			host: ExtVideoService.coursera,
 			url: "https://www.coursera.org/",
 			match: /coursera.org$/,
-			selector: sharedSelectors.videoJsUniversal,
+			selector: ".vjs-v8",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.watchpornto,
 			url: "https://watchporn.to/",
 			match: /^watchporn.to$/,
-			selector: sharedSelectors.flowplayer
-		},
-		{
-			host: VideoService$1.jove,
-			url: "https://jove.com/",
-			match: /^(?:app|www)\.jove\.com$/,
-			selector: sharedSelectors.flowplayer
+			selector: ".fp-player"
 		},
 		{
 			host: VideoService$1.linkedin,
 			url: "https://www.linkedin.com/learning/",
 			match: /^(www.)?linkedin.com$/,
-			selector: sharedSelectors.videoJsUniversal,
+			selector: ".vjs-v7",
 			needExtraData: true,
 			needBypassCSP: true
 		},
@@ -4145,24 +4080,14 @@ var vot = (function(exports) {
 			host: VideoService$1.porntn,
 			url: "https://porntn.com/videos/",
 			match: /^porntn.com$/,
-			selector: sharedSelectors.flowplayer,
+			selector: ".fp-player",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.dzen,
 			url: "https://dzen.ru/video/watch/",
 			match: /^dzen.ru$/,
-			selector: `[class*="player__playerWrap"] > div`
-		},
-		{
-			host: VideoService$1.bunnystream,
-			url: "stub",
-			match: [
-				/^video\.bunnycdn\.com$/,
-				/^iframe\.mediadelivery\.net$/,
-				/^(?:[^.]+\.)*b-cdn\.net$/
-			],
-			selector: null
+			selector: ".zen-ui-video-video-player"
 		},
 		{
 			host: VideoService$1.cloudflarestream,
@@ -4182,14 +4107,14 @@ var vot = (function(exports) {
 			host: ExtVideoService.artstation,
 			url: "https://www.artstation.com/learning/",
 			match: /^(www.)?artstation.com$/,
-			selector: sharedSelectors.videoJsUniversal,
+			selector: ".vjs-v7",
 			needExtraData: true
 		},
 		{
 			host: VideoService$1.rtnews,
 			url: "https://www.rt.com/",
 			match: /^(www.)?rt.com$/,
-			selector: sharedSelectors.jwPlayer,
+			selector: ".jw-media",
 			needExtraData: true
 		},
 		{
@@ -4210,7 +4135,7 @@ var vot = (function(exports) {
 			host: VideoService$1.thisvid,
 			url: "https://thisvid.com/",
 			match: /^(www.)?thisvid.com$/,
-			selector: sharedSelectors.flowplayer
+			selector: ".fp-player"
 		},
 		{
 			additionalData: "regional",
@@ -4224,7 +4149,7 @@ var vot = (function(exports) {
 			host: VideoService$1.ign,
 			url: "https://www.ign.com/",
 			match: /^(www.)?ign.com$/,
-			selector: sharedSelectors.player,
+			selector: ".player",
 			needExtraData: true
 		},
 		{
@@ -4238,7 +4163,7 @@ var vot = (function(exports) {
 			host: VideoService$1.imdb,
 			url: "https://www.imdb.com/video/",
 			match: /^(www\.)?imdb\.com$/,
-			selector: sharedSelectors.jwPlayer
+			selector: ".jw-media"
 		},
 		{
 			host: VideoService$1.telegram,
@@ -4250,7 +4175,7 @@ var vot = (function(exports) {
 			host: ExtVideoService.oraclelearn,
 			url: "https://mylearn.oracle.com/ou/course/",
 			match: /^mylearn\.oracle\.com/,
-			selector: sharedSelectors.videoJsUniversal,
+			selector: ".vjs-v7",
 			needExtraData: true,
 			needBypassCSP: true
 		},
@@ -4265,21 +4190,7 @@ var vot = (function(exports) {
 			host: ExtVideoService.netacad,
 			url: "https://www.netacad.com/",
 			match: /^(www\.)?netacad\.com/,
-			selector: sharedSelectors.videoJsUniversal,
-			needExtraData: true
-		},
-		{
-			host: ExtVideoService.mediafile,
-			url: "https://mediafile.cc/",
-			match: /^(www\.)?mediafile\.cc$/,
-			selector: "div#playerContainer",
-			needExtraData: true
-		},
-		{
-			host: ExtVideoService.skilljar,
-			url: "https://anthropic.skilljar.com/",
-			match: /skilljar\.com$/,
-			selector: sharedSelectors.jwPlayer,
+			selector: ".vjs-v8",
 			needExtraData: true
 		},
 		{
@@ -4294,7 +4205,8 @@ var vot = (function(exports) {
 	var VideoHelperError = class extends Error {
 		constructor(message) {
 			super(message);
-			this.name = "VideoHelperError";
+			this.name = "VideoHelper";
+			this.message = message;
 		}
 	};
 	var BaseHelper = class {
@@ -4315,12 +4227,8 @@ var vot = (function(exports) {
 			this.video = video;
 			this.language = language;
 		}
-		getVideoData(_videoId) {
-			return Promise.resolve(void 0);
-		}
-		getVideoId(_url) {
-			return Promise.resolve(void 0);
-		}
+		async getVideoData(_videoId) {}
+		async getVideoId(_url) {}
 		returnBaseData(videoId) {
 			if (!this.service) return;
 			return {
@@ -4353,21 +4261,7 @@ var vot = (function(exports) {
 	//#region node_modules/@vot.js/ext/dist/helpers/archive.js
 	var ArchiveHelper = class extends BaseHelper {
 		async getVideoId(url) {
-			const videoId = /(details|embed)\/(.+)/.exec(url.pathname)?.[2];
-			if (!videoId) return void 0;
-			return videoId.replace(/\/$/, "") || void 0;
-		}
-		async getVideoData(videoId) {
-			if (!videoId) return void 0;
-			const downloadUrl = `https://archive.org/download/${videoId.replace(/\+/g, "%20").replace(/\.[^.]+$/, ".mp4")}`;
-			return {
-				url: videoId,
-				video_url: downloadUrl,
-				translationHelp: [{
-					target: "video_file_url",
-					targetUrl: downloadUrl
-				}]
-			};
+			return /(details|embed)\/([^/]+)/.exec(url.pathname)?.[2];
 		}
 	};
 	//#endregion
@@ -4379,10 +4273,9 @@ var vot = (function(exports) {
 		}
 		async getCourseInfo(courseId) {
 			try {
-				const csrfToken = this.getCSRFToken();
 				return await (await this.fetch(`${this.API_ORIGIN}/courses/${courseId}/autoplay.json`, {
 					method: "POST",
-					headers: csrfToken ? { "PUBLIC-CSRF-TOKEN": csrfToken } : {}
+					headers: { "PUBLIC-CSRF-TOKEN": this.getCSRFToken() }
 				})).json();
 			} catch (err) {
 				Logger.error(`Failed to get artstation course info by courseId: ${courseId}.`, err.message);
@@ -4479,8 +4372,6 @@ var vot = (function(exports) {
 			if (bangumiId) return bangumiId;
 			const bvid = url.searchParams.get("bvid");
 			if (bvid) return `video/${bvid}`;
-			const intlId = /^\/(?:[a-z]{2}\/)?((?:play\/\d+(?:\/\d+)?|video\/\d+))\/?$/i.exec(url.pathname)?.[1];
-			if (intlId) return intlId;
 			let vid = /video\/([^/]+)/.exec(url.pathname)?.[0];
 			if (vid && url.searchParams.get("p") !== null) vid += `/?p=${url.searchParams.get("p")}`;
 			return vid;
@@ -4520,13 +4411,6 @@ var vot = (function(exports) {
 		}
 		async getVideoId(url) {
 			return /\/f\/([^/]+)/.exec(url.pathname)?.[1];
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/bunnystream.js
-	var BunnyStreamHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			return url.pathname + url.search;
 		}
 	};
 	//#endregion
@@ -4571,95 +4455,41 @@ var vot = (function(exports) {
 			const { file: videoUrl, duration, title } = lessonsData?.[lessonId - 1];
 			if (!videoUrl) return;
 			return {
-				url: videoId,
-				video_url: videoUrl,
-				translationHelp: [{
-					target: "video_file_url",
-					targetUrl: proxyMedia(videoUrl)
-				}],
+				url: proxyMedia(videoUrl),
 				duration,
 				title
 			};
 		}
 		async getVideoId(url) {
-			return url.href;
+			const courseId = /course\/([^/]+)/.exec(url.pathname)?.[0];
+			return courseId ? courseId + url.search : void 0;
 		}
 	};
-	//#endregion
-	//#region node_modules/@vot.js/shared/dist/data/consts.js
-	var availableLangs = [
-		"auto",
-		"ru",
-		"en",
-		"zh",
-		"ko",
-		"lt",
-		"lv",
-		"ar",
-		"fr",
-		"it",
-		"es",
-		"de",
-		"ja"
-	];
-	var availableTTS = [
-		"ru",
-		"en",
-		"kk"
-	];
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/videojs.js
 	var VideoJSHelper = class VideoJSHelper extends BaseHelper {
 		SUBTITLE_SOURCE = "videojs";
 		SUBTITLE_FORMAT = "vtt";
 		static getPlayer() {
-			const vjs = window.videojs;
-			const techEl = document.querySelector("video.vjs-tech[id], video[id$='_html5_api']");
-			const derivedPlayerId = techEl?.id?.endsWith("_html5_api") ? techEl.id.slice(0, -10) : void 0;
-			if (vjs?.getPlayer) {
-				if (derivedPlayerId) {
-					const p = vjs.getPlayer(derivedPlayerId);
-					if (p) return p;
-				}
-				if (techEl) {
-					const p = vjs.getPlayer(techEl);
-					if (p) return p;
-				}
-			}
-			const players = (typeof vjs?.getPlayers === "function" ? vjs.getPlayers() : vjs?.players) ?? {};
-			for (const p of Object.values(players)) {
-				const player = p;
-				const innerVideo = (typeof player.el === "function" ? player.el() : null)?.querySelector?.("video.vjs-tech, video") ?? null;
-				if (innerVideo && techEl && innerVideo === techEl) return p;
-				if (derivedPlayerId && typeof player.id === "function" && player.id() === derivedPlayerId) return p;
-			}
+			return document.querySelector(".video-js")?.player;
 		}
 		getVideoDataByPlayer(videoId) {
 			try {
 				const player = VideoJSHelper.getPlayer();
-				const techEl = document.querySelector("video.vjs-tech, video[id$='_html5_api'], video[src]");
-				if (!player && !techEl) throw new Error(`Video player/video element not found, videoId ${videoId}`);
-				const duration = player?.duration?.() ?? techEl?.duration;
-				let url;
-				if (player) {
-					const sources = typeof player.currentSources === "function" ? player.currentSources() : player.getCache?.()?.sources;
-					url = (Array.isArray(sources) ? sources.find((source) => source?.type === "video/mp4" || source?.type === "video/webm" || source?.src) : void 0)?.src;
-				}
-				url ??= techEl?.currentSrc || techEl?.src || techEl?.getAttribute?.("src") || void 0;
-				if (!url) throw new Error(`Failed to find video url for videoID ${videoId}`);
-				const subtitles = (techEl ? Array.from(techEl.querySelectorAll("track[src]")) : []).filter((t) => t.kind !== "metadata").flatMap((t) => {
-					const src = t.getAttribute("src");
-					if (!src) return [];
-					const absUrl = new URL(src, window.location.href).toString();
-					return [{
-						language: normalizeLang$1(t.srclang || ""),
-						source: this.SUBTITLE_SOURCE,
-						format: this.SUBTITLE_FORMAT,
-						url: absUrl
-					}];
-				});
+				if (!player) throw new Error(`Video player doesn't have player option, videoId ${videoId}`);
+				const duration = player.duration();
+				const sources = Array.isArray(player.currentSources) ? player.currentSources : player.getCache()?.sources;
+				const { tracks_: tracks } = player.textTracks();
+				const videoUrl = sources.find((source) => source.type === "video/mp4" || source.type === "video/webm");
+				if (!videoUrl) throw new Error(`Failed to find video url for videoID ${videoId}`);
+				const subtitles = tracks.filter((track) => track.src && track.kind !== "metadata").map((track) => ({
+					language: normalizeLang$1(track.language),
+					source: this.SUBTITLE_SOURCE,
+					format: this.SUBTITLE_FORMAT,
+					url: track.src
+				}));
 				return {
-					url,
+					url: videoUrl.src,
 					duration,
 					subtitles
 				};
@@ -4670,7 +4500,33 @@ var vot = (function(exports) {
 		}
 	};
 	//#endregion
+	//#region node_modules/@vot.js/shared/dist/data/consts.js
+	var availableLangs, availableTTS;
+	var init_consts = __esmMin((() => {
+		availableLangs = [
+			"auto",
+			"ru",
+			"en",
+			"zh",
+			"ko",
+			"lt",
+			"lv",
+			"ar",
+			"fr",
+			"it",
+			"es",
+			"de",
+			"ja"
+		];
+		availableTTS = [
+			"ru",
+			"en",
+			"kk"
+		];
+	}));
+	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/coursera.js
+	init_consts();
 	var CourseraHelper = class CourseraHelper extends VideoJSHelper {
 		API_ORIGIN = "https://www.coursera.org/api";
 		SUBTITLE_SOURCE = "coursera";
@@ -4733,63 +4589,9 @@ var vot = (function(exports) {
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/dailymotion.js
 	var DailymotionHelper = class extends BaseHelper {
-		getVideoIdFromUrl(url) {
-			const videoIdFromQuery = url.searchParams.get("video");
-			if (videoIdFromQuery) return videoIdFromQuery;
-		}
-		resolveVideoIdViaPostMessage() {
-			return new Promise((resolve) => {
-				const origin = "https://www.dailymotion.com";
-				const timeout = setTimeout(() => {
-					window.removeEventListener("message", onMessage);
-					resolve(void 0);
-				}, 3e3);
-				const onMessage = (e) => {
-					if (e.origin !== origin) return;
-					if (!(typeof e.data === "string" && e.data.startsWith("getVideoId:"))) return;
-					clearTimeout(timeout);
-					window.removeEventListener("message", onMessage);
-					resolve(e.data.replace("getVideoId:", ""));
-				};
-				window.addEventListener("message", onMessage);
-				window.top?.postMessage("getVideoId:", origin);
-			});
-		}
-		async getVideoId(url) {
-			if (window.self !== window.top) return await this.resolveVideoIdViaPostMessage();
-			else return this.getVideoIdFromUrl(url);
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/datacamp.js
-	var DataCampHelper = class extends VideoJSHelper {
-		SUBTITLE_SOURCE = "datacamp";
-		getVideoDataFromInput() {
-			try {
-				const input = document.querySelector("#slideDeckData") || document.getElementById("videoData");
-				if (!input || !(input instanceof HTMLInputElement) && !(input instanceof HTMLTextAreaElement) || !input.value) return null;
-				return JSON.parse(input.value);
-			} catch (err) {
-				Logger.error("Failed to parse DataCamp videoData input", err instanceof Error ? err.message : String(err));
-				return null;
-			}
-		}
-		async getVideoData(videoId) {
-			if (!this.getVideoDataByPlayer(videoId)) return;
-			const meta = this.getVideoDataFromInput();
-			const videoUrl = meta?.video_url ?? meta?.plain_video_mp4_link ?? meta?.plain_video_hls_link ?? meta?.video_mp4_link ?? meta?.video_hls_link;
-			if (!videoUrl) return;
-			return {
-				url: videoId,
-				video_url: videoUrl,
-				translationHelp: [{
-					target: "video_file_url",
-					targetUrl: videoUrl
-				}]
-			};
-		}
-		async getVideoId(url) {
-			return url.href;
+		async getVideoId(_url) {
+			const videoUrl = Array.from(document.querySelectorAll("*")).filter((s) => s.innerHTML.trim().includes(".m3u8"))?.[1]?.lastChild?.src;
+			return videoUrl ? /\/video\/(\w+)\.m3u8/.exec(videoUrl)?.[1] : void 0;
 		}
 	};
 	//#endregion
@@ -4797,7 +4599,7 @@ var vot = (function(exports) {
 	var DeeplearningAIHelper = class extends BaseHelper {
 		async getVideoData(_videoId) {
 			if (!this.video) return;
-			const sourceUrl = this.video.querySelector("source[type=\"application/x-mpegurl\"]")?.src.replace(/\.m3u8/, "_360p.mp4");
+			const sourceUrl = this.video.querySelector("source[type=\"application/x-mpegurl\"]")?.src;
 			if (!sourceUrl) return;
 			return { url: sourceUrl };
 		}
@@ -4807,6 +4609,7 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/douyin.js
+	init_consts();
 	var DouyinHelper = class DouyinHelper extends BaseHelper {
 		static getPlayer() {
 			if (typeof player === "undefined") return;
@@ -4871,7 +4674,7 @@ var vot = (function(exports) {
 				subtitles: []
 			};
 			try {
-				subtitlesString = `${subtitlesString.replace(/src:(\s)+?(videoUrl)/g, "src:\"removed\"").substring(0, subtitlesString.lastIndexOf("},"))}]`.split("\n").map((line) => line.replace(/([^\s]+):\s?(?!.*\1)/, "\"$1\":")).join("\n");
+				subtitlesString = (subtitlesString.replace(/src:(\s)+?(videoUrl)/g, "src:\"removed\"").substring(0, subtitlesString.lastIndexOf("},")) + "]").split("\n").map((line) => line.replace(/([^\s]+):\s?(?!.*\1)/, "\"$1\":")).join("\n");
 				return {
 					playlistUrl,
 					subtitles: JSON.parse(subtitlesString).filter((sub) => sub.type === "captions")
@@ -4912,7 +4715,7 @@ var vot = (function(exports) {
 					if (!(typeof e.data === "string" && e.data.startsWith("getVideoId:"))) return;
 					return resolve(e.data.replace("getVideoId:", ""));
 				});
-				window.top?.postMessage(`getVideoId:${reqId}`, origin);
+				window.top.postMessage(`getVideoId:${reqId}`, origin);
 			});
 		}
 	};
@@ -4934,7 +4737,7 @@ var vot = (function(exports) {
 	//#region node_modules/@vot.js/ext/dist/helpers/googledrive.js
 	var GoogleDriveHelper = class extends BaseHelper {
 		getPlayerData() {
-			return document.querySelector("#movie_player")?.getVideoData?.() ?? void 0;
+			return document.querySelector("#movie_player")?.getVideoData?.call() ?? void 0;
 		}
 		async getVideoId(_url) {
 			return this.getPlayerData()?.video_id;
@@ -5000,16 +4803,6 @@ var vot = (function(exports) {
 		}
 		async getVideoId(url) {
 			return /\/watch\/([^/]+)/.exec(url.pathname)?.[1];
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/jove.js
-	var JoveHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			const groups = /^\/(?:[a-z]{2}\/)?v\/(?<id>\d+)\/(?<slug>[^/?#]+)\/?$/i.exec(url.pathname)?.groups;
-			if (!groups) return;
-			const { id, slug } = groups;
-			return `v/${id}/${slug}`;
 		}
 	};
 	//#endregion
@@ -5093,9 +4886,7 @@ var vot = (function(exports) {
 				const allScripts = Array.from(document.getElementsByTagName("script"));
 				const secureScript = allScripts.filter((s) => s.innerHTML.includes(`videoId = "${videoId}"`) || s.innerHTML.includes(`serialId = Number(${videoId})`));
 				if (!secureScript.length) throw new VideoHelperError("Failed to find secure script");
-				const secureScriptContent = secureScript[0]?.textContent?.trim();
-				if (!secureScriptContent) throw new VideoHelperError("Secure script content is empty");
-				const secureContent = /'{[^']+}'/.exec(secureScriptContent)?.[0];
+				const secureContent = /'{[^']+}'/.exec(secureScript[0].textContent.trim())?.[0];
 				if (!secureContent) throw new VideoHelperError("Secure json wasn't found in secure script");
 				const secureJSON = JSON.parse(secureContent.replaceAll("'", ""));
 				if (videoType !== "serial") return {
@@ -5124,7 +4915,7 @@ var vot = (function(exports) {
 		async getFtor(secureData) {
 			const { videoType, videoId: id, hash, d, d_sign, pd, pd_sign, ref, ref_sign } = secureData;
 			try {
-				return await (await this.fetch(`${this.API_ORIGIN}/ftor`, {
+				return await (await this.fetch(this.API_ORIGIN + "/ftor", {
 					method: "POST",
 					headers: {
 						"User-Agent": config_default$1.userAgent,
@@ -5152,11 +4943,11 @@ var vot = (function(exports) {
 			}
 		}
 		decryptUrl(encryptedUrl) {
-			return `${atob(encryptedUrl.replace(/[a-zA-Z]/g, (e) => {
+			return "https:" + atob(encryptedUrl.replace(/[a-zA-Z]/g, function(e) {
 				const charCode = e.charCodeAt(0) + 18;
 				const pos = e <= "Z" ? 90 : 122;
 				return String.fromCharCode(pos >= charCode ? charCode : charCode - 26);
-			}))}`;
+			}));
 		}
 		async getVideoData(videoId) {
 			const secureData = this.getSecureData(videoId);
@@ -5165,7 +4956,7 @@ var vot = (function(exports) {
 			if (!videoData) return;
 			const videoLink = Object.entries(videoData.links[videoData.default.toString()]).find(([, data]) => data.type === "application/x-mpegURL")?.[1];
 			if (!videoLink) return;
-			return { url: videoLink.src.startsWith("//") ? `${videoLink.src}` : this.decryptUrl(videoLink.src) };
+			return { url: videoLink.src.startsWith("//") ? `https:${videoLink.src}` : this.decryptUrl(videoLink.src) };
 		}
 		async getVideoId(url) {
 			return /\/(uv|video|seria|episode|season|serial)\/([^/]+)\/([^/]+)\/([\d]+)p/.exec(url.pathname)?.[0];
@@ -5223,7 +5014,7 @@ var vot = (function(exports) {
 				const data = (await res.json()).data.fetchVideoTranscript;
 				if (data.__typename === "GenericError") throw new VideoHelperError(data.message);
 				return {
-					url: this.service?.url + videoId,
+					url: this.service.url + videoId,
 					subtitles: [{
 						format: "vtt",
 						language: normalizeLang$1(data.language),
@@ -5246,7 +5037,7 @@ var vot = (function(exports) {
 		API_ORIGIN = "https://my.mail.ru";
 		async getVideoMeta(videoId) {
 			try {
-				return await (await this.fetch(`${this.API_ORIGIN}/+/video/meta/${videoId}?xemail=&ajax_call=1&func_name=&mna=&mnb=&ext=1&_=${Date.now()}`)).json();
+				return await (await this.fetch(`${this.API_ORIGIN}/+/video/meta/${videoId}?xemail=&ajax_call=1&func_name=&mna=&mnb=&ext=1&_=${(/* @__PURE__ */ new Date()).getTime()}`)).json();
 			} catch (err) {
 				Logger.error("Failed to get mail.ru video data", err.message);
 				return;
@@ -5260,31 +5051,6 @@ var vot = (function(exports) {
 			const videoData = await this.getVideoMeta(videoId);
 			if (!videoData) return;
 			return videoData.meta.url.replace("//my.mail.ru/", "");
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/mediafile.js
-	var MediafileHelper = class extends BaseHelper {
-		DEFAULT_SITE_ORIGIN = "https://mediafile.cc";
-		SITE_ORIGIN = this.service?.url?.slice(0, -1) ?? this.DEFAULT_SITE_ORIGIN;
-		getVideoSrc() {
-			const video = this.video instanceof HTMLVideoElement ? this.video : document.querySelector("video");
-			return video?.src || video?.currentSrc || video?.querySelector("source[src]")?.src || void 0;
-		}
-		async getVideoData(videoId) {
-			const videoSource = this.getVideoSrc();
-			if (!videoSource) return;
-			return {
-				url: `${this.SITE_ORIGIN}/${videoId}`,
-				video_url: videoSource,
-				translationHelp: [{
-					target: "video_file_url",
-					targetUrl: videoSource
-				}]
-			};
-		}
-		async getVideoId(url) {
-			return url.pathname.replace(/^\/+/, "") || void 0;
 		}
 	};
 	//#endregion
@@ -5310,14 +5076,6 @@ var vot = (function(exports) {
 	var NewgroundsHelper = class extends BaseHelper {
 		async getVideoId(url) {
 			return /([^/]+)\/(view)\/([^/]+)/.exec(url.pathname)?.[0];
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/niconico.js
-	var NicoNicoHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			if (url.hostname === "nico.ms") return url.pathname.replace(/^\//, "").split("/")[0] || void 0;
-			return /\/watch\/([^/?#]+)/.exec(url.pathname)?.[1];
 		}
 	};
 	//#endregion
@@ -5350,7 +5108,15 @@ var vot = (function(exports) {
 	var OdyseeHelper = class extends BaseHelper {
 		API_ORIGIN = "https://odysee.com";
 		async getVideoData(videoId) {
-			return { url: `${this.API_ORIGIN}/${videoId}`.replace(/:[a-zA-Z0-9]+$/, "") };
+			try {
+				const content = await (await this.fetch(`${this.API_ORIGIN}/${videoId}`)).text();
+				const url = /"contentUrl":(\s)?"([^"]+)"/.exec(content)?.[2];
+				if (!url) throw new VideoHelperError("Odysee url doesn't parsed");
+				return { url };
+			} catch (err) {
+				Logger.error(`Failed to get odysee video data by video ID: ${videoId}`, err.message);
+				return;
+			}
 		}
 		async getVideoId(url) {
 			return url.pathname.slice(1);
@@ -5361,13 +5127,6 @@ var vot = (function(exports) {
 	var OKRuHelper = class extends BaseHelper {
 		async getVideoId(url) {
 			return /\/video\/(\d+)/.exec(url.pathname)?.[1];
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/olympicsreplay.js
-	var OlympicsReplayHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			return /\/([a-z]{2}\/(?:[a-z0-9-]+\/)?(?:replay|videos?|original-series\/episode)\/[\w-]+)\/?$/i.exec(url.pathname)?.[1];
 		}
 	};
 	//#endregion
@@ -5428,18 +5187,7 @@ var vot = (function(exports) {
 	//#region node_modules/@vot.js/ext/dist/helpers/peertube.js
 	var PeertubeHelper = class extends BaseHelper {
 		async getVideoId(url) {
-			const normalizedPathname = url.pathname.replace(/\/+$/, "");
-			const watchVideoId = /\/videos\/watch\/([^/]+)/.exec(normalizedPathname)?.[1];
-			if (watchVideoId) return `/videos/watch/${watchVideoId}`;
-			const shortVideoId = /\/w\/([^/]+)/.exec(normalizedPathname)?.[1];
-			if (shortVideoId) return `/videos/watch/${shortVideoId}`;
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/picarto.js
-	var PicartoHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			return /\/((?:videopopout|[^/]+(?:\/profile)?\/videos)\/[^/?#&/]+)\/?$/.exec(url.pathname)?.[1] ?? /^\/([^/#?]+)\/?$/.exec(url.pathname)?.[1];
+			return /\/w\/([^/]+)/.exec(url.pathname)?.[0];
 		}
 	};
 	//#endregion
@@ -5477,47 +5225,18 @@ var vot = (function(exports) {
 		}
 	};
 	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/preservetube.js
-	var PreserveTubeHelper = class extends BaseHelper {
-		async getVideoData(videoId) {
-			try {
-				if (!videoId) throw new VideoHelperError("Failed to find PreserveTube video ID");
-				return { url: `https://s3.archive.party/preservetube/${videoId}.mp4` };
-			} catch (err) {
-				Logger.error(`Failed to get PreserveTube data by videoId: ${videoId}`, err.message);
-				return;
-			}
-		}
-		async getVideoId(url) {
-			return url.searchParams.get("v") ?? void 0;
-		}
-	};
-	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/reddit.js
 	var RedditHelper = class extends BaseHelper {
 		API_ORIGIN = "https://www.reddit.com";
-		async getDashAudioUrl(dashUrl) {
-			const res = await fetch(dashUrl);
-			if (!res.ok) return void 0;
-			const xml = await res.text();
-			const doc = new DOMParser().parseFromString(xml, "application/xml");
-			const audioBaseUrl = doc.querySelector("AdaptationSet[contentType=\"audio\"] BaseURL")?.textContent ?? doc.querySelector("Representation[id=\"AUDIO-1\"] BaseURL")?.textContent;
-			if (!audioBaseUrl) return void 0;
-			const base = new URL(dashUrl);
-			return new URL(audioBaseUrl, base).href;
+		async getContentUrl(_videoId) {
+			if (this.service?.additionalData !== "old") return document.querySelector("shreddit-player-2")?.src;
+			return document.querySelector("[data-hls-url]")?.dataset.hlsUrl?.replaceAll("&amp;", "&");
 		}
 		async getVideoData(videoId) {
 			try {
-				const res = await fetch(`${this.API_ORIGIN}/r/${videoId}.json`, { headers: { Accept: "application/json" } });
-				if (!res.ok) throw new VideoHelperError(`Reddit API error: ${res.status}`);
-				const post = (await res.json())?.[0]?.data?.children?.[0]?.data;
-				const redditVideo = post?.secure_media?.reddit_video ?? post?.media?.reddit_video ?? post?.crosspost_parent_list?.[0]?.secure_media?.reddit_video ?? post?.crosspost_parent_list?.[0]?.media?.reddit_video;
-				if (!redditVideo) throw new VideoHelperError("No reddit_video found in post");
-				const dashUrl = redditVideo.dash_url?.replaceAll("&amp;", "&");
-				if (!dashUrl) throw new VideoHelperError("No dash_url in reddit_video");
-				const audioUrl = await this.getDashAudioUrl(dashUrl);
-				if (!audioUrl) throw new VideoHelperError("Failed to extract audio URL from DASH MPD");
-				return { url: audioUrl };
+				const contentUrl = await this.getContentUrl(videoId);
+				if (!contentUrl) throw new VideoHelperError("Failed to find content url");
+				return { url: decodeURIComponent(contentUrl) };
 			} catch (err) {
 				Logger.error(`Failed to get reddit video data by video ID: ${videoId}`, err.message);
 				return;
@@ -5543,16 +5262,6 @@ var vot = (function(exports) {
 		}
 		async getVideoId(url) {
 			return url.pathname.slice(1);
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/rule34video.js
-	var Rule34VideoHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			const parts = /\/videos?\/(\d+)(?:\/(.+))?\/?$/.exec(url.pathname);
-			if (!parts) return;
-			const [, id, tail] = parts;
-			return tail ? `${id}/${tail.replace(/\/+$/, "")}/` : id;
 		}
 	};
 	//#endregion
@@ -5664,45 +5373,6 @@ var vot = (function(exports) {
 		}
 	};
 	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/skilljar.js
-	var SkilljarHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			return url.pathname.slice(1);
-		}
-		async getVideoData(videoId) {
-			try {
-				if (typeof jwplayer === "undefined") throw new Error("JW Player not found on page");
-				const player = jwplayer();
-				if (!player || typeof player.getDuration !== "function") throw new Error("JW Player instance not ready");
-				const item = player.getPlaylistItem ? player.getPlaylistItem() : null;
-				if (!item) throw new Error("No playlist item found");
-				const duration = player.getDuration ? player.getDuration() : item.duration ?? 0;
-				const validSources = (item.allSources ?? []).filter((s) => typeof s.height === "number" && s.height > 0);
-				if (validSources.length === 0) throw new Error("No sources with height > 0 found");
-				validSources.sort((a, b) => (a.height ?? 0) - (b.height ?? 0));
-				return {
-					url: videoId,
-					duration,
-					translationHelp: [{
-						target: "video_file_url",
-						targetUrl: validSources[0].file
-					}],
-					subtitles: []
-				};
-			} catch (err) {
-				console.error("[VOT] SkilljarHelper error:", err instanceof Error ? err.message : String(err));
-				return;
-			}
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/spankbang.js
-	var SpankBangHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			return /\/([\da-z]+\/(?:video|play|embed)(?:\/[^/]+)?)\/?$/i.exec(url.pathname)?.[1] ?? /\/([\da-z]+-[\da-z]+\/playlist\/[^/]+)\/?$/i.exec(url.pathname)?.[1];
-		}
-	};
-	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/telegram.js
 	var TelegramHelper = class TelegramHelper extends BaseHelper {
 		static getMediaViewer() {
@@ -5767,7 +5437,7 @@ var vot = (function(exports) {
 			const title = document.querySelector("[data-a-target=\"stream-title\"], [data-test-selector=\"stream-info-card-component__subtitle\"]")?.innerText;
 			const isStream = !!document.querySelector("[data-a-target=\"animated-channel-viewers-count\"], .channel-status-info--live, .top-bar--pointer-enabled .tw-channel-status-text-indicator");
 			return {
-				url: this.service?.url + videoId,
+				url: this.service.url + videoId,
 				isStream,
 				title
 			};
@@ -5801,124 +5471,25 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/udemy.js
-	function isObject(value) {
-		return typeof value === "object" && value !== null;
-	}
-	function isUrlCandidate(value) {
-		return typeof value === "object" && value !== null;
-	}
-	function getUrlCandidates(data) {
-		if (Array.isArray(data)) return data.filter(isUrlCandidate);
-		if (typeof data !== "object" || data === null) return [];
-		const source = data;
-		return (Array.isArray(source.Video) ? source.Video : Array.isArray(source.video) ? source.video : []).filter(isUrlCandidate);
-	}
-	function getOutputCandidates(data) {
-		if (!isObject(data)) return [];
-		const result = [];
-		for (const [fallbackLabel, value] of Object.entries(data)) {
-			if (!isObject(value) || typeof value.url !== "string") continue;
-			result.push({
-				src: value.url,
-				type: typeof value.type === "string" ? value.type : void 0,
-				label: typeof value.height === "number" || typeof value.height === "string" ? value.height : fallbackLabel
-			});
-		}
-		return result;
-	}
-	function getQualityValue(value) {
-		if (typeof value === "number" && Number.isFinite(value)) return value;
-		const match = String(value ?? "").match(/(\d{3,4})/);
-		return Number(match?.[1] ?? 0);
-	}
-	function getCandidateUrl(candidate) {
-		if (typeof candidate.file === "string") return candidate.file;
-		if (typeof candidate.src === "string") return candidate.src;
-	}
-	function isM3U8(type, url) {
-		return type.includes("mpegurl") || /\.m3u8(?:$|[?#])/i.test(url);
-	}
-	function isDash(type, url) {
-		return type.includes("dash") || /\.mpd(?:$|[?#])/i.test(url);
-	}
+	init_consts();
 	var UdemyHelper = class extends BaseHelper {
-		API_ORIGIN = `${window.location.origin}/api-2.0`;
+		API_ORIGIN = "https://www.udemy.com/api-2.0";
 		getModuleData() {
-			const moduleData = (document.querySelector(".ud-app-loader[data-module-id='course-taking']") ?? document.querySelector("[data-module-id='course-taking']"))?.dataset?.moduleArgs;
+			const moduleData = document.querySelector(".ud-app-loader[data-module-id='course-taking']")?.dataset?.moduleArgs;
 			if (!moduleData) return;
-			try {
-				return JSON.parse(moduleData);
-			} catch {
-				return;
-			}
+			return JSON.parse(moduleData);
 		}
-		getLectureId(videoId) {
-			const lectureIdRe = /(?:\/learn\/(?:v4\/t\/)?lecture\/|#\/?lecture\/)(\d+)/i;
-			const lectureViewIdRe = /\/lecture\/view\/\?/i;
-			const href = window.location.href;
-			const lectureViewSearchParams = lectureViewIdRe.test(href) ? new URL(href).searchParams : void 0;
-			const lectureViewId = lectureViewSearchParams ? (() => {
-				for (const [key, value] of lectureViewSearchParams) {
-					const normalizedKey = key.toLowerCase();
-					if (normalizedKey === "lectureid" || normalizedKey === "lecture_id") return value;
-				}
-			})() : void 0;
-			return lectureIdRe.exec(href)?.[1] ?? lectureViewId ?? (videoId ? lectureIdRe.exec(`/${videoId}`)?.[1] : void 0);
-		}
-		getCourseId(moduleData) {
-			const moduleDataWithExtra = moduleData;
-			const moduleCourseId = this.normalizeId(moduleDataWithExtra?.courseId ?? moduleDataWithExtra?.course_id ?? moduleDataWithExtra?.course?.id);
-			if (moduleCourseId) return moduleCourseId;
-			const attrCourseId = this.normalizeId(document.querySelector("[data-course-id]")?.getAttribute("data-course-id"));
-			if (attrCourseId) return attrCourseId;
-			const pageHtml = document.documentElement?.innerHTML ?? "";
-			return /data-course-id=["'](\d+)/i.exec(pageHtml)?.[1] ?? /&quot;courseId&quot;\s*:\s*(\d+)/i.exec(pageHtml)?.[1] ?? /"courseId"\s*:\s*(\d+)/i.exec(pageHtml)?.[1];
-		}
-		normalizeId(value) {
-			if (typeof value === "number" && Number.isFinite(value)) return String(value);
-			if (typeof value === "string") return /^\d+$/.test(value) ? value : void 0;
-		}
-		parseJson(value) {
-			try {
-				return JSON.parse(value);
-			} catch {
-				const normalized = value.replaceAll("&quot;", "\"").replaceAll("&#34;", "\"").replaceAll("&apos;", "'").replaceAll("&#39;", "'");
-				try {
-					return JSON.parse(normalized);
-				} catch {
-					return;
-				}
-			}
-		}
-		getViewHtmlCandidates(viewHtml) {
-			if (typeof viewHtml !== "string" || !viewHtml.trim()) return [];
-			const doc = new DOMParser().parseFromString(viewHtml, "text/html");
-			const candidates = [];
-			for (const sourceEl of Array.from(doc.querySelectorAll("source"))) {
-				const src = sourceEl.getAttribute("src");
-				if (!src) continue;
-				candidates.push({
-					src,
-					type: sourceEl.getAttribute("type") ?? void 0,
-					label: sourceEl.getAttribute("data-res") ?? void 0
-				});
-			}
-			for (const setupDataEl of Array.from(doc.querySelectorAll("[videojs-setup-data]"))) {
-				const setupDataRaw = setupDataEl.getAttribute("videojs-setup-data");
-				if (!setupDataRaw) continue;
-				const setupData = this.parseJson(setupDataRaw);
-				if (setupData) candidates.push(...getUrlCandidates(setupData.sources));
-			}
-			return candidates;
+		getLectureId() {
+			return /learn\/lecture\/([^/]+)/.exec(window.location.pathname)?.[1];
 		}
 		isErrorData(data) {
-			return Object.hasOwn(data, "error") || Object.hasOwn(data, "detail") && !Object.hasOwn(data, "_class");
+			return Object.hasOwn(data, "error");
 		}
 		async getLectureData(courseId, lectureId) {
 			try {
 				const data = await (await this.fetch(`${this.API_ORIGIN}/users/me/subscribed-courses/${courseId}/lectures/${lectureId}/?` + new URLSearchParams({
-					"fields[lecture]": "title,description,view_html,asset,download_url,is_free,last_watched_second",
-					"fields[asset]": "asset_type,length,stream_url,media_sources,stream_urls,download_urls,external_url,captions,data,thumbnail_sprite,slides,slide_urls,course_is_drmed,media_license_token"
+					"fields[lecture]": "title,description,asset",
+					"fields[asset]": "length,media_sources,captions"
 				}).toString())).json();
 				if (this.isErrorData(data)) throw new VideoHelperError(data.detail ?? "unknown error");
 				return data;
@@ -5930,91 +5501,41 @@ var vot = (function(exports) {
 		async getCourseLang(courseId) {
 			try {
 				const data = await (await this.fetch(`${this.API_ORIGIN}/users/me/subscribed-courses/${courseId}?` + new URLSearchParams({ "fields[course]": "locale" }).toString())).json();
-				if (!this.isErrorData(data)) return data;
-				const data2 = await (await this.fetch(`${this.API_ORIGIN}/courses/${courseId}/?` + new URLSearchParams({ "fields[course]": "locale" }).toString())).json();
-				if (this.isErrorData(data2)) throw new VideoHelperError(data2.detail ?? "unknown error");
-				return data2;
+				if (this.isErrorData(data)) throw new VideoHelperError(data.detail ?? "unknown error");
+				return data;
 			} catch (err) {
 				Logger.error(`Failed to get course lang by courseId: ${courseId}`, err.message);
 				return;
 			}
 		}
-		findVideoUrl(sources, streamUrls, downloadUrls, streamUrl, externalUrl, outputs, viewHtml) {
-			const allCandidates = [];
-			const mediaSources = Array.isArray(sources) ? sources : [];
-			for (const source of mediaSources) allCandidates.push({
-				src: source.src,
-				type: source.type,
-				label: source.label
-			});
-			allCandidates.push(...getUrlCandidates(streamUrls));
-			allCandidates.push(...getUrlCandidates(downloadUrls));
-			allCandidates.push(...getOutputCandidates(outputs));
-			if (typeof viewHtml === "string") allCandidates.push(...this.getViewHtmlCandidates(viewHtml));
-			if (typeof streamUrl === "string") allCandidates.push({ src: streamUrl });
-			if (typeof externalUrl === "string") allCandidates.push({ src: externalUrl });
-			const playerSrc = this.video?.currentSrc || this.video?.src;
-			if (typeof playerSrc === "string" && playerSrc) allCandidates.push({ src: playerSrc });
-			const dedupCandidates = /* @__PURE__ */ new Map();
-			for (const candidate of allCandidates) {
-				const url = getCandidateUrl(candidate);
-				if (!url || /^javascript:/i.test(url)) continue;
-				const quality = getQualityValue(candidate.label ?? candidate.quality ?? candidate.height);
-				const type = String(candidate.type ?? "").toLowerCase();
-				const prev = dedupCandidates.get(url);
-				if (!prev || quality > prev.quality) dedupCandidates.set(url, {
-					url,
-					type,
-					quality,
-					isYouTubeWatch: /:\/\/(?:www\.)?youtube\.com\/watch\?/i.test(url)
-				});
-			}
-			const candidates = Array.from(dedupCandidates.values());
-			if (!candidates.length) return;
-			const mp4Candidates = candidates.filter((item) => item.type.includes("mp4") || /\.mp4(?:$|[?#])/i.test(item.url));
-			if (mp4Candidates.length) {
-				mp4Candidates.sort((a, b) => b.quality - a.quality);
-				return mp4Candidates[0]?.url;
-			}
-			const hlsUrl = candidates.find((item) => isM3U8(item.type, item.url))?.url;
-			if (hlsUrl) return hlsUrl;
-			const dashUrl = candidates.find((item) => isDash(item.type, item.url))?.url;
-			if (dashUrl) return dashUrl;
-			const nonYoutube = candidates.find((item) => !item.isYouTubeWatch)?.url;
-			if (nonYoutube) return nonYoutube;
-			return candidates[0]?.url;
-		}
-		getCaptionLocale(caption) {
-			const localeId = typeof caption.locale_id === "string" ? caption.locale_id : typeof caption.locale?.locale === "string" ? caption.locale.locale : void 0;
-			return localeId ? normalizeLang$1(localeId) : void 0;
+		findVideoUrl(sources) {
+			return sources?.find((src) => src.type === "video/mp4")?.src;
 		}
 		findSubtitleUrl(captions, detectedLanguage) {
-			if (!Array.isArray(captions)) return;
-			const captionsWithDownload = captions.filter((caption) => isObject(caption) && (typeof caption.url === "string" || typeof caption.download_url === "string"));
-			const subtitle = captionsWithDownload.find((caption) => this.getCaptionLocale(caption) === detectedLanguage) ?? captionsWithDownload.find((caption) => this.getCaptionLocale(caption) === "en") ?? captionsWithDownload[0];
-			return subtitle?.url ?? subtitle?.download_url;
+			return (captions?.find((caption) => normalizeLang$1(caption.locale_id) === detectedLanguage) ?? captions?.find((caption) => normalizeLang$1(caption.locale_id) === "en") ?? captions?.[0])?.url;
 		}
 		async getVideoData(videoId) {
 			const moduleData = this.getModuleData();
-			const courseId = this.getCourseId(moduleData);
-			const lectureId = this.getLectureId(videoId);
+			if (!moduleData) return;
+			const { courseId } = moduleData;
+			const lectureId = this.getLectureId();
 			Logger.log(`[Udemy] courseId: ${courseId}, lectureId: ${lectureId}`);
-			if (!lectureId || !courseId) return;
+			if (!lectureId) return;
 			const lectureData = await this.getLectureData(courseId, lectureId);
 			if (!lectureData) return;
-			const { title, description, asset, view_html } = lectureData;
+			const { title, description, asset } = lectureData;
 			const { length: duration, media_sources, captions } = asset;
-			const assetWithExtraUrls = asset;
-			const streamUrls = assetWithExtraUrls.stream_urls;
-			const downloadUrls = assetWithExtraUrls.download_urls;
-			const videoUrl = this.findVideoUrl(media_sources, streamUrls, downloadUrls, assetWithExtraUrls.stream_url ?? assetWithExtraUrls.streamUrl, assetWithExtraUrls.external_url, assetWithExtraUrls.data?.outputs, view_html);
+			const videoUrl = this.findVideoUrl(media_sources);
 			if (!videoUrl) {
-				Logger.log("Failed to find video file in asset sources", asset);
+				Logger.log("Failed to find .mp4 video file in media_sources", media_sources);
 				return;
 			}
 			let courseLang = "en";
-			const courseLocale = (await this.getCourseLang(courseId))?.locale?.locale;
-			if (typeof courseLocale === "string") courseLang = normalizeLang$1(courseLocale);
+			const courseLangData = await this.getCourseLang(courseId);
+			if (courseLangData) {
+				const { locale: { locale: courseLocale } } = courseLangData;
+				courseLang = courseLocale ? normalizeLang$1(courseLocale) : courseLang;
+			}
 			if (!availableLangs.includes(courseLang)) courseLang = "en";
 			const subtitleUrl = this.findSubtitleUrl(captions, courseLang);
 			if (!subtitleUrl) Logger.log("Failed to find subtitle file in captions", captions);
@@ -6053,29 +5574,6 @@ var vot = (function(exports) {
 		}
 		isPrivatePlayer() {
 			return this.referer && !this.referer.includes("vimeo.com") && this.origin.endsWith("player.vimeo.com");
-		}
-		toPublicUrl(videoId) {
-			const [id, hash] = videoId.split(":", 2);
-			return hash ? `${this.DEFAULT_SITE_ORIGIN}/${id}/${hash}` : `${this.DEFAULT_SITE_ORIGIN}/${id}`;
-		}
-		returnPublicBaseData(videoId) {
-			const baseData = this.returnBaseData(videoId);
-			if (!baseData) return;
-			return {
-				...baseData,
-				url: this.toPublicUrl(videoId)
-			};
-		}
-		normalizePublicVideoUrl(url, videoId) {
-			try {
-				const parsed = new URL(url);
-				if (parsed.hostname === "player.vimeo.com") return this.toPublicUrl(videoId);
-				if (parsed.hostname.endsWith("vimeo.com")) {
-					const colonMatch = /^\/(\d+):([a-z0-9]+)$/i.exec(parsed.pathname);
-					if (colonMatch) return `${this.DEFAULT_SITE_ORIGIN}/${colonMatch[1]}/${colonMatch[2]}`;
-				}
-			} catch {}
-			return url;
 		}
 		async getViewerData() {
 			try {
@@ -6162,7 +5660,7 @@ var vot = (function(exports) {
 					language: normalizeLang$1(sub.lang),
 					source: "vimeo",
 					format: "vtt",
-					url: new URL(sub.url, this.SITE_ORIGIN).href,
+					url: this.SITE_ORIGIN + sub.url,
 					isAutoGenerated: sub.lang.includes("autogenerated")
 				}));
 				const translationHelp = subtitles.length ? [{
@@ -6182,11 +5680,11 @@ var vot = (function(exports) {
 					duration
 				};
 			}
-			if (!this.extraInfo) return this.returnPublicBaseData(videoId);
+			if (!this.extraInfo) return this.returnBaseData(videoId);
 			if (videoId.includes("/")) videoId = videoId.replace("/", ":");
-			if (!await this.getViewerData()) return this.returnPublicBaseData(videoId);
+			if (!await this.getViewerData()) return this.returnBaseData(videoId);
 			const videoInfo = await this.getVideoInfo(videoId);
-			if (!videoInfo) return this.returnPublicBaseData(videoId);
+			if (!videoInfo) return this.returnBaseData(videoId);
 			const subtitles = (await this.getSubsInfo(videoId)).map((caption) => ({
 				language: normalizeLang$1(caption.language),
 				source: "vimeo",
@@ -6194,9 +5692,9 @@ var vot = (function(exports) {
 				url: caption.link,
 				isAutoGenerated: caption.language.includes("autogen")
 			}));
-			const { link, duration, name: title, description } = videoInfo;
+			const { link: url, duration, name: title, description } = videoInfo;
 			return {
-				url: this.normalizePublicVideoUrl(link, videoId),
+				url,
 				title,
 				description,
 				subtitles,
@@ -6204,17 +5702,16 @@ var vot = (function(exports) {
 			};
 		}
 		async getVideoId(url) {
-			const normalizedPathname = url.pathname.replace(/\/+$/, "");
-			const embedId = /video\/[^/]+$/.exec(normalizedPathname)?.[0];
+			const embedId = /video\/[^/]+$/.exec(url.pathname)?.[0];
 			if (this.isPrivatePlayer()) return embedId;
 			if (embedId) {
 				const hash = url.searchParams.get("h");
 				const videoId = embedId.replace("video/", "");
 				return hash ? `${videoId}/${hash}` : videoId;
 			}
-			const categoriesVideoId = /channels\/[^/]+\/([^/]+)/.exec(normalizedPathname)?.[1] ?? /groups\/[^/]+\/videos\/([^/]+)/.exec(normalizedPathname)?.[1] ?? /(showcase|album)\/[^/]+\/video\/([^/]+)/.exec(normalizedPathname)?.[2];
+			const categoriesVideoId = /channels\/[^/]+\/([^/]+)/.exec(url.pathname)?.[1] ?? /groups\/[^/]+\/videos\/([^/]+)/.exec(url.pathname)?.[1] ?? /(showcase|album)\/[^/]+\/video\/([^/]+)/.exec(url.pathname)?.[2];
 			if (categoriesVideoId) return categoriesVideoId;
-			return /([^/]+\/)?[^/]+$/.exec(normalizedPathname)?.[0];
+			return /([^/]+\/)?[^/]+$/.exec(url.pathname)?.[0];
 		}
 	};
 	//#endregion
@@ -6240,7 +5737,7 @@ var vot = (function(exports) {
 					isAutoGenerated: !!sub.is_auto
 				}));
 				return {
-					url: this.service?.url + videoId,
+					url: this.service.url + videoId,
 					title,
 					description,
 					duration,
@@ -6260,7 +5757,7 @@ var vot = (function(exports) {
 			if (paramZ) return paramZ.split("/")[0];
 			const paramOID = url.searchParams.get("oid");
 			const paramID = url.searchParams.get("id");
-			if (paramOID && paramID) return `video-${Math.abs(parseInt(paramOID, 10))}_${paramID}`;
+			if (paramOID && paramID) return `video-${Math.abs(parseInt(paramOID))}_${paramID}`;
 		}
 	};
 	//#endregion
@@ -6268,35 +5765,6 @@ var vot = (function(exports) {
 	var WatchPornToHelper = class extends BaseHelper {
 		async getVideoId(url) {
 			return /(video|embed)\/(\d+)(\/[^/]+\/)?/.exec(url.pathname)?.[0];
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/weibo.js
-	var weiboVideoIdRe = /^\d+:(?:[\da-f]{32}|\d{16,})$/i;
-	var weiboLayerIdRe = /^[A-Za-z0-9]+$/;
-	var weiboHostRe = /^(?:www\.)?weibo\.com$/;
-	var weiboLoginPathRe = /^\/newlogin\/?$/;
-	var WeiboHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			if (url.hostname === "video.weibo.com") {
-				const fid = url.searchParams.get("fid");
-				if (!fid || !weiboVideoIdRe.test(fid)) return;
-				return `tv/show/${fid}`;
-			}
-			if (weiboHostRe.test(url.host) && weiboLoginPathRe.test(url.pathname)) {
-				const nestedUrl = url.searchParams.get("url");
-				if (nestedUrl) try {
-					const parsedNestedUrl = new URL(nestedUrl, url.origin);
-					if (parsedNestedUrl.href !== url.href) {
-						const nestedVideoId = await this.getVideoId(parsedNestedUrl);
-						if (nestedVideoId) return nestedVideoId;
-					}
-				} catch {}
-				const layerId = url.searchParams.get("layerid");
-				if (layerId && weiboLayerIdRe.test(layerId)) return `0/${layerId}`;
-			}
-			const normalizedPath = url.pathname.replace(/\/+$/, "");
-			if (/^\/\d+\/[A-Za-z0-9]+$/.test(normalizedPath) || /^\/0\/[A-Za-z0-9]+$/.test(normalizedPath) || /^\/tv\/show\/\d+:(?:[\da-f]{32}|\d{16,})$/i.test(normalizedPath)) return normalizedPath.slice(1);
 		}
 	};
 	//#endregion
@@ -6340,7 +5808,7 @@ var vot = (function(exports) {
 			}).toString();
 			try {
 				const urlParams = await this.getHashURLParams(pathname);
-				return await (await this.fetch(`${this.API_ORIGIN + pathname}&${urlParams}`, { headers: this.HEADERS })).json();
+				return await (await this.fetch(this.API_ORIGIN + pathname + "&" + urlParams, { headers: this.HEADERS })).json();
 			} catch (err) {
 				Logger.error(`Failed to get weverse post preview by postId: ${postId}`, err.message);
 				return false;
@@ -6353,7 +5821,7 @@ var vot = (function(exports) {
 			}).toString();
 			try {
 				const urlParams = await this.getHashURLParams(pathname);
-				return await (await this.fetch(`${this.API_ORIGIN + pathname}&${urlParams}`, {
+				return await (await this.fetch(this.API_ORIGIN + pathname + "&" + urlParams, {
 					method: "POST",
 					headers: this.HEADERS
 				})).json();
@@ -6409,13 +5877,6 @@ var vot = (function(exports) {
 		}
 	};
 	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/xhamster.js
-	var XHamsterHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			return /\/(videos\/[^/]+-[\dA-Za-z]+)\/?$/.exec(url.pathname)?.[1];
-		}
-	};
-	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/xvideos.js
 	var XVideosHelper = class extends BaseHelper {
 		async getVideoId(url) {
@@ -6439,7 +5900,7 @@ var vot = (function(exports) {
 			if (!preloadedScript) return;
 			try {
 				const { idClient, sk } = JSON.parse(preloadedScript.innerText).config;
-				const data = await (await this.fetch(`${this.API_ORIGIN}/models-v2?m=mpfs/info`, {
+				const data = await (await this.fetch(this.API_ORIGIN + "/models-v2?m=mpfs/info", {
 					method: "POST",
 					body: JSON.stringify({
 						apiMethod: "mpfs/info",
@@ -6476,7 +5937,7 @@ var vot = (function(exports) {
 		}
 		async fetchList(dirHash, sk) {
 			const body = this.getBodyHash(dirHash, sk);
-			const data = await (await this.fetch(`${this.API_ORIGIN}/public/api/fetch-list`, {
+			const data = await (await this.fetch(this.API_ORIGIN + "/public/api/fetch-list", {
 				method: "POST",
 				body
 			})).json();
@@ -6485,7 +5946,7 @@ var vot = (function(exports) {
 		}
 		async getDownloadUrl(fileHash, sk) {
 			const body = this.getBodyHash(fileHash, sk);
-			const data = await (await this.fetch(`${this.API_ORIGIN}/public/api/download-url`, {
+			const data = await (await this.fetch(this.API_ORIGIN + "/public/api/download-url", {
 				method: "POST",
 				body
 			})).json();
@@ -6528,7 +5989,7 @@ var vot = (function(exports) {
 			}
 		}
 		async getVideoData(videoId) {
-			if (videoId.startsWith(this.INLINE_PREFIX) || /^\/d\/([^/]+)$/.exec(videoId)) return { url: this.service?.url + videoId.slice(1) };
+			if (videoId.startsWith(this.INLINE_PREFIX) || /^\/d\/([^/]+)$/.exec(videoId)) return { url: this.service.url + videoId.slice(1) };
 			videoId = decodeURIComponent(videoId);
 			if (videoId.startsWith(this.CLIENT_PREFIX)) return await this.getClientVideoData(videoId);
 			return await this.getDiskVideoData(videoId);
@@ -6549,31 +6010,10 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/helpers/youtube.js
+	init_consts();
 	var YoutubeHelper = class YoutubeHelper extends BaseHelper {
 		static isMobile() {
 			return /^m\.youtube\.com$/.test(window.location.hostname);
-		}
-		static extractVideoId(url) {
-			const rawHash = url.hash.replace(/^#/, "");
-			if (rawHash) {
-				const normalizedHash = rawHash.startsWith("!") ? rawHash.slice(1) : rawHash;
-				let decodedHash = normalizedHash;
-				try {
-					decodedHash = decodeURIComponent(normalizedHash);
-				} catch {}
-				try {
-					const hashUrl = decodedHash.startsWith("http") ? new URL(decodedHash) : new URL(decodedHash.startsWith("/") ? decodedHash : `/${decodedHash}`, url.origin);
-					const hashVideoId = YoutubeHelper.extractVideoId(hashUrl);
-					if (hashVideoId) return hashVideoId;
-				} catch {
-					const hashVideoId = /(?:^|[?&#])v=([^&#]+)/.exec(decodedHash)?.[1];
-					if (hashVideoId) return hashVideoId;
-				}
-			}
-			if (url.hostname === "youtu.be") return url.pathname.replace(/^\/+/, "").split("/")[0] || void 0;
-			const pathVideoId = /\/(?:watch|embed|shorts|live|v|e)\/([^/?#]+)/.exec(url.pathname)?.[1] ?? void 0;
-			if (pathVideoId) return pathVideoId;
-			return url.searchParams.get("v") ?? void 0;
 		}
 		static getPlayer() {
 			if (window.location.pathname.startsWith("/shorts/") && !YoutubeHelper.isMobile()) return document.querySelector("#shorts-player");
@@ -6680,7 +6120,7 @@ var vot = (function(exports) {
 			if (detectedLanguage && !availableLangs.includes(detectedLanguage)) detectedLanguage = void 0;
 			const duration = YoutubeHelper.getPlayer()?.getDuration?.call(void 0) ?? void 0;
 			return {
-				url: this.service?.url + videoId,
+				url: this.service.url + videoId,
 				isStream,
 				title,
 				localizedTitle,
@@ -6691,22 +6131,15 @@ var vot = (function(exports) {
 			};
 		}
 		async getVideoId(url) {
+			if (url.hostname === "youtu.be") {
+				url.search = `?v=${url.pathname.replace("/", "")}`;
+				url.pathname = "/watch";
+			}
 			if (url.searchParams.has("enablejsapi")) {
 				const videoUrl = YoutubeHelper.getPlayer()?.getVideoUrl();
 				url = videoUrl ? new URL(videoUrl) : url;
 			}
-			return YoutubeHelper.extractVideoId(url);
-		}
-	};
-	//#endregion
-	//#region node_modules/@vot.js/ext/dist/helpers/zdf.js
-	var zdfPlayPathRe = /^\/play\/([^/?#]+)\/([^/?#]+)\/([^/?#]+)\/?$/i;
-	var ZDFHelper = class extends BaseHelper {
-		async getVideoId(url) {
-			const match = zdfPlayPathRe.exec(url.pathname);
-			if (!match) return;
-			const [, publicationForm, collectionCanonical, videoCanonical] = match;
-			return `${publicationForm}/${collectionCanonical}/${videoCanonical}`;
+			return /(?:watch|embed|shorts|live)\/([^/]+)/.exec(url.pathname)?.[1] ?? url.searchParams.get("v");
 		}
 	};
 	//#endregion
@@ -6714,7 +6147,6 @@ var vot = (function(exports) {
 	var availableHelpers = {
 		[VideoService$1.mailru]: MailRuHelper,
 		[VideoService$1.weverse]: WeverseHelper,
-		[VideoService$1.weibo]: WeiboHelper,
 		[VideoService$1.kodik]: KodikHelper,
 		[VideoService$1.patreon]: PatreonHelper,
 		[VideoService$1.reddit]: RedditHelper,
@@ -6726,7 +6158,6 @@ var vot = (function(exports) {
 		[VideoService$1.coursehunterLike]: CoursehunterLikeHelper,
 		[VideoService$1.twitch]: TwitchHelper,
 		[VideoService$1.sap]: SapHelper,
-		[VideoService$1.jove]: JoveHelper,
 		[VideoService$1.linkedin]: LinkedinHelper,
 		[VideoService$1.vimeo]: VimeoHelper,
 		[VideoService$1.yandexdisk]: YandexDiskHelper,
@@ -6737,11 +6168,6 @@ var vot = (function(exports) {
 		[VideoService$1.googledrive]: GoogleDriveHelper,
 		[VideoService$1.bilibili]: BilibiliHelper,
 		[VideoService$1.xvideos]: XVideosHelper,
-		[VideoService$1.xhamster]: XHamsterHelper,
-		[VideoService$1.spankbang]: SpankBangHelper,
-		[VideoService$1.rule34video]: Rule34VideoHelper,
-		[VideoService$1.picarto]: PicartoHelper,
-		[VideoService$1.olympicsreplay]: OlympicsReplayHelper,
 		[VideoService$1.watchpornto]: WatchPornToHelper,
 		[VideoService$1.archive]: ArchiveHelper,
 		[VideoService$1.dailymotion]: DailymotionHelper,
@@ -6761,12 +6187,11 @@ var vot = (function(exports) {
 		[VideoService$1.proxitok]: TikTokHelper,
 		[VideoService$1.nine_gag]: NineGAGHelper,
 		[VideoService$1.youtube]: YoutubeHelper,
-		[VideoService$1.preservetube]: PreserveTubeHelper,
+		[VideoService$1.ricktube]: YoutubeHelper,
 		[VideoService$1.invidious]: YoutubeHelper,
+		[VideoService$1.poketube]: YoutubeHelper,
 		[VideoService$1.piped]: YoutubeHelper,
-		[VideoService$1.zdf]: ZDFHelper,
 		[VideoService$1.dzen]: DzenHelper,
-		[VideoService$1.bunnystream]: BunnyStreamHelper,
 		[VideoService$1.cloudflarestream]: CloudflareStreamHelper,
 		[VideoService$1.loom]: LoomHelper,
 		[VideoService$1.rtnews]: RtNewsHelper,
@@ -6776,18 +6201,14 @@ var vot = (function(exports) {
 		[VideoService$1.bunkr]: BunkrHelper,
 		[VideoService$1.imdb]: IMDbHelper,
 		[VideoService$1.telegram]: TelegramHelper,
-		[VideoService$1.niconico]: NicoNicoHelper,
 		[ExtVideoService.udemy]: UdemyHelper,
 		[ExtVideoService.coursera]: CourseraHelper,
 		[ExtVideoService.douyin]: DouyinHelper,
 		[ExtVideoService.artstation]: ArtstationHelper,
 		[ExtVideoService.kickstarter]: KickstarterHelper,
-		[ExtVideoService.datacamp]: DataCampHelper,
 		[ExtVideoService.oraclelearn]: OracleLearnHelper,
 		[ExtVideoService.deeplearningai]: DeeplearningAIHelper,
-		[ExtVideoService.netacad]: NetacadHelper,
-		[ExtVideoService.mediafile]: MediafileHelper,
-		[ExtVideoService.skilljar]: SkilljarHelper
+		[ExtVideoService.netacad]: NetacadHelper
 	};
 	var VideoHelper = class {
 		helpersData;
@@ -6800,9 +6221,6 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region node_modules/@vot.js/ext/dist/utils/videoData.js
-	function hasHelper(host) {
-		return host in availableHelpers;
-	}
 	function getService() {
 		if (localLinkRe.exec(window.location.href)) return [];
 		const hostname = window.location.hostname;
@@ -6814,24 +6232,22 @@ var vot = (function(exports) {
 			return false;
 		};
 		return sites_default.filter((e) => {
-			return !!e.match && (Array.isArray(e.match) ? e.match.some(isMatches) : isMatches(e.match)) && e.host && e.url;
+			return (Array.isArray(e.match) ? e.match.some(isMatches) : isMatches(e.match)) && e.host && e.url;
 		});
 	}
 	async function getVideoID(service, opts = {}) {
 		const url = new URL(window.location.href);
 		const serviceHost = service.host;
-		if (hasHelper(serviceHost)) return await new VideoHelper(opts).getHelper(serviceHost).getVideoId(url);
+		if (Object.keys(availableHelpers).includes(serviceHost)) return await new VideoHelper(opts).getHelper(serviceHost).getVideoId(url);
 		return serviceHost === VideoService$1.custom ? url.href : void 0;
 	}
 	async function getVideoData(service, opts = {}) {
-		const currentUrl = new URL(window.location.href);
 		const videoId = await getVideoID(service, opts);
 		if (!videoId) throw new VideoDataError(`Entered unsupported link: "${service.host}"`);
-		const origin = currentUrl.origin;
+		const origin = window.location.origin;
 		if ([
 			VideoService$1.peertube,
 			VideoService$1.coursehunterLike,
-			VideoService$1.bunnystream,
 			VideoService$1.cloudflarestream
 		].includes(service.host)) service.url = origin;
 		if (service.rawResult) return {
@@ -6846,7 +6262,6 @@ var vot = (function(exports) {
 			host: service.host,
 			duration: void 0
 		};
-		if (!hasHelper(service.host)) throw new VideoDataError(`No helper is available for "${service.host}"`);
 		const result = await new VideoHelper({
 			...opts,
 			service,
@@ -6855,21 +6270,16 @@ var vot = (function(exports) {
 		if (!result) throw new VideoDataError(`Failed to get video raw url for ${service.host}`);
 		return {
 			...result,
-			url: result.url,
 			videoId,
 			host: service.host
 		};
 	}
 	//#endregion
 	//#region node_modules/chaimu/dist/config.js
-	var fetchFn = (...args) => {
-		if (typeof globalThis.fetch !== "function") throw new Error("Fetch API is not available in this environment");
-		return globalThis.fetch(...args);
-	};
 	var config_default = {
 		version: "1.0.6",
 		debug: false,
-		fetchFn
+		fetchFn: fetch.bind(window)
 	};
 	//#endregion
 	//#region node_modules/chaimu/dist/debug.js
@@ -6884,26 +6294,17 @@ var vot = (function(exports) {
 		"ratechange",
 		"play",
 		"waiting",
-		"stalled",
-		"seeking",
 		"pause",
-		"ended",
 		"seeked"
 	];
-	var BUFFERING_PAUSE_DELAY_MS = 250;
-	var SYNC_DRIFT_TOLERANCE_SEC = .15;
 	function initAudioContext() {
-		if (typeof window === "undefined") return;
-		const audioContext = window.AudioContext ?? window.webkitAudioContext;
+		const audioContext = window.AudioContext || window.webkitAudioContext;
 		return audioContext ? new audioContext() : void 0;
 	}
-	var IDLE_SUSPEND_DELAY_MS = 1e4;
 	var BasePlayer = class {
 		static name = "BasePlayer";
 		chaimu;
 		fetch;
-		isBuffering = false;
-		bufferingPauseTimer;
 		_src;
 		fetchOpts;
 		constructor(chaimu, src) {
@@ -6926,66 +6327,6 @@ var vot = (function(exports) {
 			this.lipSync(event.type);
 			return this;
 		};
-		isPlaybackBlocked() {
-			const video = this.chaimu.video;
-			return this.isBuffering || !video || video.ended || video.seeking || video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA;
-		}
-		handlePlaybackError(action, error) {
-			if (error instanceof DOMException && error.name === "NotAllowedError") {
-				debug_default.log(`[${this.name}] ${action} blocked by autoplay policy`);
-				return;
-			}
-			console.error(`[${this.name}] ${action} failed`, error);
-		}
-		cancelBufferingPause() {
-			if (this.bufferingPauseTimer !== void 0) {
-				clearTimeout(this.bufferingPauseTimer);
-				this.bufferingPauseTimer = void 0;
-			}
-		}
-		resetPlaybackState() {
-			this.cancelBufferingPause();
-			this.isBuffering = false;
-		}
-		shouldPauseForBuffering() {
-			const video = this.chaimu.video;
-			if (!video || video.paused || video.ended) return false;
-			return video.seeking || video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA;
-		}
-		scheduleBufferingPause(onPause) {
-			this.cancelBufferingPause();
-			this.bufferingPauseTimer = setTimeout(() => {
-				this.bufferingPauseTimer = void 0;
-				if (!this.shouldPauseForBuffering()) return;
-				this.isBuffering = true;
-				onPause();
-			}, BUFFERING_PAUSE_DELAY_MS);
-		}
-		async resumeAudioContext() {
-			const audioContext = this.chaimu.audioContext;
-			if (!audioContext) return true;
-			if (audioContext.state === "running") return true;
-			if (audioContext.state === "closed") {
-				this.handlePlaybackError("resume AudioContext", /* @__PURE__ */ new Error("AudioContext is closed"));
-				return false;
-			}
-			try {
-				await audioContext.resume();
-				return true;
-			} catch (error) {
-				this.handlePlaybackError("resume AudioContext", error);
-				return false;
-			}
-		}
-		async suspendAudioContext() {
-			const audioContext = this.chaimu.audioContext;
-			if (!audioContext || audioContext.state !== "running") return;
-			try {
-				await audioContext.suspend();
-			} catch (error) {
-				this.handlePlaybackError("suspend AudioContext", error);
-			}
-		}
 		removeVideoEvents() {
 			for (const e of videoLipSyncEvents) this.chaimu.video?.removeEventListener(e, this.handleVideoEvent);
 			return this;
@@ -7029,7 +6370,6 @@ var vot = (function(exports) {
 		audio;
 		gainNode;
 		audioSource;
-		suspendTimer;
 		constructor(chaimu, src) {
 			super(chaimu, src);
 			this.updateAudio();
@@ -7037,11 +6377,10 @@ var vot = (function(exports) {
 		initAudioBooster() {
 			if (!this.chaimu.audioContext) return this;
 			this.disconnectAudioNodes();
-			const gainNode = this.chaimu.audioContext.createGain();
-			this.gainNode = gainNode;
-			gainNode.connect(this.chaimu.audioContext.destination);
+			this.gainNode = this.chaimu.audioContext.createGain();
+			this.gainNode.connect(this.chaimu.audioContext.destination);
 			this.audioSource = this.chaimu.audioContext.createMediaElementSource(this.audio);
-			this.audioSource.connect(gainNode);
+			this.audioSource.connect(this.gainNode);
 			return this;
 		}
 		disconnectAudioNodes() {
@@ -7054,27 +6393,6 @@ var vot = (function(exports) {
 				this.gainNode = void 0;
 			}
 		}
-		scheduleSuspend() {
-			this.cancelSuspend();
-			this.suspendTimer = setTimeout(async () => {
-				debug_default.log("[AudioPlayer] idle suspend");
-				await this.suspendAudioContext();
-			}, IDLE_SUSPEND_DELAY_MS);
-		}
-		cancelSuspend() {
-			if (this.suspendTimer !== void 0) {
-				clearTimeout(this.suspendTimer);
-				this.suspendTimer = void 0;
-			}
-		}
-		syncAudioToVideo(force = false) {
-			const video = this.chaimu.video;
-			if (!video) return this;
-			this.audio.playbackRate = video.playbackRate;
-			const drift = Math.abs(this.audio.currentTime - video.currentTime);
-			if (force || drift > SYNC_DRIFT_TOLERANCE_SEC) this.audio.currentTime = video.currentTime;
-			return this;
-		}
 		updateAudio() {
 			this.audio = new Audio(this.src);
 			this.audio.crossOrigin = "anonymous";
@@ -7085,78 +6403,52 @@ var vot = (function(exports) {
 			this.initAudioBooster();
 			return this;
 		}
-		async resumeAndPlayAudio() {
-			if (!this.audio || this.isPlaybackBlocked()) return;
-			this.cancelSuspend();
-			if (!await this.resumeAudioContext() || this.isPlaybackBlocked()) return;
-			try {
-				await this.audio.play();
-			} catch (error) {
-				this.handlePlaybackError("play audio element", error);
-			}
-		}
+		audioErrorHandle = (e) => {
+			console.error("[AudioPlayer]", e);
+		};
 		lipSync(mode = false) {
 			debug_default.log("[AudioPlayer] lipsync video", this.chaimu.video);
 			if (!this.chaimu.video) return this;
-			this.syncAudioToVideo(mode === "play" || mode === "seeked" || mode === "seeking");
-			if (!mode) return this;
+			this.audio.currentTime = this.chaimu.video.currentTime;
+			this.audio.playbackRate = this.chaimu.video.playbackRate;
+			if (!mode) {
+				debug_default.log("[AudioPlayer] lipsync mode isn't set");
+				return this;
+			}
+			debug_default.log(`[AudioPlayer] lipsync mode is ${mode}`);
 			switch (mode) {
-				case "ratechange":
-					this.cancelBufferingPause();
-					return this;
 				case "play":
 				case "playing":
 				case "seeked":
-					this.cancelBufferingPause();
-					this.isBuffering = false;
 					if (!this.chaimu.video.paused) this.syncPlay();
 					return this;
-				case "waiting":
-				case "stalled":
-					this.scheduleBufferingPause(() => {
-						this.audio.pause();
-					});
-					return this;
-				case "seeking":
-					this.cancelBufferingPause();
-					this.isBuffering = true;
-					this.audio.pause();
-					return this;
 				case "pause":
-				case "ended":
-					this.cancelBufferingPause();
-					this.isBuffering = false;
+				case "waiting":
 					this.pause();
 					return this;
 				default: return this;
 			}
 		}
 		async clear() {
-			this.cancelSuspend();
-			this.resetPlaybackState();
 			this.audio.pause();
 			this.audio.src = "";
 			this.audio.removeAttribute("src");
-			this.audio.load();
 			this.disconnectAudioNodes();
-			await this.suspendAudioContext();
 			return this;
 		}
 		syncPlay() {
 			debug_default.log("[AudioPlayer] sync play called");
-			this.resumeAndPlayAudio();
+			if (this.audio) this.audio.play().catch(this.audioErrorHandle);
 			return this;
 		}
 		async play() {
 			debug_default.log("[AudioPlayer] play called");
-			await this.resumeAndPlayAudio();
+			if (this.audio) await this.audio.play().catch(this.audioErrorHandle);
 			return this;
 		}
 		async pause() {
 			debug_default.log("[AudioPlayer] pause called");
-			this.resetPlaybackState();
 			if (this.audio) this.audio.pause();
-			this.scheduleSuspend();
 			return this;
 		}
 		set src(url) {
@@ -7203,7 +6495,6 @@ var vot = (function(exports) {
 		isClearing = false;
 		isInitializing = false;
 		clearingPromise;
-		suspendTimer;
 		async fetchAudio() {
 			if (!this._src) throw new Error("No audio source provided");
 			if (!this.chaimu.audioContext) throw new Error("No audio context available");
@@ -7211,7 +6502,6 @@ var vot = (function(exports) {
 			let tempBlobUrl;
 			try {
 				const res = await this.fetch(this._src, this.fetchOpts);
-				if (!res.ok) throw new Error(`Response status: ${res.status}`);
 				debug_default.log(`[ChaimuPlayer] Decoding fetched audio...`);
 				const data = await res.arrayBuffer();
 				const blob = new Blob([data]);
@@ -7242,19 +6532,6 @@ var vot = (function(exports) {
 				this.gainNode = void 0;
 			}
 		}
-		scheduleSuspend() {
-			this.cancelSuspend();
-			this.suspendTimer = setTimeout(async () => {
-				debug_default.log("[ChaimuPlayer] idle suspend");
-				await this.suspendAudioContext();
-			}, IDLE_SUSPEND_DELAY_MS);
-		}
-		cancelSuspend() {
-			if (this.suspendTimer !== void 0) {
-				clearTimeout(this.suspendTimer);
-				this.suspendTimer = void 0;
-			}
-		}
 		async init() {
 			if (this.isInitializing) throw new Error("Initialization already in progress");
 			this.isInitializing = true;
@@ -7278,39 +6555,27 @@ var vot = (function(exports) {
 				if ("webkitPreservesPitch" in audio) audio.webkitPreservesPitch = true;
 			}
 			this.audioElement = audio;
-			const gainNode = this.gainNode;
-			if (!gainNode) throw new Error("Audio gain node is missing");
 			this.mediaElementSource = this.chaimu.audioContext.createMediaElementSource(audio);
-			this.mediaElementSource.connect(gainNode);
-			gainNode.connect(this.chaimu.audioContext.destination);
+			this.mediaElementSource.connect(this.gainNode);
+			this.gainNode.connect(this.chaimu.audioContext.destination);
 		}
 		lipSync(mode = false) {
 			debug_default.log("[ChaimuPlayer] lipsync video", this.chaimu.video, this);
-			if (!this.chaimu.video || !mode) return this;
+			if (!this.chaimu.video) return this;
+			if (!mode) {
+				debug_default.log("[ChaimuPlayer] lipsync mode isn't set");
+				return this;
+			}
+			debug_default.log(`[ChaimuPlayer] lipsync mode is ${mode}`);
 			switch (mode) {
 				case "play":
 				case "playing":
 				case "ratechange":
 				case "seeked":
-					this.cancelBufferingPause();
-					this.isBuffering = false;
 					if (!this.chaimu.video.paused) this.start();
 					return this;
-				case "waiting":
-				case "stalled":
-					this.scheduleBufferingPause(() => {
-						if (this.audioElement) this.audioElement.pause();
-					});
-					return this;
-				case "seeking":
-					this.cancelBufferingPause();
-					this.isBuffering = true;
-					if (this.audioElement) this.audioElement.pause();
-					return this;
 				case "pause":
-				case "ended":
-					this.cancelBufferingPause();
-					this.isBuffering = false;
+				case "waiting":
 					this.pause();
 					return this;
 				default: return this;
@@ -7330,11 +6595,10 @@ var vot = (function(exports) {
 			if (this.isClearing && this.clearingPromise) return this.clearingPromise;
 			if (!this.chaimu.audioContext) throw new Error("No audio context available");
 			debug_default.log("clear audio context");
-			this.cancelSuspend();
-			this.resetPlaybackState();
 			this.isClearing = true;
 			this.clearingPromise = (async () => {
 				try {
+					await this.pause();
 					if (this.audioElement) {
 						this.audioElement.pause();
 						this.audioElement = void 0;
@@ -7343,14 +6607,12 @@ var vot = (function(exports) {
 						URL.revokeObjectURL(this.blobUrl);
 						this.blobUrl = void 0;
 					}
-					this.audioBuffer = void 0;
-					const oldVolume = this.gainNode ? this.gainNode.gain.value : 1;
 					this.disconnectAudioNodes();
+					const oldVolume = this.gainNode ? this.gainNode.gain.value : 1;
 					await this.reopenCtx();
 					if (this.chaimu.audioContext) {
 						this.initAudioBooster();
 						this.volume = oldVolume;
-						await this.suspendAudioContext();
 					}
 					return this;
 				} finally {
@@ -7367,34 +6629,24 @@ var vot = (function(exports) {
 				debug_default.log("The other cleaner is still running, waiting...");
 				await this.clearingPromise;
 			}
-			if (!this.chaimu.audioContext || !this.audioElement) return this;
-			this.cancelSuspend();
-			if (this.isPlaybackBlocked()) return this;
 			debug_default.log("starting audio via HTMLAudioElement");
-			if (!await this.resumeAudioContext()) return this;
-			if (this.isPlaybackBlocked()) return this;
+			await this.play();
 			if (this.chaimu.video) {
 				this.audioElement.currentTime = this.chaimu.video.currentTime;
 				this.audioElement.playbackRate = this.chaimu.video.playbackRate;
 			}
-			try {
-				await this.audioElement.play();
-			} catch (error) {
-				this.handlePlaybackError("play audio element", error);
-			}
+			this.audioElement.play().catch((err) => debug_default.log("[ChaimuPlayer] Play audioElement failed:", err));
 			return this;
 		}
 		async pause() {
 			if (!this.chaimu.audioContext) throw new Error("No audio context available");
-			this.resetPlaybackState();
 			if (this.audioElement) this.audioElement.pause();
-			this.scheduleSuspend();
+			if (this.chaimu.audioContext.state === "running") await this.chaimu.audioContext.suspend();
 			return this;
 		}
 		async play() {
 			if (!this.chaimu.audioContext) throw new Error("No audio context available");
-			this.cancelSuspend();
-			await this.resumeAudioContext();
+			await this.chaimu.audioContext.resume();
 			return this;
 		}
 		set src(url) {
@@ -7435,15 +6687,14 @@ var vot = (function(exports) {
 			this._debug = config_default.debug = debug;
 			this.fetchFn = fetchFn;
 			this.fetchOpts = fetchOpts;
-			this.audioContext = preferAudio ? void 0 : initAudioContext();
+			this.audioContext = initAudioContext();
 			this.player = this.audioContext && !preferAudio ? new ChaimuPlayer(this, url) : new AudioPlayer(this, url);
 			this.video = video;
 		}
 		async init() {
 			await this.player.init();
+			if (this.video && !this.video.paused) this.player.lipSync("play");
 			this.player.addVideoEvents();
-			if (this.video.paused || this.video.ended || this.video.seeking || this.video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) await this.player.pause();
-			else this.player.lipSync("play");
 		}
 		set debug(value) {
 			this._debug = config_default.debug = value;
@@ -7512,135 +6763,128 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/config/config.ts
-	var workerHost = "api.browser.yandex.ru";
-	/**
-	* used for streaming
-	*
-	* @see https://github.com/FOSWLY/media-proxy
-	*/
-	var m3u8ProxyHost = "media-proxy.toil.cc/v1/proxy/m3u8";
-	/**
-	* @see https://github.com/FOSWLY/vot-worker
-	*/
-	var proxyWorkerHostMode1 = "vot-worker.vtrans.eu.cc";
-	var proxyWorkerHost = "vot-worker.eu.cc";
-	var votBackendUrl = "https://vot.toil.cc/v1";
-	/**
-	* @see https://github.com/FOSWLY/translate-backend
-	*/
-	var foswlyTranslateUrl = "https://translate-backend.transly.eu.cc/v2";
-	var detectRustServerUrl = "https://rust-server-531j.onrender.com/detect";
-	var authServerUrl = "https://rust-server-531j.onrender.com";
-	var authLoginUrl = `${authServerUrl}/v1/auth/handle`;
-	var avatarServerUrl = "https://avatars.mds.yandex.net/get-yapic";
-	var repoPath = "ilyhalight/voice-over-translation";
-	var contentUrl = `https://raw.githubusercontent.com/${repoPath}`;
-	var repositoryUrl = `https://github.com/${repoPath}`;
-	var defaultTranslationService = "yandexbrowser";
-	var defaultDetectService = "yandexbrowser";
-	var proxyOnlyCountries = [
-		"UA",
-		"LV",
-		"LT"
-	];
-	/**
-	* 100 - 3000 ms - delay before hiding button
-	*/
-	var defaultAutoHideDelay = 1e3;
-	var actualCompatVersion = "2025-05-09";
+	var workerHost, m3u8ProxyHost, proxyWorkerHostMode1, proxyWorkerHost, votBackendUrl, foswlyTranslateUrl, detectRustServerUrl, authServerUrl, authLoginUrl, avatarServerUrl, repoPath, contentUrl, repositoryUrl, defaultTranslationService, defaultDetectService, proxyOnlyCountries, defaultAutoHideDelay, actualCompatVersion;
+	var init_config = __esmMin((() => {
+		workerHost = "api.browser.yandex.ru";
+		m3u8ProxyHost = "media-proxy.toil.cc/v1/proxy/m3u8";
+		proxyWorkerHostMode1 = "vot-worker.vtrans.eu.cc";
+		proxyWorkerHost = "vot-worker.eu.cc";
+		votBackendUrl = "https://vot.toil.cc/v1";
+		foswlyTranslateUrl = "https://translate-backend.transly.eu.cc/v2";
+		detectRustServerUrl = "https://rust-server-531j.onrender.com/detect";
+		authServerUrl = "https://rust-server-531j.onrender.com";
+		authLoginUrl = `${authServerUrl}/v1/auth/handle`;
+		avatarServerUrl = "https://avatars.mds.yandex.net/get-yapic";
+		repoPath = "ilyhalight/voice-over-translation";
+		contentUrl = `https://raw.githubusercontent.com/${repoPath}`;
+		repositoryUrl = `https://github.com/${repoPath}`;
+		defaultTranslationService = "yandexbrowser";
+		defaultDetectService = "yandexbrowser";
+		proxyOnlyCountries = [
+			"UA",
+			"LV",
+			"LT"
+		];
+		defaultAutoHideDelay = 1e3;
+		actualCompatVersion = "2025-05-09";
+	}));
 	//#endregion
 	//#region src/types/storage.ts
-	var subtitleResponseLanguageModes = ["auto", "original"];
-	var storageKeys = [
-		"autoTranslate",
-		"autoSubtitles",
-		"dontTranslateLanguages",
-		"enabledDontTranslateLanguages",
-		"enabledAutoVolume",
-		"enabledSmartDucking",
-		"autoVolume",
-		"buttonPos",
-		"showVideoSlider",
-		"syncVolume",
-		"downloadWithName",
-		"sendNotifyOnComplete",
-		"subtitlesMaxLength",
-		"subtitlesSmartLayout",
-		"highlightWords",
-		"subtitlesFontSize",
-		"subtitlesFontFamily",
-		"subtitlesOpacity",
-		"subtitlesDownloadFormat",
-		"responseLanguage",
-		"responseLanguageSubtitles",
-		"defaultVolume",
-		"onlyBypassMediaCSP",
-		"newAudioPlayer",
-		"showPiPButton",
-		"translateAPIErrors",
-		"translationService",
-		"detectService",
-		"translationHotkey",
-		"subtitlesHotkey",
-		"m3u8ProxyHost",
-		"proxyWorkerHost",
-		"translateProxyEnabled",
-		"translateProxyEnabledDefault",
-		"audioBooster",
-		"useLivelyVoice",
-		"autoHideButtonDelay",
-		"useAudioDownload",
-		"compatVersion",
-		"localePhrases",
-		"localeLang",
-		"localeHash",
-		"localeVersion",
-		"localeUpdatedAt",
-		"localeLangOverride",
-		"account"
-	];
+	var subtitleResponseLanguageModes, storageKeys;
+	var init_storage$1 = __esmMin((() => {
+		subtitleResponseLanguageModes = ["auto", "original"];
+		storageKeys = [
+			"autoTranslate",
+			"autoSubtitles",
+			"dontTranslateLanguages",
+			"enabledDontTranslateLanguages",
+			"enabledAutoVolume",
+			"enabledSmartDucking",
+			"autoVolume",
+			"buttonPos",
+			"showVideoSlider",
+			"syncVolume",
+			"downloadWithName",
+			"sendNotifyOnComplete",
+			"subtitlesMaxLength",
+			"subtitlesSmartLayout",
+			"highlightWords",
+			"subtitlesFontSize",
+			"subtitlesFontFamily",
+			"subtitlesOpacity",
+			"subtitlesDownloadFormat",
+			"responseLanguage",
+			"responseLanguageSubtitles",
+			"defaultVolume",
+			"onlyBypassMediaCSP",
+			"newAudioPlayer",
+			"showPiPButton",
+			"translateAPIErrors",
+			"translationService",
+			"detectService",
+			"translationHotkey",
+			"subtitlesHotkey",
+			"m3u8ProxyHost",
+			"proxyWorkerHost",
+			"translateProxyEnabled",
+			"translateProxyEnabledDefault",
+			"audioBooster",
+			"useLivelyVoice",
+			"autoHideButtonDelay",
+			"useAudioDownload",
+			"compatVersion",
+			"localePhrases",
+			"localeLang",
+			"localeHash",
+			"localeVersion",
+			"localeUpdatedAt",
+			"localeLangOverride",
+			"account"
+		];
+	}));
 	//#endregion
 	//#region src/utils/debug.ts
-	var noop = () => {};
-	var debug = {
-		log: noop,
-		warn: noop,
-		error: noop
-	};
+	var noop, debug;
+	var init_debug = __esmMin((() => {
+		noop = () => {};
+		debug = {
+			log: noop,
+			warn: noop,
+			error: noop
+		};
+	}));
 	//#endregion
 	//#region src/utils/localization.ts
 	function getNavigatorLang() {
 		if (typeof navigator === "undefined") return "en";
 		return navigator.language?.substring(0, 2).toLowerCase() || "en";
 	}
-	var slavicLangs = new Set([
-		"uk",
-		"be",
-		"bg",
-		"mk",
-		"sr",
-		"bs",
-		"hr",
-		"sl",
-		"pl",
-		"sk",
-		"cs"
-	]);
 	function resolveCalculatedResLang(baseLang) {
 		if (availableTTS.includes(baseLang)) return baseLang;
 		if (slavicLangs.has(baseLang)) return "ru";
 		return "en";
 	}
-	var lang = getNavigatorLang();
-	var calculatedResLang = resolveCalculatedResLang(lang);
+	var slavicLangs, lang, calculatedResLang;
+	var init_localization = __esmMin((() => {
+		init_consts();
+		slavicLangs = new Set([
+			"uk",
+			"be",
+			"bg",
+			"mk",
+			"sr",
+			"bs",
+			"hr",
+			"sl",
+			"pl",
+			"sk",
+			"cs"
+		]);
+		lang = getNavigatorLang();
+		calculatedResLang = resolveCalculatedResLang(lang);
+	}));
 	//#endregion
 	//#region src/utils/utils.ts
-	var DEFAULT_OBJECT_URL_REVOKE_DELAY_MS = 3e4;
-	var ASCII_CONTROL_CHARS_RE = /\p{Cc}/gu;
-	var INVALID_FILENAME_CHARS_RE = /[\\/:*?"'<>|]+/g;
-	var URL_PROTOCOL_RE = /^https?:\/\//i;
-	var MULTIPLE_DASHES_RE = /-{2,}/g;
-	var EDGE_FILE_CHARS_RE = /^[.\s-]+|[.\s-]+$/g;
 	function getDateFallbackFilename() {
 		return (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
 	}
@@ -7683,7 +6927,6 @@ var vot = (function(exports) {
 		}
 		return (hash >>> 0).toString(36);
 	}
-	var isPiPAvailable = () => Boolean(document.pictureInPictureEnabled);
 	async function writeBlobToHandle(handle, blob) {
 		try {
 			const writable = await handle.createWritable();
@@ -7755,8 +6998,6 @@ var vot = (function(exports) {
 		if (!trimmed) return getDateFallbackFilename();
 		return stripAsciiControlChars(trimmed).replace(URL_PROTOCOL_RE, "").replace(INVALID_FILENAME_CHARS_RE, "-").replace(MULTIPLE_DASHES_RE, "-").replace(EDGE_FILE_CHARS_RE, "") || getDateFallbackFilename();
 	}
-	var getTimestamp = () => Math.floor(Date.now() / 1e3);
-	var getHeaders = (headers) => headers ? Object.fromEntries(new Headers(headers)) : {};
 	function clamp(value, min = 0, max = 100) {
 		return Math.min(Math.max(value, Math.min(min, max)), Math.max(min, max));
 	}
@@ -7776,18 +7017,21 @@ var vot = (function(exports) {
 		}
 		return out;
 	}
+	var DEFAULT_OBJECT_URL_REVOKE_DELAY_MS, ASCII_CONTROL_CHARS_RE, INVALID_FILENAME_CHARS_RE, URL_PROTOCOL_RE, MULTIPLE_DASHES_RE, EDGE_FILE_CHARS_RE, isPiPAvailable, getTimestamp, getHeaders;
+	var init_utils = __esmMin((() => {
+		init_localization();
+		DEFAULT_OBJECT_URL_REVOKE_DELAY_MS = 3e4;
+		ASCII_CONTROL_CHARS_RE = /\p{Cc}/gu;
+		INVALID_FILENAME_CHARS_RE = /[\\/:*?"'<>|]+/g;
+		URL_PROTOCOL_RE = /^https?:\/\//i;
+		MULTIPLE_DASHES_RE = /-{2,}/g;
+		EDGE_FILE_CHARS_RE = /^[.\s-]+|[.\s-]+$/g;
+		isPiPAvailable = () => Boolean(document.pictureInPictureEnabled);
+		getTimestamp = () => Math.floor(Date.now() / 1e3);
+		getHeaders = (headers) => headers ? Object.fromEntries(new Headers(headers)) : {};
+	}));
 	//#endregion
 	//#region src/core/cacheManager.ts
-	var YANDEX_TTL_MS = 7200 * 1e3;
-	var RESPONSE_CACHE_CREATED_AT_HEADER = "x-vot-cache-created-at";
-	var RESPONSE_CACHE_KEY_HEADER = "x-vot-cache-key";
-	var DEFAULT_RESPONSE_CACHE_NAME = "vot-http-cache-v1";
-	var MAX_MEMORY_CACHE_ENTRIES = 500;
-	var VOT_SESSION_STORAGE_KEY = "VOTSession";
-	var EXPIRY_FIELD_BY_FIELD = {
-		translation: "translationExpiresAt",
-		subtitles: "subtitlesExpiresAt"
-	};
 	function getCurrentUnixTimestampSeconds() {
 		return Math.floor(Date.now() / 1e3);
 	}
@@ -7809,328 +7053,338 @@ var vot = (function(exports) {
 	function hasSessions(sessions) {
 		return Object.keys(sessions).length > 0;
 	}
-	var VOTSessionStorageCache = class {
-		constructor(storage = votStorage) {
-			this.storage = storage;
-		}
-		getStorageKey() {
-			return VOT_SESSION_STORAGE_KEY;
-		}
-		async restore(_host, currentSessions = {}) {
-			const storageKey = this.getStorageKey();
-			const rawStoredSession = await this.storage.getRaw(storageKey);
-			const restoredSessions = sanitizeVOTSessions(rawStoredSession);
-			if (!hasSessions(restoredSessions)) {
-				if (rawStoredSession !== void 0) await this.storage.deleteRaw(storageKey);
-				return currentSessions;
-			}
-			return {
-				...currentSessions,
-				...restoredSessions
-			};
-		}
-		async persist(_host, sessions) {
-			const storageKey = this.getStorageKey();
-			const sanitizedSessions = sanitizeVOTSessions(sessions);
-			if (!hasSessions(sanitizedSessions)) {
-				await this.storage.deleteRaw(storageKey);
-				return;
-			}
-			await this.storage.setRaw(storageKey, sanitizedSessions);
-		}
-	};
-	/**
-	* Small in-memory cache with TTL for both translations and subtitles.
-	*
-	* The cache is keyed by a stable key built by VideoHandler.
-	*/
-	var InMemoryCacheManager = class {
-		cache = /* @__PURE__ */ new Map();
-		/**
-		* Clears all cached entries.
-		*
-		* Used when runtime settings change (e.g. proxy mode/host), because cached
-		* translation URLs and especially previous failures can become stale.
-		*/
-		clear() {
-			this.cache.clear();
-		}
-		getTranslation(key) {
-			return this.getValue(key, "translation");
-		}
-		setTranslation(key, translation) {
-			this.setValue(key, "translation", translation);
-		}
-		getSubtitles(key) {
-			return this.getValue(key, "subtitles");
-		}
-		setSubtitles(key, subtitles) {
-			this.setValue(key, "subtitles", subtitles);
-		}
-		deleteSubtitles(key) {
-			this.deleteValue(key, "subtitles");
-		}
-		getValue(key, field) {
-			const now = Date.now();
-			const entry = this.cache.get(key);
-			if (!entry) return void 0;
-			const expiryField = EXPIRY_FIELD_BY_FIELD[field];
-			const expiresAt = entry[expiryField];
-			if (expiresAt !== void 0 && expiresAt <= now) {
-				entry[field] = void 0;
-				entry[expiryField] = void 0;
-				this.evictIfEmpty(key, entry);
-				return;
-			}
-			return entry[field];
-		}
-		setValue(key, field, value) {
-			const now = Date.now();
-			const entry = this.getOrCreateEntry(key);
-			const expiresAt = now + YANDEX_TTL_MS;
-			const expiryField = EXPIRY_FIELD_BY_FIELD[field];
-			entry[field] = value;
-			entry[expiryField] = expiresAt;
-		}
-		deleteValue(key, field) {
-			const entry = this.cache.get(key);
-			if (!entry) return;
-			const expiryField = EXPIRY_FIELD_BY_FIELD[field];
-			entry[field] = void 0;
-			entry[expiryField] = void 0;
-			this.evictIfEmpty(key, entry);
-		}
-		evictIfEmpty(key, entry) {
-			if (entry.translation === void 0 && entry.subtitles === void 0) this.cache.delete(key);
-		}
-		getOrCreateEntry(key) {
-			const existing = this.cache.get(key);
-			if (existing) return existing;
-			const entry = {};
-			this.cache.set(key, entry);
-			return entry;
-		}
-	};
-	var ResponseCacheManager = class {
-		memoryCache = /* @__PURE__ */ new Map();
-		inFlightRequests = /* @__PURE__ */ new Map();
-		async execute(context, options, fetcher) {
-			if (!options || options.ttlMs <= 0) return fetcher();
-			const key = options.key ?? this.buildDefaultCacheKey(context);
-			if (!key) return fetcher();
-			const method = this.normalizeMethod(context.method);
-			const ttlMs = options.ttlMs;
-			const cacheName = options.cacheName || DEFAULT_RESPONSE_CACHE_NAME;
-			const useMemory = options.useMemory !== false;
-			const useCacheApi = options.useCacheApi !== false && method === "GET" && this.supportsCacheApi();
-			const cacheApiKey = useCacheApi ? fnv1a32ToKeyPart(key) : "";
-			const dedupe = options.dedupe !== false;
-			const allowStaleOnError = options.allowStaleOnError !== false;
-			const nowMs = Date.now();
-			const staleFallback = await this.readCachedResponse({
-				key,
-				nowMs,
-				useMemory,
-				useCacheApi,
-				cacheName,
-				url: context.url,
-				cacheApiKey,
-				ttlMs,
-				allowStaleOnError
-			});
-			if (staleFallback.fresh) return staleFallback.fresh;
-			if (!dedupe) return await this.runNetworkRequestWithFallback({
-				key,
-				cacheName,
-				url: context.url,
-				cacheApiKey,
-				ttlMs,
-				useMemory,
-				useCacheApi
-			}, fetcher, allowStaleOnError ? staleFallback.stale : void 0);
-			const inFlight = this.inFlightRequests.get(key);
-			if (inFlight !== void 0) return (await inFlight).clone();
-			const networkPromise = this.runNetworkRequestWithFallback({
-				key,
-				cacheName,
-				url: context.url,
-				cacheApiKey,
-				ttlMs,
-				useMemory,
-				useCacheApi
-			}, fetcher, allowStaleOnError ? staleFallback.stale?.clone() : void 0);
-			this.inFlightRequests.set(key, networkPromise);
-			try {
-				return (await networkPromise).clone();
-			} finally {
-				this.inFlightRequests.delete(key);
-			}
-		}
-		async readCachedResponse({ key, nowMs, useMemory, useCacheApi, cacheName, url, cacheApiKey, ttlMs, allowStaleOnError }) {
-			let staleFallback;
-			if (useMemory) {
-				const memoryHit = this.readMemoryCache(key, nowMs);
-				if (memoryHit.fresh) return { fresh: memoryHit.fresh };
-				staleFallback = memoryHit.stale;
-			}
-			if (!useCacheApi) return { stale: staleFallback };
-			const cacheApiHit = await this.readCacheApi(cacheName, url, cacheApiKey, ttlMs, nowMs, allowStaleOnError);
-			if (cacheApiHit.fresh) {
-				if (useMemory) this.writeMemoryCache(key, cacheApiHit.fresh.clone(), cacheApiHit.expiresAt ?? nowMs + ttlMs);
-				return { fresh: cacheApiHit.fresh };
-			}
-			return { stale: staleFallback ?? cacheApiHit.stale };
-		}
-		async runNetworkRequestWithFallback(cacheConfig, fetcher, staleFallback) {
-			try {
-				return await this.runNetworkRequest(cacheConfig, fetcher);
-			} catch (err) {
-				if (staleFallback) return staleFallback;
-				throw err;
-			}
-		}
-		async runNetworkRequest({ key, cacheName, url, cacheApiKey, ttlMs, useMemory, useCacheApi }, fetcher) {
-			const response = await fetcher();
-			if (!response.ok) return response;
-			const createdAtMs = Date.now();
-			const expiresAt = this.computeExpiresAt(createdAtMs, ttlMs);
-			if (useMemory) this.writeMemoryCache(key, response.clone(), expiresAt);
-			if (useCacheApi) {
-				const storable = this.toStorableResponse(response.clone(), createdAtMs);
-				await this.writeCacheApi(cacheName, url, cacheApiKey, storable);
-			}
-			return response;
-		}
-		computeExpiresAt(createdAtMs, ttlMs) {
-			if (!Number.isFinite(ttlMs) || ttlMs <= 0) return createdAtMs;
-			if (ttlMs >= Number.MAX_SAFE_INTEGER - createdAtMs) return Number.MAX_SAFE_INTEGER;
-			return createdAtMs + ttlMs;
-		}
-		normalizeMethod(method) {
-			return (method || "GET").toUpperCase();
-		}
-		resolveBodyKey(body) {
-			if (body == null) return "";
-			if (typeof body === "string") return body;
-			if (body instanceof URLSearchParams) return body.toString();
-		}
-		buildDefaultCacheKey(context) {
-			const method = this.normalizeMethod(context.method);
-			if (method === "GET") return `${method}:${context.url}`;
-			const bodyKey = this.resolveBodyKey(context.body);
-			if (bodyKey === void 0) return void 0;
-			return `${method}:${context.url}#${fnv1a32ToKeyPart(bodyKey)}`;
-		}
-		supportsCacheApi() {
-			return typeof caches !== "undefined" && typeof caches.open === "function";
-		}
-		readCreatedAtMs(response) {
-			const raw = response.headers.get(RESPONSE_CACHE_CREATED_AT_HEADER);
-			if (!raw) return null;
-			const value = Number(raw);
-			return Number.isFinite(value) ? value : null;
-		}
-		ensureVaryByCacheKey(headers) {
-			const varyRaw = headers.get("vary");
-			if (!varyRaw) {
-				headers.set("vary", RESPONSE_CACHE_KEY_HEADER);
-				return;
-			}
-			const varyParts = new Set(varyRaw.split(",").map((part) => part.trim().toLowerCase()));
-			if (!varyParts.has("*") && !varyParts.has(RESPONSE_CACHE_KEY_HEADER)) headers.set("vary", `${varyRaw}, ${RESPONSE_CACHE_KEY_HEADER}`);
-		}
-		toStorableResponse(response, createdAtMs) {
-			const headers = new Headers(response.headers);
-			headers.set(RESPONSE_CACHE_CREATED_AT_HEADER, String(createdAtMs));
-			this.ensureVaryByCacheKey(headers);
-			return new Response(response.body, {
-				status: response.status,
-				statusText: response.statusText,
-				headers
-			});
-		}
-		readMemoryCache(key, nowMs) {
-			const entry = this.memoryCache.get(key);
-			if (!entry) return {};
-			if (entry.expiresAt > nowMs) {
-				this.touchMemoryCache(key, entry);
-				return {
-					fresh: entry.response.clone(),
-					expiresAt: entry.expiresAt
-				};
-			}
-			this.memoryCache.delete(key);
-			return {
-				stale: entry.response.clone(),
-				expiresAt: entry.expiresAt
-			};
-		}
-		touchMemoryCache(key, entry) {
-			this.memoryCache.delete(key);
-			this.memoryCache.set(key, entry);
-		}
-		trimMemoryCache() {
-			while (this.memoryCache.size > MAX_MEMORY_CACHE_ENTRIES) {
-				const first = this.memoryCache.keys().next().value;
-				if (typeof first !== "string") break;
-				this.memoryCache.delete(first);
-			}
-		}
-		writeMemoryCache(key, response, expiresAt) {
-			if (this.memoryCache.has(key)) this.memoryCache.delete(key);
-			this.memoryCache.set(key, {
-				response,
-				expiresAt
-			});
-			this.trimMemoryCache();
-		}
-		async readCacheApi(cacheName, url, cacheKey, ttlMs, nowMs, allowStaleOnError) {
-			try {
-				const request = new Request(url, {
-					method: "GET",
-					headers: { [RESPONSE_CACHE_KEY_HEADER]: cacheKey }
-				});
-				const cache = await caches.open(cacheName);
-				const cached = await cache.match(request);
-				if (!cached) return {};
-				const createdAtMs = this.readCreatedAtMs(cached);
-				if (createdAtMs === null) {
-					await cache.delete(request);
-					return {};
-				}
-				const expiresAt = this.computeExpiresAt(createdAtMs, ttlMs);
-				if (expiresAt > nowMs) return {
-					fresh: cached.clone(),
-					expiresAt
-				};
-				if (!allowStaleOnError) {
-					await cache.delete(request);
-					return {};
-				}
-				const stale = cached.clone();
-				await cache.delete(request);
-				return {
-					stale,
-					expiresAt
-				};
-			} catch {
-				return {};
-			}
-		}
-		async writeCacheApi(cacheName, url, cacheKey, response) {
-			try {
-				const request = new Request(url, {
-					method: "GET",
-					headers: { [RESPONSE_CACHE_KEY_HEADER]: cacheKey }
-				});
-				await (await caches.open(cacheName)).put(request, response);
-			} catch {}
-		}
-	};
-	var responseCacheManager = new ResponseCacheManager();
 	async function executeWithResponseCache(context, options, fetcher) {
 		return responseCacheManager.execute(context, options, fetcher);
 	}
+	var YANDEX_TTL_MS, RESPONSE_CACHE_CREATED_AT_HEADER, RESPONSE_CACHE_KEY_HEADER, DEFAULT_RESPONSE_CACHE_NAME, MAX_MEMORY_CACHE_ENTRIES, VOT_SESSION_STORAGE_KEY, EXPIRY_FIELD_BY_FIELD, VOTSessionStorageCache, InMemoryCacheManager, ResponseCacheManager, responseCacheManager;
+	var init_cacheManager = __esmMin((() => {
+		init_storage();
+		init_utils();
+		YANDEX_TTL_MS = 7200 * 1e3;
+		RESPONSE_CACHE_CREATED_AT_HEADER = "x-vot-cache-created-at";
+		RESPONSE_CACHE_KEY_HEADER = "x-vot-cache-key";
+		DEFAULT_RESPONSE_CACHE_NAME = "vot-http-cache-v1";
+		MAX_MEMORY_CACHE_ENTRIES = 500;
+		VOT_SESSION_STORAGE_KEY = "VOTSession";
+		EXPIRY_FIELD_BY_FIELD = {
+			translation: "translationExpiresAt",
+			subtitles: "subtitlesExpiresAt"
+		};
+		VOTSessionStorageCache = class {
+			constructor(storage = votStorage) {
+				this.storage = storage;
+			}
+			getStorageKey() {
+				return VOT_SESSION_STORAGE_KEY;
+			}
+			async restore(_host, currentSessions = {}) {
+				const storageKey = this.getStorageKey();
+				const rawStoredSession = await this.storage.getRaw(storageKey);
+				const restoredSessions = sanitizeVOTSessions(rawStoredSession);
+				if (!hasSessions(restoredSessions)) {
+					if (rawStoredSession !== void 0) await this.storage.deleteRaw(storageKey);
+					return currentSessions;
+				}
+				return {
+					...currentSessions,
+					...restoredSessions
+				};
+			}
+			async persist(_host, sessions) {
+				const storageKey = this.getStorageKey();
+				const sanitizedSessions = sanitizeVOTSessions(sessions);
+				if (!hasSessions(sanitizedSessions)) {
+					await this.storage.deleteRaw(storageKey);
+					return;
+				}
+				await this.storage.setRaw(storageKey, sanitizedSessions);
+			}
+		};
+		InMemoryCacheManager = class {
+			cache = /* @__PURE__ */ new Map();
+			/**
+			* Clears all cached entries.
+			*
+			* Used when runtime settings change (e.g. proxy mode/host), because cached
+			* translation URLs and especially previous failures can become stale.
+			*/
+			clear() {
+				this.cache.clear();
+			}
+			getTranslation(key) {
+				return this.getValue(key, "translation");
+			}
+			setTranslation(key, translation) {
+				this.setValue(key, "translation", translation);
+			}
+			getSubtitles(key) {
+				return this.getValue(key, "subtitles");
+			}
+			setSubtitles(key, subtitles) {
+				this.setValue(key, "subtitles", subtitles);
+			}
+			deleteSubtitles(key) {
+				this.deleteValue(key, "subtitles");
+			}
+			getValue(key, field) {
+				const now = Date.now();
+				const entry = this.cache.get(key);
+				if (!entry) return void 0;
+				const expiryField = EXPIRY_FIELD_BY_FIELD[field];
+				const expiresAt = entry[expiryField];
+				if (expiresAt !== void 0 && expiresAt <= now) {
+					entry[field] = void 0;
+					entry[expiryField] = void 0;
+					this.evictIfEmpty(key, entry);
+					return;
+				}
+				return entry[field];
+			}
+			setValue(key, field, value) {
+				const now = Date.now();
+				const entry = this.getOrCreateEntry(key);
+				const expiresAt = now + YANDEX_TTL_MS;
+				const expiryField = EXPIRY_FIELD_BY_FIELD[field];
+				entry[field] = value;
+				entry[expiryField] = expiresAt;
+			}
+			deleteValue(key, field) {
+				const entry = this.cache.get(key);
+				if (!entry) return;
+				const expiryField = EXPIRY_FIELD_BY_FIELD[field];
+				entry[field] = void 0;
+				entry[expiryField] = void 0;
+				this.evictIfEmpty(key, entry);
+			}
+			evictIfEmpty(key, entry) {
+				if (entry.translation === void 0 && entry.subtitles === void 0) this.cache.delete(key);
+			}
+			getOrCreateEntry(key) {
+				const existing = this.cache.get(key);
+				if (existing) return existing;
+				const entry = {};
+				this.cache.set(key, entry);
+				return entry;
+			}
+		};
+		ResponseCacheManager = class {
+			memoryCache = /* @__PURE__ */ new Map();
+			inFlightRequests = /* @__PURE__ */ new Map();
+			async execute(context, options, fetcher) {
+				if (!options || options.ttlMs <= 0) return fetcher();
+				const key = options.key ?? this.buildDefaultCacheKey(context);
+				if (!key) return fetcher();
+				const method = this.normalizeMethod(context.method);
+				const ttlMs = options.ttlMs;
+				const cacheName = options.cacheName || DEFAULT_RESPONSE_CACHE_NAME;
+				const useMemory = options.useMemory !== false;
+				const useCacheApi = options.useCacheApi !== false && method === "GET" && this.supportsCacheApi();
+				const cacheApiKey = useCacheApi ? fnv1a32ToKeyPart(key) : "";
+				const dedupe = options.dedupe !== false;
+				const allowStaleOnError = options.allowStaleOnError !== false;
+				const nowMs = Date.now();
+				const staleFallback = await this.readCachedResponse({
+					key,
+					nowMs,
+					useMemory,
+					useCacheApi,
+					cacheName,
+					url: context.url,
+					cacheApiKey,
+					ttlMs,
+					allowStaleOnError
+				});
+				if (staleFallback.fresh) return staleFallback.fresh;
+				if (!dedupe) return await this.runNetworkRequestWithFallback({
+					key,
+					cacheName,
+					url: context.url,
+					cacheApiKey,
+					ttlMs,
+					useMemory,
+					useCacheApi
+				}, fetcher, allowStaleOnError ? staleFallback.stale : void 0);
+				const inFlight = this.inFlightRequests.get(key);
+				if (inFlight !== void 0) return (await inFlight).clone();
+				const networkPromise = this.runNetworkRequestWithFallback({
+					key,
+					cacheName,
+					url: context.url,
+					cacheApiKey,
+					ttlMs,
+					useMemory,
+					useCacheApi
+				}, fetcher, allowStaleOnError ? staleFallback.stale?.clone() : void 0);
+				this.inFlightRequests.set(key, networkPromise);
+				try {
+					return (await networkPromise).clone();
+				} finally {
+					this.inFlightRequests.delete(key);
+				}
+			}
+			async readCachedResponse({ key, nowMs, useMemory, useCacheApi, cacheName, url, cacheApiKey, ttlMs, allowStaleOnError }) {
+				let staleFallback;
+				if (useMemory) {
+					const memoryHit = this.readMemoryCache(key, nowMs);
+					if (memoryHit.fresh) return { fresh: memoryHit.fresh };
+					staleFallback = memoryHit.stale;
+				}
+				if (!useCacheApi) return { stale: staleFallback };
+				const cacheApiHit = await this.readCacheApi(cacheName, url, cacheApiKey, ttlMs, nowMs, allowStaleOnError);
+				if (cacheApiHit.fresh) {
+					if (useMemory) this.writeMemoryCache(key, cacheApiHit.fresh.clone(), cacheApiHit.expiresAt ?? nowMs + ttlMs);
+					return { fresh: cacheApiHit.fresh };
+				}
+				return { stale: staleFallback ?? cacheApiHit.stale };
+			}
+			async runNetworkRequestWithFallback(cacheConfig, fetcher, staleFallback) {
+				try {
+					return await this.runNetworkRequest(cacheConfig, fetcher);
+				} catch (err) {
+					if (staleFallback) return staleFallback;
+					throw err;
+				}
+			}
+			async runNetworkRequest({ key, cacheName, url, cacheApiKey, ttlMs, useMemory, useCacheApi }, fetcher) {
+				const response = await fetcher();
+				if (!response.ok) return response;
+				const createdAtMs = Date.now();
+				const expiresAt = this.computeExpiresAt(createdAtMs, ttlMs);
+				if (useMemory) this.writeMemoryCache(key, response.clone(), expiresAt);
+				if (useCacheApi) {
+					const storable = this.toStorableResponse(response.clone(), createdAtMs);
+					await this.writeCacheApi(cacheName, url, cacheApiKey, storable);
+				}
+				return response;
+			}
+			computeExpiresAt(createdAtMs, ttlMs) {
+				if (!Number.isFinite(ttlMs) || ttlMs <= 0) return createdAtMs;
+				if (ttlMs >= Number.MAX_SAFE_INTEGER - createdAtMs) return Number.MAX_SAFE_INTEGER;
+				return createdAtMs + ttlMs;
+			}
+			normalizeMethod(method) {
+				return (method || "GET").toUpperCase();
+			}
+			resolveBodyKey(body) {
+				if (body == null) return "";
+				if (typeof body === "string") return body;
+				if (body instanceof URLSearchParams) return body.toString();
+			}
+			buildDefaultCacheKey(context) {
+				const method = this.normalizeMethod(context.method);
+				if (method === "GET") return `${method}:${context.url}`;
+				const bodyKey = this.resolveBodyKey(context.body);
+				if (bodyKey === void 0) return void 0;
+				return `${method}:${context.url}#${fnv1a32ToKeyPart(bodyKey)}`;
+			}
+			supportsCacheApi() {
+				return typeof caches !== "undefined" && typeof caches.open === "function";
+			}
+			readCreatedAtMs(response) {
+				const raw = response.headers.get(RESPONSE_CACHE_CREATED_AT_HEADER);
+				if (!raw) return null;
+				const value = Number(raw);
+				return Number.isFinite(value) ? value : null;
+			}
+			ensureVaryByCacheKey(headers) {
+				const varyRaw = headers.get("vary");
+				if (!varyRaw) {
+					headers.set("vary", RESPONSE_CACHE_KEY_HEADER);
+					return;
+				}
+				const varyParts = new Set(varyRaw.split(",").map((part) => part.trim().toLowerCase()));
+				if (!varyParts.has("*") && !varyParts.has(RESPONSE_CACHE_KEY_HEADER)) headers.set("vary", `${varyRaw}, ${RESPONSE_CACHE_KEY_HEADER}`);
+			}
+			toStorableResponse(response, createdAtMs) {
+				const headers = new Headers(response.headers);
+				headers.set(RESPONSE_CACHE_CREATED_AT_HEADER, String(createdAtMs));
+				this.ensureVaryByCacheKey(headers);
+				return new Response(response.body, {
+					status: response.status,
+					statusText: response.statusText,
+					headers
+				});
+			}
+			readMemoryCache(key, nowMs) {
+				const entry = this.memoryCache.get(key);
+				if (!entry) return {};
+				if (entry.expiresAt > nowMs) {
+					this.touchMemoryCache(key, entry);
+					return {
+						fresh: entry.response.clone(),
+						expiresAt: entry.expiresAt
+					};
+				}
+				this.memoryCache.delete(key);
+				return {
+					stale: entry.response.clone(),
+					expiresAt: entry.expiresAt
+				};
+			}
+			touchMemoryCache(key, entry) {
+				this.memoryCache.delete(key);
+				this.memoryCache.set(key, entry);
+			}
+			trimMemoryCache() {
+				while (this.memoryCache.size > MAX_MEMORY_CACHE_ENTRIES) {
+					const first = this.memoryCache.keys().next().value;
+					if (typeof first !== "string") break;
+					this.memoryCache.delete(first);
+				}
+			}
+			writeMemoryCache(key, response, expiresAt) {
+				if (this.memoryCache.has(key)) this.memoryCache.delete(key);
+				this.memoryCache.set(key, {
+					response,
+					expiresAt
+				});
+				this.trimMemoryCache();
+			}
+			async readCacheApi(cacheName, url, cacheKey, ttlMs, nowMs, allowStaleOnError) {
+				try {
+					const request = new Request(url, {
+						method: "GET",
+						headers: { [RESPONSE_CACHE_KEY_HEADER]: cacheKey }
+					});
+					const cache = await caches.open(cacheName);
+					const cached = await cache.match(request);
+					if (!cached) return {};
+					const createdAtMs = this.readCreatedAtMs(cached);
+					if (createdAtMs === null) {
+						await cache.delete(request);
+						return {};
+					}
+					const expiresAt = this.computeExpiresAt(createdAtMs, ttlMs);
+					if (expiresAt > nowMs) return {
+						fresh: cached.clone(),
+						expiresAt
+					};
+					if (!allowStaleOnError) {
+						await cache.delete(request);
+						return {};
+					}
+					const stale = cached.clone();
+					await cache.delete(request);
+					return {
+						stale,
+						expiresAt
+					};
+				} catch {
+					return {};
+				}
+			}
+			async writeCacheApi(cacheName, url, cacheKey, response) {
+				try {
+					const request = new Request(url, {
+						method: "GET",
+						headers: { [RESPONSE_CACHE_KEY_HEADER]: cacheKey }
+					});
+					await (await caches.open(cacheName)).put(request, response);
+				} catch {}
+			}
+		};
+		responseCacheManager = new ResponseCacheManager();
+	}));
 	//#endregion
 	//#region src/utils/errors.ts
 	/**
@@ -8204,9 +7458,9 @@ var vot = (function(exports) {
 			return err;
 		}
 	}
+	var init_errors = __esmMin((() => {}));
 	//#endregion
 	//#region src/utils/abort.ts
-	var NEVER_ABORTED_SIGNAL = new AbortController().signal;
 	/**
 	* Throws a canonical AbortError if the provided signal is aborted.
 	*
@@ -8264,7 +7518,14 @@ var vot = (function(exports) {
 			}
 		};
 	}
-	var browserInfo = (/* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
+	var NEVER_ABORTED_SIGNAL;
+	var init_abort = __esmMin((() => {
+		init_errors();
+		NEVER_ABORTED_SIGNAL = new AbortController().signal;
+	}));
+	//#endregion
+	//#region node_modules/bowser/es5.js
+	var require_es5 = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		(function(e, t) {
 			"object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.bowser = t() : e.bowser = t();
 		})(exports, (function() {
@@ -9978,14 +9239,16 @@ var vot = (function(exports) {
 				}
 			});
 		}));
-	})))(), 1)).default.getParser(globalThis.navigator.userAgent).getResult();
+	}));
+	//#endregion
+	//#region src/utils/browserInfo.ts
+	var import_es5, browserInfo;
+	var init_browserInfo = __esmMin((() => {
+		import_es5 = /* @__PURE__ */ __toESM(require_es5(), 1);
+		browserInfo = import_es5.default.getParser(globalThis.navigator.userAgent).getResult();
+	}));
 	//#endregion
 	//#region src/utils/gm.ts
-	var YANDEX_API_HOST = "api.browser.yandex.ru";
-	var GOOGLEVIDEO_HOST_SUFFIX = "googlevideo.com";
-	var HEADER_LINE_RE = /^([\w-]+):\s*(.+)$/;
-	var URL_SCHEME_RE = /^[a-zA-Z][a-zA-Z\d+.-]*:/;
-	var scriptHandler = typeof GM_info === "undefined" ? void 0 : GM_info?.scriptHandler;
 	function getCallbackGmXhr() {
 		const gmXhr = typeof GM_xmlhttpRequest === "undefined" ? globalThis.GM_xmlhttpRequest : GM_xmlhttpRequest;
 		return typeof gmXhr === "function" ? gmXhr : void 0;
@@ -9998,9 +9261,6 @@ var vot = (function(exports) {
 	function hasSupportedGmXhr() {
 		return !!(getCallbackGmXhr() || getPromiseGmXhr());
 	}
-	var isProxyOnlyExtension = !(typeof IS_EXTENSION !== "undefined" && IS_EXTENSION) && (browserInfo.browser?.name === "Safari" || !["Tampermonkey", "Violentmonkey"].includes(scriptHandler));
-	var isSupportGM4 = typeof GM !== "undefined" || globalThis.GM !== void 0;
-	var isSupportGMXhr = hasSupportedGmXhr();
 	function getRequestHost(url) {
 		const normalizedUrl = url.trim();
 		try {
@@ -10301,40 +9561,25 @@ var vot = (function(exports) {
 			body: fetchOptions.body
 		}, responseCache, performRequest);
 	}
+	var YANDEX_API_HOST, GOOGLEVIDEO_HOST_SUFFIX, HEADER_LINE_RE, URL_SCHEME_RE, scriptHandler, isProxyOnlyExtension, isSupportGM4, isSupportGMXhr;
+	var init_gm = __esmMin((() => {
+		init_cacheManager();
+		init_abort();
+		init_browserInfo();
+		init_debug();
+		init_errors();
+		init_utils();
+		YANDEX_API_HOST = "api.browser.yandex.ru";
+		GOOGLEVIDEO_HOST_SUFFIX = "googlevideo.com";
+		HEADER_LINE_RE = /^([\w-]+):\s*(.+)$/;
+		URL_SCHEME_RE = /^[a-zA-Z][a-zA-Z\d+.-]*:/;
+		scriptHandler = typeof GM_info === "undefined" ? void 0 : GM_info?.scriptHandler;
+		isProxyOnlyExtension = !(typeof IS_EXTENSION !== "undefined" && IS_EXTENSION) && (browserInfo.browser?.name === "Safari" || !["Tampermonkey", "Violentmonkey"].includes(scriptHandler));
+		isSupportGM4 = typeof GM !== "undefined" || globalThis.GM !== void 0;
+		isSupportGMXhr = hasSupportedGmXhr();
+	}));
 	//#endregion
 	//#region src/utils/storage.ts
-	var compatRules = Object.entries({
-		numToBool: [
-			["autoTranslate"],
-			["dontTranslateYourLang", "enabledDontTranslateLanguages"],
-			["autoSetVolumeYandexStyle", "enabledAutoVolume"],
-			["showVideoSlider"],
-			["syncVolume"],
-			["downloadWithName"],
-			["sendNotifyOnComplete"],
-			["highlightWords"],
-			["onlyBypassMediaCSP"],
-			["newAudioPlayer"],
-			["showPiPButton"],
-			["translateAPIErrors"],
-			["audioBooster"],
-			["useNewModel", "useLivelyVoice"]
-		],
-		number: [["autoVolume"]],
-		array: [["dontTranslateLanguage", "dontTranslateLanguages"]],
-		string: [
-			["hotkeyButton", "translationHotkey"],
-			["locale-lang-override", "localeLangOverride"],
-			["locale-lang", "localeLang"]
-		]
-	}).flatMap(([category, entries]) => entries.map(([oldKey, maybeNewKey]) => ({
-		category,
-		oldKey,
-		newKey: maybeNewKey ?? oldKey,
-		shouldDeleteOldKey: Boolean(maybeNewKey)
-	})));
-	var compatRuleByOldKey = new Map(compatRules.map((rule) => [rule.oldKey, rule]));
-	var compatKeysToRead = Array.from(new Set(compatRules.map((rule) => rule.oldKey)));
 	function createUndefinedDefaults(keys) {
 		const defaults = {};
 		for (const key of keys) defaults[key] = void 0;
@@ -10397,190 +9642,229 @@ var vot = (function(exports) {
 			compatVersion: actualCompatVersion
 		};
 	}
-	var VOTStorage = class {
-		support = null;
-		localStorageListeners = /* @__PURE__ */ new Map();
-		shouldUseSyntheticListeners(support) {
-			return !support.promiseAddValueChangeListener && !support.legacyAddValueChangeListener;
-		}
-		getGMRuntime() {
-			if (typeof GM !== "undefined") return GM;
-			return globalThis.GM;
-		}
-		resolveSupport() {
-			if (this.support) return this.support;
-			const gm = this.getGMRuntime();
-			const support = {
-				legacyGet: typeof GM_getValue === "function",
-				legacySet: typeof GM_setValue === "function",
-				legacyDelete: typeof GM_deleteValue === "function",
-				legacyList: typeof GM_listValues === "function",
-				legacyAddValueChangeListener: typeof globalThis.GM_addValueChangeListener === "function",
-				legacyRemoveValueChangeListener: typeof globalThis.GM_removeValueChangeListener === "function",
-				promiseGet: isSupportGM4 && typeof gm?.getValue === "function",
-				promiseGetValues: isSupportGM4 && typeof gm?.getValues === "function",
-				promiseSet: isSupportGM4 && typeof gm?.setValue === "function",
-				promiseDelete: isSupportGM4 && typeof gm?.deleteValue === "function",
-				promiseList: isSupportGM4 && typeof gm?.listValues === "function",
-				promiseAddValueChangeListener: isSupportGM4 && typeof gm?.addValueChangeListener === "function",
-				promiseRemoveValueChangeListener: isSupportGM4 && typeof gm?.removeValueChangeListener === "function"
-			};
-			this.support = support;
-			debug.log(`[VOT Storage] GM Promises: ${support.promiseGet} | GM legacy: ${support.legacyGet}`);
-			return support;
-		}
-		/**
-		* Check if storage type is LocalStorage
-		*/
-		get isSupportOnlyLS() {
-			const support = this.resolveSupport();
-			return !support.legacyGet && !support.legacySet && !support.legacyDelete && !support.legacyList && !support.promiseGet && !support.promiseGetValues && !support.promiseSet && !support.promiseDelete && !support.promiseList;
-		}
-		syncGetByName(name, def, support) {
-			if (support.legacyGet) return GM_getValue(name, def);
-			const val = globalThis.localStorage.getItem(name);
-			if (val === null) return def;
-			try {
-				return JSON.parse(val);
-			} catch {
-				return def;
+	var compatRules, compatRuleByOldKey, compatKeysToRead, VOTStorage, VOT_STORAGE_GLOBAL_KEY, votStorage;
+	var init_storage = __esmMin((() => {
+		init_config();
+		init_storage$1();
+		init_debug();
+		init_gm();
+		compatRules = Object.entries({
+			numToBool: [
+				["autoTranslate"],
+				["dontTranslateYourLang", "enabledDontTranslateLanguages"],
+				["autoSetVolumeYandexStyle", "enabledAutoVolume"],
+				["showVideoSlider"],
+				["syncVolume"],
+				["downloadWithName"],
+				["sendNotifyOnComplete"],
+				["highlightWords"],
+				["onlyBypassMediaCSP"],
+				["newAudioPlayer"],
+				["showPiPButton"],
+				["translateAPIErrors"],
+				["audioBooster"],
+				["useNewModel", "useLivelyVoice"]
+			],
+			number: [["autoVolume"]],
+			array: [["dontTranslateLanguage", "dontTranslateLanguages"]],
+			string: [
+				["hotkeyButton", "translationHotkey"],
+				["locale-lang-override", "localeLangOverride"],
+				["locale-lang", "localeLang"]
+			]
+		}).flatMap(([category, entries]) => entries.map(([oldKey, maybeNewKey]) => ({
+			category,
+			oldKey,
+			newKey: maybeNewKey ?? oldKey,
+			shouldDeleteOldKey: Boolean(maybeNewKey)
+		})));
+		compatRuleByOldKey = new Map(compatRules.map((rule) => [rule.oldKey, rule]));
+		compatKeysToRead = Array.from(new Set(compatRules.map((rule) => rule.oldKey)));
+		VOTStorage = class {
+			support = null;
+			localStorageListeners = /* @__PURE__ */ new Map();
+			shouldUseSyntheticListeners(support) {
+				return !support.promiseAddValueChangeListener && !support.legacyAddValueChangeListener;
 			}
-		}
-		async getRaw(name, def) {
-			const support = this.resolveSupport();
-			if (support.promiseGet && GM.getValue) return await GM.getValue(name, def);
-			return this.syncGetByName(name, def, support);
-		}
-		async get(name, def) {
-			return this.getRaw(name, def);
-		}
-		async getValues(data) {
-			const support = this.resolveSupport();
-			if (support.promiseGetValues && GM.getValues) return await GM.getValues(data);
-			const entries = Object.entries(data);
-			if (support.promiseGet && GM.getValue) {
-				const values = await Promise.all(entries.map(async ([key, value]) => {
-					return [key, await GM.getValue(key, value)];
-				}));
-				return Object.fromEntries(values);
+			getGMRuntime() {
+				if (typeof GM !== "undefined") return GM;
+				return globalThis.GM;
 			}
-			return Object.fromEntries(entries.map(([key, value]) => [key, this.syncGetByName(key, value, support)]));
-		}
-		syncSetByName(name, value, support) {
-			if (support.legacySet) return GM_setValue(name, value);
-			return globalThis.localStorage.setItem(name, JSON.stringify(value));
-		}
-		async setRaw(name, value) {
-			const support = this.resolveSupport();
-			const storageKey = name;
-			const shouldNotify = this.shouldUseSyntheticListeners(support);
-			const oldValue = shouldNotify ? await this.getRaw(name) : void 0;
-			if (support.promiseSet && GM.setValue) {
-				await GM.setValue(name, value);
-				if (shouldNotify) this.notifyLocalStorageListeners(storageKey, oldValue, value, false);
-				return;
+			resolveSupport() {
+				if (this.support) return this.support;
+				const gm = this.getGMRuntime();
+				const support = {
+					legacyGet: typeof GM_getValue === "function",
+					legacySet: typeof GM_setValue === "function",
+					legacyDelete: typeof GM_deleteValue === "function",
+					legacyList: typeof GM_listValues === "function",
+					legacyAddValueChangeListener: typeof globalThis.GM_addValueChangeListener === "function",
+					legacyRemoveValueChangeListener: typeof globalThis.GM_removeValueChangeListener === "function",
+					promiseGet: isSupportGM4 && typeof gm?.getValue === "function",
+					promiseGetValues: isSupportGM4 && typeof gm?.getValues === "function",
+					promiseSet: isSupportGM4 && typeof gm?.setValue === "function",
+					promiseDelete: isSupportGM4 && typeof gm?.deleteValue === "function",
+					promiseList: isSupportGM4 && typeof gm?.listValues === "function",
+					promiseAddValueChangeListener: isSupportGM4 && typeof gm?.addValueChangeListener === "function",
+					promiseRemoveValueChangeListener: isSupportGM4 && typeof gm?.removeValueChangeListener === "function"
+				};
+				this.support = support;
+				debug.log(`[VOT Storage] GM Promises: ${support.promiseGet} | GM legacy: ${support.legacyGet}`);
+				return support;
 			}
-			const setResult = this.syncSetByName(name, value, support);
-			this.notifyLocalStorageListeners(storageKey, oldValue, value, false);
-			return setResult;
-		}
-		async set(name, value) {
-			return this.setRaw(name, value);
-		}
-		syncDeleteByName(name, support) {
-			if (support.legacyDelete) return GM_deleteValue(name);
-			return globalThis.localStorage.removeItem(name);
-		}
-		async deleteRaw(name) {
-			const support = this.resolveSupport();
-			const storageKey = name;
-			const shouldNotify = this.shouldUseSyntheticListeners(support);
-			const oldValue = shouldNotify ? await this.getRaw(name) : void 0;
-			if (support.promiseDelete && GM.deleteValue) {
-				await GM.deleteValue(name);
-				if (shouldNotify) this.notifyLocalStorageListeners(storageKey, oldValue, void 0, false);
-				return;
+			/**
+			* Check if storage type is LocalStorage
+			*/
+			get isSupportOnlyLS() {
+				const support = this.resolveSupport();
+				return !support.legacyGet && !support.legacySet && !support.legacyDelete && !support.legacyList && !support.promiseGet && !support.promiseGetValues && !support.promiseSet && !support.promiseDelete && !support.promiseList;
 			}
-			const deleteResult = this.syncDeleteByName(name, support);
-			this.notifyLocalStorageListeners(storageKey, oldValue, void 0, false);
-			return deleteResult;
-		}
-		async delete(name) {
-			return this.deleteRaw(name);
-		}
-		addValueChangeListener(name, listener) {
-			const support = this.resolveSupport();
-			const gm = this.getGMRuntime();
-			if (support.promiseAddValueChangeListener) {
-				const addListener = gm?.addValueChangeListener;
-				const removeListener = support.promiseRemoveValueChangeListener ? gm?.removeValueChangeListener : void 0;
-				if (typeof addListener === "function") {
-					const listenerId = addListener(name, this.createTypedListener(listener));
-					return () => {
-						if (typeof removeListener === "function") removeListener(listenerId);
-					};
+			syncGetByName(name, def, support) {
+				if (support.legacyGet) return GM_getValue(name, def);
+				const val = globalThis.localStorage.getItem(name);
+				if (val === null) return def;
+				try {
+					return JSON.parse(val);
+				} catch {
+					return def;
 				}
 			}
-			if (support.legacyAddValueChangeListener) {
-				const addListener = globalThis.GM_addValueChangeListener;
-				const removeListener = support.legacyRemoveValueChangeListener ? globalThis.GM_removeValueChangeListener : void 0;
-				if (typeof addListener === "function") {
-					const listenerId = addListener(name, this.createTypedListener(listener));
-					return () => {
-						if (typeof removeListener === "function") removeListener(listenerId);
-					};
-				}
+			async getRaw(name, def) {
+				const support = this.resolveSupport();
+				if (support.promiseGet && GM.getValue) return await GM.getValue(name, def);
+				return this.syncGetByName(name, def, support);
 			}
-			const listeners = this.getLocalStorageListeners(name);
-			const typedListener = listener;
-			listeners.add(typedListener);
-			const onStorage = (event) => {
-				if (event.storageArea !== globalThis.localStorage || event.key !== name) return;
-				typedListener(name, parseStoredValue(event.oldValue), parseStoredValue(event.newValue), true);
-			};
-			globalThis.addEventListener("storage", onStorage);
-			return () => {
-				listeners.delete(typedListener);
-				if (listeners.size === 0) this.localStorageListeners.delete(name);
-				globalThis.removeEventListener("storage", onStorage);
-			};
-		}
-		createTypedListener(listener) {
-			return (key, oldValue, newValue, remote) => {
-				listener(key, oldValue, newValue, remote);
-			};
-		}
-		getLocalStorageListeners(name) {
-			const existing = this.localStorageListeners.get(name);
-			if (existing) return existing;
-			const created = /* @__PURE__ */ new Set();
-			this.localStorageListeners.set(name, created);
+			async get(name, def) {
+				return this.getRaw(name, def);
+			}
+			async getValues(data) {
+				const support = this.resolveSupport();
+				if (support.promiseGetValues && GM.getValues) return await GM.getValues(data);
+				const entries = Object.entries(data);
+				if (support.promiseGet && GM.getValue) {
+					const values = await Promise.all(entries.map(async ([key, value]) => {
+						return [key, await GM.getValue(key, value)];
+					}));
+					return Object.fromEntries(values);
+				}
+				return Object.fromEntries(entries.map(([key, value]) => [key, this.syncGetByName(key, value, support)]));
+			}
+			syncSetByName(name, value, support) {
+				if (support.legacySet) return GM_setValue(name, value);
+				return globalThis.localStorage.setItem(name, JSON.stringify(value));
+			}
+			async setRaw(name, value) {
+				const support = this.resolveSupport();
+				const storageKey = name;
+				const shouldNotify = this.shouldUseSyntheticListeners(support);
+				const oldValue = shouldNotify ? await this.getRaw(name) : void 0;
+				if (support.promiseSet && GM.setValue) {
+					await GM.setValue(name, value);
+					if (shouldNotify) this.notifyLocalStorageListeners(storageKey, oldValue, value, false);
+					return;
+				}
+				const setResult = this.syncSetByName(name, value, support);
+				this.notifyLocalStorageListeners(storageKey, oldValue, value, false);
+				return setResult;
+			}
+			async set(name, value) {
+				return this.setRaw(name, value);
+			}
+			syncDeleteByName(name, support) {
+				if (support.legacyDelete) return GM_deleteValue(name);
+				return globalThis.localStorage.removeItem(name);
+			}
+			async deleteRaw(name) {
+				const support = this.resolveSupport();
+				const storageKey = name;
+				const shouldNotify = this.shouldUseSyntheticListeners(support);
+				const oldValue = shouldNotify ? await this.getRaw(name) : void 0;
+				if (support.promiseDelete && GM.deleteValue) {
+					await GM.deleteValue(name);
+					if (shouldNotify) this.notifyLocalStorageListeners(storageKey, oldValue, void 0, false);
+					return;
+				}
+				const deleteResult = this.syncDeleteByName(name, support);
+				this.notifyLocalStorageListeners(storageKey, oldValue, void 0, false);
+				return deleteResult;
+			}
+			async delete(name) {
+				return this.deleteRaw(name);
+			}
+			addValueChangeListener(name, listener) {
+				const support = this.resolveSupport();
+				const gm = this.getGMRuntime();
+				if (support.promiseAddValueChangeListener) {
+					const addListener = gm?.addValueChangeListener;
+					const removeListener = support.promiseRemoveValueChangeListener ? gm?.removeValueChangeListener : void 0;
+					if (typeof addListener === "function") {
+						const listenerId = addListener(name, this.createTypedListener(listener));
+						return () => {
+							if (typeof removeListener === "function") removeListener(listenerId);
+						};
+					}
+				}
+				if (support.legacyAddValueChangeListener) {
+					const addListener = globalThis.GM_addValueChangeListener;
+					const removeListener = support.legacyRemoveValueChangeListener ? globalThis.GM_removeValueChangeListener : void 0;
+					if (typeof addListener === "function") {
+						const listenerId = addListener(name, this.createTypedListener(listener));
+						return () => {
+							if (typeof removeListener === "function") removeListener(listenerId);
+						};
+					}
+				}
+				const listeners = this.getLocalStorageListeners(name);
+				const typedListener = listener;
+				listeners.add(typedListener);
+				const onStorage = (event) => {
+					if (event.storageArea !== globalThis.localStorage || event.key !== name) return;
+					typedListener(name, parseStoredValue(event.oldValue), parseStoredValue(event.newValue), true);
+				};
+				globalThis.addEventListener("storage", onStorage);
+				return () => {
+					listeners.delete(typedListener);
+					if (listeners.size === 0) this.localStorageListeners.delete(name);
+					globalThis.removeEventListener("storage", onStorage);
+				};
+			}
+			createTypedListener(listener) {
+				return (key, oldValue, newValue, remote) => {
+					listener(key, oldValue, newValue, remote);
+				};
+			}
+			getLocalStorageListeners(name) {
+				const existing = this.localStorageListeners.get(name);
+				if (existing) return existing;
+				const created = /* @__PURE__ */ new Set();
+				this.localStorageListeners.set(name, created);
+				return created;
+			}
+			notifyLocalStorageListeners(name, oldValue, newValue, remote) {
+				const listeners = this.localStorageListeners.get(name);
+				if (!listeners || listeners.size === 0) return;
+				for (const listener of listeners) listener(name, oldValue, newValue, remote);
+			}
+			syncList(support) {
+				if (support.legacyList) return GM_listValues();
+				return storageKeys;
+			}
+			async list() {
+				const support = this.resolveSupport();
+				if (support.promiseList && GM.listValues) return await GM.listValues();
+				return this.syncList(support);
+			}
+		};
+		VOT_STORAGE_GLOBAL_KEY = "__VOT_STORAGE_SINGLETON__";
+		votStorage = (() => {
+			const scope = globalThis;
+			const existing = scope[VOT_STORAGE_GLOBAL_KEY];
+			if (existing instanceof VOTStorage) return existing;
+			const created = new VOTStorage();
+			scope[VOT_STORAGE_GLOBAL_KEY] = created;
 			return created;
-		}
-		notifyLocalStorageListeners(name, oldValue, newValue, remote) {
-			const listeners = this.localStorageListeners.get(name);
-			if (!listeners || listeners.size === 0) return;
-			for (const listener of listeners) listener(name, oldValue, newValue, remote);
-		}
-		syncList(support) {
-			if (support.legacyList) return GM_listValues();
-			return storageKeys;
-		}
-		async list() {
-			const support = this.resolveSupport();
-			if (support.promiseList && GM.listValues) return await GM.listValues();
-			return this.syncList(support);
-		}
-	};
-	var VOT_STORAGE_GLOBAL_KEY = "__VOT_STORAGE_SINGLETON__";
-	var votStorage = (() => {
-		const scope = globalThis;
-		const existing = scope[VOT_STORAGE_GLOBAL_KEY];
-		if (existing instanceof VOTStorage) return existing;
-		const created = new VOTStorage();
-		scope[VOT_STORAGE_GLOBAL_KEY] = created;
-		return created;
-	})();
+		})();
+	}));
 	//#endregion
 	//#region src/core/authRefreshMessage.ts
 	var AUTH_REFRESH_MESSAGE_SOURCE = "vot-auth";
@@ -10602,6 +9886,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/core/auth.ts
+	init_storage();
 	function getProfilePayload() {
 		const payload = globalThis._userData;
 		if (!payload || typeof payload !== "object") return null;
@@ -10881,6 +10166,10 @@ var vot = (function(exports) {
 		PressTheKeyCombination: "Press the key combination...",
 		VOTUseAudioDownload: "Use audio download",
 		VOTUseAudioDownloadWarning: "Disabling audio downloads may affect the functionality of the extension",
+		VOTDownloadVideoMixed: "Download video with translation",
+		VOTDownloadVideoMixedError: "Failed to create video with mixed audio",
+		VOTDownloadVideoMixedNotSupported: "Video mixing not supported in this browser",
+		VOTFailedGetVideo: "Could not get video URL",
 		VOTAccountRequired: "You need to log in to use this feature",
 		VOTMyAccount: "My account",
 		VOTLogin: "Login",
@@ -10893,6 +10182,12 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/localization/localizationProvider.ts
+	init_config();
+	init_debug();
+	init_gm();
+	init_localization();
+	init_storage();
+	init_utils();
 	var LOCALE_STORAGE_KEYS = [
 		"localePhrases",
 		"localeLang",
@@ -11204,6 +10499,8 @@ var vot = (function(exports) {
 	var isIframe = () => globalThis.self !== globalThis.top;
 	//#endregion
 	//#region src/bootstrap/runtimeActivation.ts
+	init_config();
+	init_debug();
 	var runtimeActivated = false;
 	var runtimeActivationPromise = null;
 	async function ensureRuntimeActivated(reason, logBootstrap) {
@@ -11887,6 +11184,7 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/audioDownloader/ytAudio/strategy.ts
+	init_gm();
 	var DEFAULT_YT_AUDIO_QUALITY = "bestefficiency";
 	var DEFAULT_FETCH_TIMEOUT_MS = 3e4;
 	function assertValidChunkSize(chunkSize) {
@@ -11946,6 +11244,7 @@ var vot = (function(exports) {
 	var strategies = { [YT_AUDIO_STRATEGY]: getAudioFromYtAudio };
 	//#endregion
 	//#region src/audioDownloader/index.ts
+	init_debug();
 	function assertValidMediaPartsLength(mediaPartsLength) {
 		if (!Number.isInteger(mediaPartsLength) || mediaPartsLength < 1) throw new Error("Audio downloader. Invalid media parts length");
 	}
@@ -12143,6 +11442,9 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/core/translationHandler.ts
+	init_abort();
+	init_debug();
+	init_errors();
 	function asVotClientErrorShape(value) {
 		if (!value || typeof value !== "object") return null;
 		const candidate = value;
@@ -12556,6 +11858,7 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/core/translationOrchestrator.ts
+	init_debug();
 	var TranslationOrchestrator = class {
 		state = { status: "idle" };
 		deps;
@@ -12629,6 +11932,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/core/videoLifecycleController.ts
+	init_debug();
 	var VideoLifecycleController = class {
 		host;
 		lifecycleGeneration = 0;
@@ -12914,6 +12218,9 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/utils/translateApis.ts
+	init_config();
+	init_gm();
+	init_storage();
 	var SETTINGS_CACHE_TTL_MS = 5e3;
 	var IMMUTABLE_API_CACHE_TTL_MS = Number.MAX_SAFE_INTEGER;
 	var cachedTranslationService = null;
@@ -13107,6 +12414,9 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/core/videoManager.ts
+	init_consts();
+	init_debug();
+	init_gm();
 	var FORCED_DETECTED_LANGUAGE_BY_HOST = {
 		rutube: "ru",
 		"ok.ru": "ru",
@@ -13852,6 +13162,7 @@ var vot = (function(exports) {
 	var triggers = ["hover", "click"];
 	//#endregion
 	//#region src/ui/components/tooltip.ts
+	init_utils();
 	var Tooltip = class Tooltip {
 		/** Whether tooltip element is currently mounted. */
 		showed = false;
@@ -14469,6 +13780,8 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/subtitles/fonts.ts
+	init_debug();
+	init_gm();
 	var GOOGLE_SUBTITLE_FONT_PREFIX = "google:";
 	var GOOGLE_FONTS_CSS_API_URL = "https://fonts.googleapis.com/css2";
 	var GOOGLE_FONTS_METADATA_URL = "https://fonts.google.com/metadata/fonts";
@@ -15209,6 +14522,8 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/subtitles/widget.ts
+	init_config();
+	init_storage();
 	var WRAP_WIDTH_GUARD_PX = 8;
 	var WRAP_WIDTH_GUARD_RATIO = .97;
 	var MIN_EFFECTIVE_WRAP_WIDTH_PX = 24;
@@ -17525,6 +16840,7 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/utils/download.ts
+	init_utils();
 	function toUint32BE(value) {
 		return new Uint8Array([
 			value >>> 24 & 255,
@@ -17690,6 +17006,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/ui/translationCommands.ts
+	init_debug();
 	function isAbortError(error) {
 		return error instanceof Error && error.name === "AbortError";
 	}
@@ -17966,15 +17283,15 @@ var vot = (function(exports) {
 		onClick = new EventImpl();
 		events = { click: this.onClick };
 		_progress = 0;
-		constructor() {
-			const elements = this.createElements();
+		constructor(ariaLabel) {
+			const elements = this.createElements(ariaLabel);
 			this.button = elements.button;
 			this.loaderMain = elements.loaderMain;
 			this.loaderCircle = elements.loaderCircle;
 			this.progress = 0;
 		}
-		createElements() {
-			const button = UI.createIconButton(DOWNLOAD_ICON, { ariaLabel: "Download translation" });
+		createElements(ariaLabel) {
+			const button = UI.createIconButton(DOWNLOAD_ICON, { ariaLabel: ariaLabel || "Download translation" });
 			const loaderMain = button.querySelector(".vot-loader-main");
 			if (!loaderMain) throw new Error("[VOT] DownloadButton loader main element not found");
 			const loaderCircle = button.querySelector(".vot-loader-progress");
@@ -19099,6 +18416,10 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/ui/views/overlay.ts
+	init_consts();
+	init_config();
+	init_storage();
+	init_utils();
 	var OverlayView = class OverlayView {
 		static BIG_CONTAINER_WIDTH_PX = 550;
 		resizeObserver;
@@ -19142,6 +18463,7 @@ var vot = (function(exports) {
 		votMenu;
 		downloadTranslationButton;
 		downloadSubtitlesButton;
+		downloadVideoMixedButton;
 		openSettingsButton;
 		languagePairSelect;
 		subtitlesSelectLabel;
@@ -19286,10 +18608,12 @@ var vot = (function(exports) {
 			this.votButton.menuButton.setAttribute("aria-controls", this.votMenu.container.id);
 			this.downloadTranslationButton = new DownloadButton();
 			this.downloadTranslationButton.hidden = true;
+			this.downloadVideoMixedButton = new DownloadButton("Download video with translation");
+			this.downloadVideoMixedButton.hidden = true;
 			this.downloadSubtitlesButton = UI.createIconButton(SUBTITLES_ICON, { ariaLabel: "Download subtitles" });
 			this.downloadSubtitlesButton.hidden = true;
 			this.openSettingsButton = UI.createIconButton(SETTINGS_ICON, { ariaLabel: localizationProvider.get("VOTSettings") });
-			this.votMenu.headerContainer.append(this.downloadTranslationButton.button, this.downloadSubtitlesButton, this.openSettingsButton);
+			this.votMenu.headerContainer.append(this.downloadTranslationButton.button, this.downloadVideoMixedButton.button, this.downloadSubtitlesButton, this.openSettingsButton);
 			const detectedLanguage = this.videoHandler?.videoData?.detectedLanguage ?? "en";
 			const responseLanguage = this.data.responseLanguage ?? "ru";
 			this.languagePairSelect = new LanguagePairSelect({
@@ -19410,6 +18734,9 @@ var vot = (function(exports) {
 			}, { signal });
 			this.downloadTranslationButton.addEventListener("click", () => {
 				this.events["click:downloadTranslation"].dispatch();
+			});
+			this.downloadVideoMixedButton.addEventListener("click", () => {
+				this.events["click:downloadVideoMixed"].dispatch();
 			});
 			this.downloadSubtitlesButton.addEventListener("click", () => {
 				this.events["click:downloadSubtitles"].dispatch();
@@ -19657,6 +18984,7 @@ var vot = (function(exports) {
 	];
 	//#endregion
 	//#region src/utils/environment.ts
+	init_browserInfo();
 	var UNKNOWN_VALUE = "unknown";
 	var joinParts = (...parts) => {
 		return parts.filter(Boolean).join(" ").trim() || UNKNOWN_VALUE;
@@ -19681,6 +19009,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/ui/components/accountButton.ts
+	init_config();
 	var AccountButton = class {
 		container;
 		accountWrapper;
@@ -20081,6 +19410,13 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/ui/views/settings.ts
+	init_consts();
+	init_config();
+	init_storage$1();
+	init_debug();
+	init_gm();
+	init_storage();
+	init_utils();
 	var SETTINGS_EVENT_KEYS = [
 		"click:bugReport",
 		"click:resetSettings",
@@ -20169,12 +19505,6 @@ var vot = (function(exports) {
 		onAuthRefreshMessage = (event) => {
 			if (!isAuthRefreshMessage(event.data)) return;
 			this.refreshAccountFromStorage();
-		};
-		refreshAccountOnFocus = () => {
-			this.refreshAccountFromStorage();
-		};
-		refreshAccountOnVisibilityChange = () => {
-			if (document.visibilityState === "visible") this.refreshAccountFromStorage();
 		};
 		dialog;
 		accountButton;
@@ -20819,8 +20149,6 @@ var vot = (function(exports) {
 		initUIEvents() {
 			if (!this.isInitialized()) throw new Error("[VOT] SettingsView isn't initialized");
 			globalThis.addEventListener("message", this.onAuthRefreshMessage);
-			globalThis.addEventListener("focus", this.refreshAccountOnFocus);
-			document.addEventListener("visibilitychange", this.refreshAccountOnVisibilityChange);
 			this.accountButton.addEventListener("click", async () => {
 				if (votStorage.isSupportOnlyLS) return;
 				if (this.accountButton.loggedIn) {
@@ -21228,8 +20556,6 @@ var vot = (function(exports) {
 			this.accountStorageListenerCleanup?.();
 			this.accountStorageListenerCleanup = void 0;
 			globalThis.removeEventListener("message", this.onAuthRefreshMessage);
-			globalThis.removeEventListener("focus", this.refreshAccountOnFocus);
-			document.removeEventListener("visibilitychange", this.refreshAccountOnVisibilityChange);
 			this.flushStoragePersists();
 			for (const event of Object.values(this.events)) event.clear();
 		}
@@ -21260,7 +20586,209 @@ var vot = (function(exports) {
 		}
 	};
 	//#endregion
+	//#region src/videoDownloadMixer.ts
+	var videoDownloadMixer_exports = /* @__PURE__ */ __exportAll({
+		downloadVideoWithMixedAudio: () => downloadVideoWithMixedAudio,
+		isVideoMixingSupported: () => isVideoMixingSupported
+	});
+	/**
+	* Downloads file with progress tracking
+	*/
+	async function downloadWithProgress(url, onProgress) {
+		const response = await GM_fetch(url, { timeout: 0 });
+		if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+		const contentLength = response.headers.get("content-length");
+		const total = contentLength ? parseInt(contentLength, 10) : 0;
+		if (!response.body || !total) return await (await response.blob()).arrayBuffer();
+		const reader = response.body.getReader();
+		const chunks = [];
+		let received = 0;
+		while (true) {
+			const { done, value } = await reader.read();
+			if (done) break;
+			chunks.push(value);
+			received += value.length;
+			onProgress(total > 0 ? received / total : 0);
+		}
+		const allChunks = new Uint8Array(received);
+		let position = 0;
+		for (const chunk of chunks) {
+			allChunks.set(chunk, position);
+			position += chunk.length;
+		}
+		return allChunks.buffer;
+	}
+	/**
+	* Decodes audio data from ArrayBuffer
+	*/
+	async function decodeAudioData(audioContext, arrayBuffer) {
+		try {
+			return await audioContext.decodeAudioData(arrayBuffer);
+		} catch (err) {
+			return new Promise((resolve, reject) => {
+				const onError = () => reject(/* @__PURE__ */ new Error("Failed to decode audio"));
+				audioContext.decodeAudioData(arrayBuffer.slice(0), resolve, onError);
+			});
+		}
+	}
+	/**
+	* Mixes two audio buffers with specified volumes
+	*/
+	function mixAudioBuffers(ctx, original, translation, originalVolume, translationVolume) {
+		const duration = Math.max(original.duration, translation.duration);
+		const sampleRate = ctx.sampleRate;
+		const numberOfChannels = Math.max(original.numberOfChannels, translation.numberOfChannels);
+		const output = ctx.createBuffer(numberOfChannels, Math.ceil(duration * sampleRate), sampleRate);
+		for (let channel = 0; channel < numberOfChannels; channel++) {
+			const outputData = output.getChannelData(channel);
+			const originalData = original.numberOfChannels > channel ? original.getChannelData(channel) : original.getChannelData(0);
+			const translationData = translation.numberOfChannels > channel ? translation.getChannelData(channel) : translation.getChannelData(0);
+			for (let i = 0; i < outputData.length; i++) {
+				const origSample = i < originalData.length ? originalData[i] * originalVolume : 0;
+				const transSample = i < translationData.length ? translationData[i] * translationVolume : 0;
+				outputData[i] = Math.max(-1, Math.min(1, origSample + transSample));
+			}
+		}
+		return output;
+	}
+	/**
+	* Uses MediaRecorder to mux video and audio (browser-based approach)
+	* This creates a new video with the mixed audio track
+	*/
+	async function muxVideoWithAudio(videoBlob, mixedAudioBuffer, onProgress) {
+		return new Promise((resolve, reject) => {
+			const videoUrl = URL.createObjectURL(videoBlob);
+			const videoEl = document.createElement("video");
+			videoEl.src = videoUrl;
+			videoEl.muted = true;
+			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+			const destination = audioCtx.createMediaStreamDestination();
+			videoEl.onloadedmetadata = () => {
+				const videoStream = videoEl.captureStream ? videoEl.captureStream() : videoEl.mozCaptureStream?.();
+				if (!videoStream) {
+					URL.revokeObjectURL(videoUrl);
+					reject(/* @__PURE__ */ new Error("Browser doesn't support video captureStream"));
+					return;
+				}
+				const audioSource = audioCtx.createBufferSource();
+				audioSource.buffer = mixedAudioBuffer;
+				audioSource.connect(destination);
+				audioSource.start();
+				const combinedStream = new MediaStream([...videoStream.getVideoTracks(), ...destination.stream.getAudioTracks()]);
+				const mediaRecorder = new MediaRecorder(combinedStream, { mimeType: "video/webm;codecs=vp9,opus" });
+				const chunks = [];
+				mediaRecorder.ondataavailable = (e) => {
+					if (e.data.size > 0) chunks.push(e.data);
+				};
+				mediaRecorder.onstop = () => {
+					const outputBlob = new Blob(chunks, { type: "video/webm" });
+					URL.revokeObjectURL(videoUrl);
+					resolve(outputBlob);
+				};
+				mediaRecorder.onerror = (err) => {
+					URL.revokeObjectURL(videoUrl);
+					reject(err);
+				};
+				mediaRecorder.start(100);
+				videoEl.play();
+				const progressInterval = setInterval(() => {
+					const progress = videoEl.currentTime / videoEl.duration;
+					onProgress(Math.min(progress, .99));
+					if (videoEl.ended || videoEl.currentTime >= videoEl.duration - .1) {
+						clearInterval(progressInterval);
+						setTimeout(() => {
+							mediaRecorder.stop();
+							onProgress(1);
+						}, 500);
+					}
+				}, 250);
+				videoEl.onerror = () => {
+					clearInterval(progressInterval);
+					URL.revokeObjectURL(videoUrl);
+					reject(/* @__PURE__ */ new Error("Video playback error"));
+				};
+			};
+			videoEl.onerror = () => {
+				URL.revokeObjectURL(videoUrl);
+				reject(/* @__PURE__ */ new Error("Failed to load video"));
+			};
+		});
+	}
+	/**
+	* Main function to download and mix video with translated audio
+	*/
+	async function downloadVideoWithMixedAudio(options) {
+		const { videoUrl, audioUrl, filename, originalVolume = .5, translationVolume = 1, onProgress = () => {} } = options;
+		try {
+			debug.log("[VideoDownloadMixer] Starting download process");
+			onProgress("download_video", 0);
+			debug.log("[VideoDownloadMixer] Downloading video...");
+			const videoBuffer = await downloadWithProgress(videoUrl, (p) => {
+				onProgress("download_video", p * .4);
+			});
+			onProgress("download_video", .4);
+			onProgress("download_audio", .4);
+			debug.log("[VideoDownloadMixer] Downloading translation audio...");
+			const audioBuffer = await downloadWithProgress(audioUrl, (p) => {
+				onProgress("download_audio", .4 + p * .2);
+			});
+			onProgress("download_audio", .6);
+			onProgress("mixing", .6);
+			debug.log("[VideoDownloadMixer] Mixing audio...");
+			const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+			const [originalAudio, translationAudio] = await Promise.all([Promise.resolve(null), decodeAudioData(audioCtx, audioBuffer)]);
+			onProgress("mixing", .7);
+			const videoBlob = new Blob([videoBuffer], { type: "video/mp4" });
+			onProgress("encoding", .8);
+			debug.log("[VideoDownloadMixer] Encoding final video...");
+			try {
+				const sampleRate = audioCtx.sampleRate;
+				const duration = translationAudio.duration;
+				const outputBlob = await muxVideoWithAudio(videoBlob, mixAudioBuffers(audioCtx, audioCtx.createBuffer(translationAudio.numberOfChannels, Math.ceil(duration * sampleRate), sampleRate), translationAudio, originalVolume, translationVolume), (p) => {
+					onProgress("encoding", .8 + p * .2);
+				});
+				onProgress("complete", 1);
+				debug.log("[VideoDownloadMixer] Complete");
+				return {
+					success: true,
+					blob: outputBlob
+				};
+			} catch (muxErr) {
+				debug.warn("[VideoDownloadMixer] Muxing failed, returning separate files info", muxErr);
+				return {
+					success: true,
+					blob: videoBlob,
+					error: "Mixed audio muxing not fully supported in this browser. Video downloaded without mixed audio."
+				};
+			}
+		} catch (err) {
+			debug.error("[VideoDownloadMixer] Error:", err);
+			return {
+				success: false,
+				error: err instanceof Error ? err.message : String(err)
+			};
+		}
+	}
+	/**
+	* Checks if browser supports required APIs for video mixing
+	*/
+	function isVideoMixingSupported() {
+		const hasMediaRecorder = typeof MediaRecorder !== "undefined";
+		const hasCaptureStream = typeof HTMLVideoElement !== "undefined" && ("captureStream" in HTMLVideoElement.prototype || "mozCaptureStream" in HTMLVideoElement.prototype);
+		const hasAudioContext = typeof (window.AudioContext || window.webkitAudioContext) !== "undefined";
+		return hasMediaRecorder && hasCaptureStream && hasAudioContext;
+	}
+	var init_videoDownloadMixer = __esmMin((() => {
+		init_gm();
+		init_debug();
+	}));
+	//#endregion
 	//#region src/ui/manager.ts
+	init_config();
+	init_debug();
+	init_gm();
+	init_storage();
+	init_utils();
 	var UIManager = class {
 		mount;
 		initialized = false;
@@ -21360,6 +20888,8 @@ var vot = (function(exports) {
 				this.votSettingsView.open();
 			}).addEventListener("click:downloadTranslation", async () => {
 				await this.handleDownloadTranslationClick();
+			}).addEventListener("click:downloadVideoMixed", async () => {
+				await this.handleDownloadVideoMixedClick();
 			}).addEventListener("click:downloadSubtitles", async () => {
 				await this.handleDownloadSubtitlesClick();
 			}).addEventListener("input:videoVolume", (volume) => {
@@ -21548,6 +21078,7 @@ var vot = (function(exports) {
 		clearDownloadTranslation(videoHandler) {
 			videoHandler.downloadTranslation = null;
 			if (this.votOverlayView?.downloadTranslationButton) this.votOverlayView.downloadTranslationButton.hidden = true;
+			if (this.votOverlayView?.downloadVideoMixedButton) this.votOverlayView.downloadVideoMixedButton.hidden = true;
 		}
 		async downloadTranslationAudio(downloadUrl, filename, onProgress, saveOptions) {
 			const response = await GM_fetch(downloadUrl, { timeout: 0 });
@@ -21560,6 +21091,53 @@ var vot = (function(exports) {
 			const subsFormat = this.data.subtitlesDownloadFormat ?? "json";
 			const subsContent = serializeProcessedSubtitles(videoHandler.yandexSubtitles, subsFormat, { assTitle: videoHandler.videoData.localizedTitle ?? videoHandler.videoData.title ?? videoHandler.videoData.downloadTitle });
 			await downloadBlob(new Blob([subsFormat === "json" ? JSON.stringify(subsContent) : subsContent], { type: "text/plain" }), `${this.data.downloadWithName ? clearFileName(videoHandler.videoData.downloadTitle) : `subtitles_${videoHandler.videoData.videoId}`}.${subsFormat}`, { preferShare: this.isLikelyMobileDownloadContext() });
+		}
+		async handleDownloadVideoMixedClick() {
+			const overlayView = this.votOverlayView;
+			const videoHandler = this.videoHandler;
+			const download = videoHandler?.downloadTranslation;
+			if (!overlayView?.isInitialized() || !download || !videoHandler.videoData) return;
+			const downloadVideoData = await this.getDownloadVideoData(videoHandler, download.videoId);
+			if (!downloadVideoData) return;
+			const { isVideoMixingSupported } = await Promise.resolve().then(() => (init_videoDownloadMixer(), videoDownloadMixer_exports));
+			if (!isVideoMixingSupported()) {
+				this.notifier.error(localizationProvider.get("VOTDownloadVideoMixedNotSupported"));
+				return;
+			}
+			const downloadButton = overlayView.downloadVideoMixedButton;
+			const audioUrl = download.url;
+			const videoUrl = videoHandler.video?.currentSrc || videoHandler.video?.src;
+			if (!videoUrl) {
+				this.notifier.error(localizationProvider.get("VOTFailedGetVideo"));
+				return;
+			}
+			const filename = this.data.downloadWithName ? clearFileName(downloadVideoData.downloadTitle) : `mixed_${downloadVideoData.videoId}`;
+			const setProgress = (stage, progress) => {
+				if (downloadButton) downloadButton.progress = Math.round(progress * 100);
+			};
+			downloadButton?.setAttribute("disabled", "true");
+			try {
+				const { downloadVideoWithMixedAudio } = await Promise.resolve().then(() => (init_videoDownloadMixer(), videoDownloadMixer_exports));
+				const result = await downloadVideoWithMixedAudio({
+					videoUrl,
+					audioUrl,
+					filename,
+					originalVolume: .5,
+					translationVolume: 1,
+					onProgress: setProgress
+				});
+				if (result.success && result.blob) {
+					const saveOptions = { preferShare: this.isLikelyMobileDownloadContext() };
+					await downloadBlob(result.blob, `${filename}.webm`, saveOptions);
+					if (result.error) this.notifier.warn(result.error);
+				} else throw new Error(result.error || "Download failed");
+			} catch (err) {
+				console.error("[VOT] Download mixed video failed:", err);
+				this.notifier.error(localizationProvider.get("VOTDownloadVideoMixedError"));
+			} finally {
+				setProgress("", 0);
+				downloadButton?.removeAttribute("disabled");
+			}
 		}
 		async reloadMenu() {
 			if (!this.votOverlayView?.isInitialized()) throw new Error("[VOT] OverlayView isn't initialized");
@@ -21683,6 +21261,7 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/ui/overlayVisibilityController.ts
+	init_debug();
 	/**
 	* Centralizes overlay visibility behavior: showing, hiding and deadline checks.
 	*/
@@ -21958,6 +21537,8 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/utils/notify.ts
+	init_debug();
+	init_errors();
 	var now = () => Date.now();
 	function getScriptTitle() {
 		return GM_info?.script?.name || "VOT";
@@ -22144,6 +21725,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/utils/VideoObserver.ts
+	init_debug();
 	var AD_ATTRS = [
 		"class",
 		"id",
@@ -22603,6 +22185,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/ducking.ts
+	init_utils();
 	var VOLUME_MIN_01 = 0;
 	var VOLUME_MAX_01 = 1;
 	var SMART_DUCKING_DEFAULT_CONFIG = Object.freeze({
@@ -22767,6 +22350,9 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/smartDuckingRuntime.ts
+	init_config();
+	init_debug();
+	init_utils();
 	var SMART_DUCKING_TICK_MS = SMART_DUCKING_DEFAULT_CONFIG.tickMs;
 	var smartDuckingAnalyserState = /* @__PURE__ */ new WeakMap();
 	function isAudioNode(node) {
@@ -23070,6 +22656,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/proxyShared.ts
+	init_config();
 	var AUDIO_SOURCE_PREFIX = "https://vtrans.s3-private.mds.yandex.net/tts/prod/";
 	var AUDIO_PROXY_PATH_PREFIX = "/video-translation/audio-proxy/";
 	var SUBTITLE_SOURCE_PREFIX = "https://brosubs.s3-private.mds.yandex.net/vtrans/";
@@ -23114,6 +22701,7 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/subtitlesShared.ts
+	init_storage$1();
 	var DISABLED_SUBTITLES_VALUE = "disabled";
 	var SUBTITLES_INDEX_OPTION_PATTERN = /^\d+$/u;
 	var [AUTO_SUBTITLE_LANGUAGE_VALUE, ORIGINAL_SUBTITLE_LANGUAGE_VALUE] = subtitleResponseLanguageModes;
@@ -23231,6 +22819,9 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/translationPlayback.ts
+	init_debug();
+	init_errors();
+	init_gm();
 	var AUDIO_PROBE_TIMEOUT_MS = 5e3;
 	var AUDIO_PROBE_RETRY_DELAY_MS = 150;
 	var AUDIO_PROBE_MAX_ATTEMPTS = 2;
@@ -23672,6 +23263,10 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/events.ts
+	init_consts();
+	init_config();
+	init_debug();
+	init_gm();
 	function mergeListenerSignals(primary, secondary) {
 		if (!secondary || secondary === primary) return primary;
 		if (primary.aborted) return primary;
@@ -24061,6 +23656,11 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/videoHandler/modules/init.ts
+	init_config();
+	init_debug();
+	init_gm();
+	init_storage();
+	init_utils();
 	var countryCodeRequestInFlight = null;
 	async function ensureCountryCode() {
 		if (countryCode) return;
@@ -24308,6 +23908,9 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/subtitles/processor.ts
+	init_debug();
+	init_gm();
+	init_localization();
 	var toFiniteNumber = (value) => typeof value === "number" && Number.isFinite(value) ? value : 0;
 	var toNonNegativeNumber = (value) => Math.max(0, toFiniteNumber(value));
 	var pickDescriptorFromVideoData = (videoData, requestLang, spokenLang) => {
@@ -24834,6 +24437,7 @@ var vot = (function(exports) {
 	};
 	//#endregion
 	//#region src/videoHandler/modules/subtitles.ts
+	init_debug();
 	var subtitlesSelectionRequestVersion = /* @__PURE__ */ new WeakMap();
 	function getPreferredSubtitlesLanguage(handler) {
 		const videoData = handler.videoData;
@@ -25055,6 +24659,11 @@ var vot = (function(exports) {
 	}
 	//#endregion
 	//#region src/index.ts
+	init_config();
+	init_cacheManager();
+	init_debug();
+	init_gm();
+	init_utils();
 	var RESOLVED_VOID_PROMISE = Promise.resolve();
 	var VideoHandler = class {
 		video;
@@ -25747,6 +25356,7 @@ var vot = (function(exports) {
 					if (overlayView.videoVolumeSlider) overlayView.videoVolumeSlider.hidden = true;
 					if (overlayView.translationVolumeSlider) overlayView.translationVolumeSlider.hidden = true;
 					if (overlayView.downloadTranslationButton) overlayView.downloadTranslationButton.hidden = true;
+					if (overlayView.downloadVideoMixedButton) overlayView.downloadVideoMixedButton.hidden = true;
 				}
 				this.downloadTranslation = null;
 				this.longWaitingResCount = 0;
@@ -25846,6 +25456,7 @@ var vot = (function(exports) {
 			} else this.volumeLinkState.initialized = false;
 			if (this.videoData && !this.videoData.isStream) {
 				if (overlayView.downloadTranslationButton) overlayView.downloadTranslationButton.hidden = false;
+				if (overlayView.downloadVideoMixedButton) overlayView.downloadVideoMixedButton.hidden = false;
 				this.downloadTranslation = {
 					url: audioUrl,
 					videoId: this.videoData.videoId
