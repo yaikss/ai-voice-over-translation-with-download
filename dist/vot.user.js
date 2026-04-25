@@ -6,7 +6,7 @@
 // @name:it        [VOT] - Traduzione Video fuori campo
 // @name:ru        [VOT] - Закадровый перевод видео
 // @name:zh        [VOT] - 画外音视频翻译
-// @namespace      vot
+// @namespace      vot-fork
 // @version        1.11.5.6-fork
 // @author         Toil, SashaXser, MrSoczekXD, mynovelhost, sodapng (forked by yaikss)
 // @description    Voice Over Translation fork with video + mixed audio download feature

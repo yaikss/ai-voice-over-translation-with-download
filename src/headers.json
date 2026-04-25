@@ -3,7 +3,7 @@
   "description": "Voice Over Translation fork with video + mixed audio download feature",
   "version": "1.11.5.6-fork",
   "author": "Toil, SashaXser, MrSoczekXD, mynovelhost, sodapng (forked by yaikss)",
-  "namespace": "vot",
+  "namespace": "vot-fork",
   "icon": "https://translate.yandex.ru/icons/favicon.ico",
   "match": [
     "*://*.youtube.com/*",
