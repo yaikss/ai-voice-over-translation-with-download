@@ -75,6 +75,9 @@ export class OverlayView {
     "click:downloadTranslation": new EventImpl<
       OverlayViewEventMap["click:downloadTranslation"]
     >(),
+    "click:downloadVideoMixed": new EventImpl<
+      OverlayViewEventMap["click:downloadVideoMixed"]
+    >(),
     "click:downloadSubtitles": new EventImpl<
       OverlayViewEventMap["click:downloadSubtitles"]
     >(),

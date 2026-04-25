@@ -16,6 +16,7 @@ export type OverlayViewEventMap = {
   "click:settings": [];
   "click:pip": [];
   "click:downloadTranslation": [];
+  "click:downloadVideoMixed": []; // New event
   "click:downloadSubtitles": [];
   "click:translate": [];
   "input:videoVolume": [volume: number];

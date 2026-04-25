@@ -18450,6 +18450,7 @@ var vot = (function(exports) {
 			"click:settings": new EventImpl(),
 			"click:pip": new EventImpl(),
 			"click:downloadTranslation": new EventImpl(),
+			"click:downloadVideoMixed": new EventImpl(),
 			"click:downloadSubtitles": new EventImpl(),
 			"click:translate": new EventImpl(),
 			"input:videoVolume": new EventImpl(),
