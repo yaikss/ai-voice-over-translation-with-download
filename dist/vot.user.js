@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           [VOT] - Voice Over Translation
+// @name           [VOT-Fork] AI Voice Over with Video Download
 // @name:de        [VOT] - Voice-Over-Video-Übersetzung
 // @name:es        [VOT] - Traducción de vídeo en off
 // @name:fr        [VOT] - Traduction vidéo voix-off
@@ -7,9 +7,9 @@
 // @name:ru        [VOT] - Закадровый перевод видео
 // @name:zh        [VOT] - 画外音视频翻译
 // @namespace      vot
-// @version        1.11.5.6
-// @author         Toil, SashaXser, MrSoczekXD, mynovelhost, sodapng
-// @description    A small extension that adds a Yandex Browser video translation to other browsers
+// @version        1.11.5.6-fork
+// @author         Toil, SashaXser, MrSoczekXD, mynovelhost, sodapng (forked by yaikss)
+// @description    Voice Over Translation fork with video + mixed audio download feature
 // @description:de Eine kleine Erweiterung, die eine Voice-over-Übersetzung von Videos aus dem Yandex-Browser zu anderen Browsern hinzufügt
 // @description:es Una pequeña extensión que agrega una traducción de voz en off de un video de Yandex Browser a otros navegadores
 // @description:fr Une petite extension qui ajoute la traduction vocale de la vidéo du Navigateur Yandex à d'autres navigateurs
@@ -10334,7 +10334,7 @@ var vot = (function(exports) {
 		return buildVersion || scriptVersion || "unknown";
 	}
 	function getRuntimeLocaleVersion() {
-		return resolveRuntimeLocaleVersion(String("1.11.5.6"), typeof GM_info !== "undefined" ? String(GM_info?.script?.version || "") : "");
+		return resolveRuntimeLocaleVersion(String("1.11.5.6-fork"), typeof GM_info !== "undefined" ? String(GM_info?.script?.version || "") : "");
 	}
 	var LocalizationProvider = class {
 		/**
@@ -20127,7 +20127,7 @@ var vot = (function(exports) {
 			appearanceSection.content.append(this.showPiPButtonCheckbox.container, this.autoHideButtonDelaySlider.container, this.buttonPositionSelect.container, this.menuLanguageSelect.container);
 			const envInfo = getEnvironmentInfo();
 			const versionInfo = UI.createInformation(`${localizationProvider.get("VOTVersion")}:`, envInfo.scriptVersion || GM_info.script.version || localizationProvider.get("notFound"));
-			const buildAuthors = String("Toil, SashaXser, MrSoczekXD, mynovelhost, sodapng");
+			const buildAuthors = String("Toil, SashaXser, MrSoczekXD, mynovelhost, sodapng (forked by yaikss)");
 			const authorsInfo = UI.createInformation(`${localizationProvider.get("VOTAuthors")}:`, GM_info.script.author || buildAuthors || localizationProvider.get("notFound"));
 			const loaderInfo = UI.createInformation(`${localizationProvider.get("VOTLoader")}:`, envInfo.loader);
 			const userBrowserInfo = UI.createInformation(`${localizationProvider.get("VOTBrowser")}:`, `${envInfo.browser} (${envInfo.os})`);
@@ -20779,8 +20779,8 @@ var vot = (function(exports) {
 		return hasMediaRecorder && hasCaptureStream && hasAudioContext;
 	}
 	var init_videoDownloadMixer = __esmMin((() => {
-		init_gm();
 		init_debug();
+		init_gm();
 	}));
 	//#endregion
 	//#region src/ui/manager.ts
