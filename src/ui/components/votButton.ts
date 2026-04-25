@@ -21,6 +21,7 @@ export default class VOTButton {
   separator: HTMLElement;
   downloadButton: HTMLElement; // Audio download
   downloadVideoButton: HTMLElement; // Video download
+  downloadVideoLabel: HTMLElement; // Label for video download button
   separatorDl: HTMLElement;
   pipButton: HTMLElement;
   separator2: HTMLElement;
@@ -54,6 +55,7 @@ export default class VOTButton {
     this.separator = elements.separator;
     this.downloadButton = elements.downloadButton;
     this.downloadVideoButton = elements.downloadVideoButton;
+    this.downloadVideoLabel = elements.downloadVideoLabel;
     this.separatorDl = elements.separatorDl;
     this.pipButton = elements.pipButton;
     this.separator2 = elements.separator2;
@@ -108,10 +110,8 @@ export default class VOTButton {
     downloadButton.hidden = true;
     render(DOWNLOAD_ICON, downloadButton);
 
-    // Download video button (hidden by default)
-    const downloadVideoButton = UI.createEl("vot-block", [
-      "vot-segment-only-icon",
-    ]);
+    // Download video button with text (hidden by default)
+    const downloadVideoButton = UI.createEl("vot-block", ["vot-segment"]);
     downloadVideoButton.setAttribute("role", "button");
     downloadVideoButton.tabIndex = 0;
     downloadVideoButton.setAttribute(
@@ -119,7 +119,10 @@ export default class VOTButton {
       "Download video with translation",
     );
     downloadVideoButton.hidden = true;
-    render(DOWNLOAD_ICON, downloadVideoButton);
+
+    const downloadVideoLabel = UI.createEl("span", ["vot-segment-label"]);
+    downloadVideoLabel.textContent = "Download Video";
+    downloadVideoButton.appendChild(downloadVideoLabel);
 
     const separatorDl = UI.createEl("vot-block", ["vot-separator"]);
     separatorDl.hidden = true;
@@ -156,6 +159,7 @@ export default class VOTButton {
       separator,
       downloadButton,
       downloadVideoButton,
+      downloadVideoLabel,
       separatorDl,
       pipButton,
       separator2,
@@ -180,6 +184,12 @@ export default class VOTButton {
     this._labelText = labelText;
     this.label.textContent = labelText;
     this.translateButton.setAttribute("aria-label", labelText || "Translate");
+    return this;
+  }
+
+  setDownloadVideoText(text: string) {
+    this.downloadVideoLabel.textContent = text;
+    this.downloadVideoButton.setAttribute("aria-label", text);
     return this;
   }
 

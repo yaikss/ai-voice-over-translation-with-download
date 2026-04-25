@@ -18207,6 +18207,7 @@ var vot = (function(exports) {
 		separator;
 		downloadButton;
 		downloadVideoButton;
+		downloadVideoLabel;
 		separatorDl;
 		pipButton;
 		separator2;
@@ -18229,6 +18230,7 @@ var vot = (function(exports) {
 			this.separator = elements.separator;
 			this.downloadButton = elements.downloadButton;
 			this.downloadVideoButton = elements.downloadVideoButton;
+			this.downloadVideoLabel = elements.downloadVideoLabel;
 			this.separatorDl = elements.separatorDl;
 			this.pipButton = elements.pipButton;
 			this.separator2 = elements.separator2;
@@ -18268,12 +18270,14 @@ var vot = (function(exports) {
 			downloadButton.setAttribute("aria-label", "Download translation audio");
 			downloadButton.hidden = true;
 			D(DOWNLOAD_ICON, downloadButton);
-			const downloadVideoButton = UI.createEl("vot-block", ["vot-segment-only-icon"]);
+			const downloadVideoButton = UI.createEl("vot-block", ["vot-segment"]);
 			downloadVideoButton.setAttribute("role", "button");
 			downloadVideoButton.tabIndex = 0;
 			downloadVideoButton.setAttribute("aria-label", "Download video with translation");
 			downloadVideoButton.hidden = true;
-			D(DOWNLOAD_ICON, downloadVideoButton);
+			const downloadVideoLabel = UI.createEl("span", ["vot-segment-label"]);
+			downloadVideoLabel.textContent = "Download Video";
+			downloadVideoButton.appendChild(downloadVideoLabel);
 			const separatorDl = UI.createEl("vot-block", ["vot-separator"]);
 			separatorDl.hidden = true;
 			const pipButton = UI.createEl("vot-block", ["vot-segment-only-icon"]);
@@ -18296,6 +18300,7 @@ var vot = (function(exports) {
 				separator,
 				downloadButton,
 				downloadVideoButton,
+				downloadVideoLabel,
 				separatorDl,
 				pipButton,
 				separator2,
@@ -18317,6 +18322,11 @@ var vot = (function(exports) {
 			this._labelText = labelText;
 			this.label.textContent = labelText;
 			this.translateButton.setAttribute("aria-label", labelText || "Translate");
+			return this;
+		}
+		setDownloadVideoText(text) {
+			this.downloadVideoLabel.textContent = text;
+			this.downloadVideoButton.setAttribute("aria-label", text);
 			return this;
 		}
 		remove() {
