@@ -531,9 +531,17 @@
     // ============================================
     function injectVOTButton() {
         const videoId = getVideoId();
-        if (!videoId) return false;
+        if (!videoId) {
+            console.log('[VOT] No video ID found');
+            return false;
+        }
 
-        if (document.getElementById('vot-segmented-button')) return true;
+        if (document.getElementById('vot-segmented-button')) {
+            console.log('[VOT] Button already exists');
+            return true;
+        }
+
+        console.log('[VOT] Trying to inject for video:', videoId);
 
         // Try YouTube menu bar targets (where Share/Save buttons are)
         const targets = [
@@ -542,29 +550,37 @@
             '#menu > ytd-menu-renderer > #top-level-buttons',
             'ytd-watch-metadata #menu',
             '#actions > #menu',
-            'ytd-menu-renderer[has-items]'
+            'ytd-menu-renderer[has-items]',
+            // Additional 2024-2025 selectors
+            '#actions-inner #menu',
+            'ytd-video-primary-info-renderer #menu',
+            '#info-contents #menu'
         ];
 
         for (const selector of targets) {
             const target = document.querySelector(selector);
             if (target) {
+                console.log('[VOT] Found target:', selector);
                 const button = createVOTButton();
                 target.appendChild(button);
-                console.log('[VOT] Injected into', selector);
+                console.log('[VOT] ✅ SUCCESS! Button injected');
                 return true;
             }
         }
 
+        console.log('[VOT] ❌ No suitable target found. Tried:', targets.join(', '));
+
         // Fallback: inject near title
-        const titleArea = document.querySelector('ytd-watch-metadata #title, h1.ytd-watch-metadata');
+        const titleArea = document.querySelector('ytd-watch-metadata #title, h1.ytd-watch-metadata, #title h1');
         if (titleArea) {
+            console.log('[VOT] Using title fallback');
             const button = createVOTButton();
             button.style.marginTop = '12px';
             titleArea.parentNode.insertBefore(button, titleArea.nextSibling);
-            console.log('[VOT] Injected near title');
             return true;
         }
 
+        console.log('[VOT] ❌ All injection methods failed');
         return false;
     }
 
@@ -645,6 +661,9 @@
         GM_setValue('vot_button_position', 'bottom');
         location.reload();
     });
+
+    // Expose for manual testing
+    window.votInject = injectVOTButton;
 
     // Start
     if (document.readyState === 'loading') {
