@@ -586,6 +586,9 @@ export class UIManager {
     if (this.votOverlayView?.downloadVideoMixedButton) {
       this.votOverlayView.downloadVideoMixedButton.hidden = true;
     }
+    if (this.votOverlayView?.votButton) {
+      this.votOverlayView.votButton.showDownloadButtons(false);
+    }
   }
 
   private async downloadTranslationAudio(

@@ -7,13 +7,21 @@ import type {
   VOTButtonProps,
 } from "../../types/components/votButton";
 import UI from "../../ui";
-import { MENU_ICON, PIP_ICON_SVG, TRANSLATE_ICON_SVG } from "../icons";
+import {
+  DOWNLOAD_ICON,
+  MENU_ICON,
+  PIP_ICON_SVG,
+  TRANSLATE_ICON_SVG,
+} from "../icons";
 import { getHiddenState, setHiddenState } from "./componentShared";
 
 export default class VOTButton {
   container: HTMLElement;
   translateButton: HTMLElement;
   separator: HTMLElement;
+  downloadButton: HTMLElement; // Audio download
+  downloadVideoButton: HTMLElement; // Video download
+  separatorDl: HTMLElement;
   pipButton: HTMLElement;
   separator2: HTMLElement;
   menuButton: HTMLElement;
@@ -44,6 +52,9 @@ export default class VOTButton {
     this.container = elements.container;
     this.translateButton = elements.translateButton;
     this.separator = elements.separator;
+    this.downloadButton = elements.downloadButton;
+    this.downloadVideoButton = elements.downloadVideoButton;
+    this.separatorDl = elements.separatorDl;
     this.pipButton = elements.pipButton;
     this.separator2 = elements.separator2;
     this.menuButton = elements.menuButton;
@@ -65,7 +76,7 @@ export default class VOTButton {
   }
 
   static calcDirection(position: Position) {
-    return ["default", "top"].includes(position) ? "row" : "column";
+    return ["default", "top", "bottom"].includes(position) ? "row" : "column";
   }
 
   private createElements() {
@@ -88,6 +99,31 @@ export default class VOTButton {
     translateButton.appendChild(label);
 
     const separator = UI.createEl("vot-block", ["vot-separator"]);
+
+    // Download audio button (hidden by default)
+    const downloadButton = UI.createEl("vot-block", ["vot-segment-only-icon"]);
+    downloadButton.setAttribute("role", "button");
+    downloadButton.tabIndex = 0;
+    downloadButton.setAttribute("aria-label", "Download translation audio");
+    downloadButton.hidden = true;
+    render(DOWNLOAD_ICON, downloadButton);
+
+    // Download video button (hidden by default)
+    const downloadVideoButton = UI.createEl("vot-block", [
+      "vot-segment-only-icon",
+    ]);
+    downloadVideoButton.setAttribute("role", "button");
+    downloadVideoButton.tabIndex = 0;
+    downloadVideoButton.setAttribute(
+      "aria-label",
+      "Download video with translation",
+    );
+    downloadVideoButton.hidden = true;
+    render(DOWNLOAD_ICON, downloadVideoButton);
+
+    const separatorDl = UI.createEl("vot-block", ["vot-separator"]);
+    separatorDl.hidden = true;
+
     const pipButton = UI.createEl("vot-block", ["vot-segment-only-icon"]);
     pipButton.setAttribute("role", "button");
     pipButton.tabIndex = 0;
@@ -107,6 +143,9 @@ export default class VOTButton {
     container.append(
       translateButton,
       separator,
+      downloadButton,
+      downloadVideoButton,
+      separatorDl,
       pipButton,
       separator2,
       menuButton,
@@ -115,6 +154,9 @@ export default class VOTButton {
       container,
       translateButton,
       separator,
+      downloadButton,
+      downloadVideoButton,
+      separatorDl,
       pipButton,
       separator2,
       menuButton,
@@ -124,6 +166,13 @@ export default class VOTButton {
 
   showPiPButton(visible: boolean) {
     this.separator2.hidden = this.pipButton.hidden = !visible;
+    return this;
+  }
+
+  showDownloadButtons(visible: boolean) {
+    this.downloadButton.hidden = !visible;
+    this.downloadVideoButton.hidden = !visible;
+    this.separatorDl.hidden = !visible;
     return this;
   }
 
@@ -145,6 +194,8 @@ export default class VOTButton {
         return "right";
       case "right":
         return "left";
+      case "bottom":
+        return "top";
       default:
         return "bottom";
     }

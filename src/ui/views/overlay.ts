@@ -548,6 +548,25 @@ export class OverlayView {
       preventPointerDefault: true,
     });
 
+    // Download buttons on main UI
+    this.bindPrimaryAction(
+      this.votButton.downloadButton,
+      () => {
+        closeMenu();
+        this.events["click:downloadTranslation"].dispatch();
+      },
+      signal,
+    );
+
+    this.bindPrimaryAction(
+      this.votButton.downloadVideoButton,
+      () => {
+        closeMenu();
+        this.events["click:downloadVideoMixed"].dispatch();
+      },
+      signal,
+    );
+
     // #region [Events] VOT Button Dragging
     // Pointer capture keeps drag updates routed to the button even when the
     // pointer leaves the overlay bounds.
@@ -555,6 +574,8 @@ export class OverlayView {
     this.votButton.container.style.touchAction = touchAction;
     // `touch-action` is not inherited, so ensure child segments are also covered.
     this.votButton.translateButton.style.touchAction = touchAction;
+    this.votButton.downloadButton.style.touchAction = touchAction;
+    this.votButton.downloadVideoButton.style.touchAction = touchAction;
     this.votButton.pipButton.style.touchAction = touchAction;
     this.votButton.menuButton.style.touchAction = touchAction;
 

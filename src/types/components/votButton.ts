@@ -1,4 +1,4 @@
-export const positions = ["default", "top", "left", "right"] as const;
+export const positions = ["default", "top", "bottom", "left", "right"] as const;
 export type Position = (typeof positions)[number];
 
 export const directions = ["default", "row", "column"] as const;

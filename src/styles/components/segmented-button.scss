@@ -149,6 +149,13 @@
     top: 12.5vh;
   }
 
+  &[data-position="bottom"] {
+    left: 50%;
+    top: auto;
+    bottom: 80px;
+    transform: translate(-50%);
+  }
+
   & svg {
     width: 24px;
     fill: inherit;

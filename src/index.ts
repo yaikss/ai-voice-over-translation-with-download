@@ -1186,6 +1186,10 @@ export class VideoHandler {
         if (overlayView.downloadVideoMixedButton) {
           overlayView.downloadVideoMixedButton.hidden = true;
         }
+        // Hide main UI download buttons too
+        if (overlayView.votButton) {
+          overlayView.votButton.showDownloadButtons(false);
+        }
       }
       this.downloadTranslation = null;
       this.longWaitingResCount = 0;
@@ -1397,6 +1401,10 @@ export class VideoHandler {
       }
       if (overlayView.downloadVideoMixedButton) {
         overlayView.downloadVideoMixedButton.hidden = false;
+      }
+      // Show main UI download buttons too
+      if (overlayView.votButton) {
+        overlayView.votButton.showDownloadButtons(true);
       }
       this.downloadTranslation = {
         url: audioUrl,

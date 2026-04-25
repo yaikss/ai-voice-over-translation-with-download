@@ -227,6 +227,7 @@
     "left": "Left",
     "right": "Right",
     "top": "Top",
+    "bottom": "Bottom",
     "default": "Default"
   },
   "secs": "secs",
