@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         VOT YouTube Translator
 // @namespace    http://tampermonkey.net/
-// @version      1.3
-// @description  YouTube video translation with download feature - matches original VOT position
+// @version      2.0
+// @description  YouTube video translation with download feature
 // @author       You
 // @match        https://www.youtube.com/*
 // @grant        GM_setValue
@@ -14,7 +14,7 @@
 (function() {
     'use strict';
 
-    console.log('[VOT] Script loaded');
+    console.log('[VOT] Script loaded v2.0');
 
     // ============================================
     // CONFIGURATION & STATE
@@ -38,7 +38,7 @@
     };
 
     // ============================================
-    // UI STYLES - Exact VOT positioning
+    // UI STYLES - VOT-style segmented button
     // ============================================
     const STYLES = `
         .vot-segmented-button {
@@ -48,42 +48,25 @@
             --vot-border-color: rgba(0, 0, 0, 0.1);
             --vot-radius-s: 8px;
             --vot-shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            --vot-duration-slow: 0.3s;
-            --vot-duration-fast: 0.15s;
-            --vot-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
             --vot-space-2: 8px;
-            --vot-focus-ring-color: rgba(33, 150, 243, 0.5);
 
             opacity: 1 !important;
             pointer-events: auto !important;
-            touch-action: none !important;
             overflow: hidden;
-            position: absolute !important;
-            left: 50% !important;
-            top: 5rem !important;
-            transform: translateX(-50%) !important;
-            user-select: none;
-            display: flex !important;
+            display: inline-flex !important;
             align-items: center;
             height: 36px;
-            max-width: 100vw;
             background: rgb(var(--vot-surface-rgb));
             color: rgba(var(--vot-onsurface-rgb), 0.87);
             fill: rgba(var(--vot-onsurface-rgb), 0.87);
             border: 1px solid var(--vot-border-color) !important;
             border-radius: var(--vot-radius-s) !important;
             box-shadow: var(--vot-shadow-1) !important;
-            font-family: "YouTube Noto", Roboto, "Segoe UI", system-ui, sans-serif !important;
-            font-size: 16px;
+            font-family: "YouTube Noto", Roboto, Arial, sans-serif !important;
+            font-size: 14px;
             line-height: 1.5;
-            cursor: default;
-            transition: opacity var(--vot-duration-slow) var(--vot-easing-standard);
-            z-index: 2147483647 !important;
-        }
-
-        .vot-segmented-button.vot-segmented-button--hidden {
-            opacity: 0 !important;
-            pointer-events: none !important;
+            vertical-align: middle;
+            margin-left: 8px;
         }
 
         .vot-segmented-button * {
@@ -106,19 +89,14 @@
             padding: 0 var(--vot-space-2) !important;
             background-color: transparent;
             color: inherit;
-            transition: background-color var(--vot-duration-fast) var(--vot-easing-standard);
             border: none !important;
             outline: none;
-            -webkit-tap-highlight-color: transparent;
             cursor: pointer;
+            font: inherit;
         }
 
         .vot-segmented-button .vot-segment:hover {
             background-color: rgba(var(--vot-onsurface-rgb), 0.04);
-        }
-
-        .vot-segmented-button .vot-segment:active {
-            background-color: rgba(var(--vot-onsurface-rgb), 0.16);
         }
 
         .vot-segmented-button .vot-segment-only-icon {
@@ -129,11 +107,9 @@
         .vot-segmented-button .vot-segment-label {
             margin-left: var(--vot-space-2) !important;
             white-space: nowrap;
-            color: inherit;
             font-weight: 400 !important;
         }
 
-        /* Status colors */
         .vot-segmented-button[data-status="success"] .vot-translate-button {
             color: rgb(var(--vot-primary-rgb));
             fill: rgb(var(--vot-primary-rgb));
@@ -144,7 +120,6 @@
             fill: #f28b82;
         }
 
-        /* Loading state */
         .vot-segmented-button[data-loading="true"] .vot-spinner {
             display: block !important;
         }
@@ -153,60 +128,15 @@
             display: none !important;
         }
 
-        /* Position variants */
-        .vot-segmented-button[data-position="left"] {
-            left: 50px !important;
-            top: 12.5vh !important;
-            transform: none !important;
-        }
-
-        .vot-segmented-button[data-position="right"] {
-            left: auto !important;
-            right: 0 !important;
-            top: 12.5vh !important;
-            transform: none !important;
-        }
-
-        .vot-segmented-button[data-position="bottom"] {
-            left: 50% !important;
-            top: auto !important;
-            bottom: 80px !important;
-            transform: translateX(-50%) !important;
-        }
-
-        /* Direction: column (for left/right positions) */
-        .vot-segmented-button[data-direction="column"] {
-            flex-direction: column;
-            height: fit-content;
-        }
-
-        .vot-segmented-button[data-direction="column"] .vot-segment-label {
-            display: none;
-        }
-
-        .vot-segmented-button[data-direction="column"] > .vot-segment-only-icon,
-        .vot-segmented-button[data-direction="column"] > .vot-segment {
-            padding: 8px !important;
-        }
-
-        .vot-segmented-button[data-direction="column"] .vot-separator {
-            height: 1px;
-            width: 50%;
-        }
-
-        /* Icons */
         .vot-segmented-button svg {
-            width: 24px;
-            height: 24px;
-            fill: inherit;
-            stroke: inherit;
-            flex-shrink: 0;
-        }
-
-        /* Spinner */
-        .vot-spinner {
             width: 20px;
             height: 20px;
+            fill: inherit;
+        }
+
+        .vot-spinner {
+            width: 16px;
+            height: 16px;
             border: 2px solid rgba(var(--vot-onsurface-rgb), 0.2);
             border-top-color: rgb(var(--vot-primary-rgb));
             border-radius: 50%;
@@ -264,7 +194,6 @@
             background: #2a2a2a;
             border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
         .vot-quality-option:hover {
@@ -273,16 +202,6 @@
 
         .vot-quality-option input {
             margin-right: 12px;
-        }
-
-        .vot-quality-label {
-            flex: 1;
-            font-size: 14px;
-        }
-
-        .vot-quality-info {
-            font-size: 12px;
-            color: #aaa;
         }
 
         .vot-dialog-buttons {
@@ -328,7 +247,6 @@
         style.id = 'vot-styles';
         style.textContent = STYLES;
         document.head.appendChild(style);
-        console.log('[VOT] Styles injected');
     }
 
     function getVideoId() {
@@ -336,37 +254,23 @@
         return urlParams.get('v');
     }
 
-    function extractVideoInfo() {
-        const video = document.querySelector('video');
-        const title = document.querySelector('h1.ytd-watch-metadata yt-formatted-string, #title h1, h1.title')?.textContent?.trim() || 'Unknown';
-        return {
-            videoId: getVideoId(),
-            title: title,
-            duration: video?.duration || 0,
-            src: video?.src
-        };
-    }
-
     // ============================================
-    // SERVER API (MOCK - Replace with real endpoints)
+    // SERVER API (MOCK)
     // ============================================
-    async function requestTranslation(videoId, targetLang = 'en') {
-        return { job_id: 'mock-job-' + Date.now() };
+    async function requestTranslation(videoId) {
+        return { job_id: 'mock-' + Date.now() };
     }
 
     async function checkTranslationStatus(jobId) {
-        await new Promise(r => setTimeout(r, 1000));
-        return { status: 'completed', audio_url: 'https://example.com/audio.mp3', segments: [] };
+        await new Promise(r => setTimeout(r, 1500));
+        return { status: 'completed', audio_url: 'https://example.com/audio.mp3' };
     }
 
     async function getAvailableQualities(videoId) {
         return [
             { label: '1080p', format: '137+140', resolution: '1920x1080', fps: 60 },
-            { label: '1080p', format: '137+140', resolution: '1920x1080', fps: 30 },
-            { label: '720p', format: '22', resolution: '1280x720', fps: 60 },
             { label: '720p', format: '22', resolution: '1280x720', fps: 30 },
-            { label: '480p', format: '135+140', resolution: '854x480', fps: 30 },
-            { label: '360p', format: '18', resolution: '640x360', fps: 30 }
+            { label: '480p', format: '135+140', resolution: '854x480', fps: 30 }
         ];
     }
 
@@ -376,7 +280,7 @@
 
     async function checkDownloadProgress(downloadId) {
         await new Promise(r => setTimeout(r, 500));
-        currentState.downloadProgress = Math.min(currentState.downloadProgress + 10, 100);
+        currentState.downloadProgress = Math.min(currentState.downloadProgress + 20, 100);
         return {
             status: currentState.downloadProgress >= 100 ? 'completed' : 'processing',
             percent: currentState.downloadProgress,
@@ -388,16 +292,9 @@
     // UI COMPONENTS
     // ============================================
     function createVOTButton() {
-        const existing = document.getElementById('vot-segmented-button');
-        if (existing) return existing;
-
-        console.log('[VOT] Creating button element...');
-
         const container = document.createElement('div');
         container.className = 'vot-segmented-button';
         container.id = 'vot-segmented-button';
-        container.dataset.position = CONFIG.buttonPosition;
-        container.dataset.direction = 'row';
         container.dataset.status = 'none';
         container.dataset.loading = 'false';
 
@@ -411,15 +308,19 @@
         const sep1 = document.createElement('div');
         sep1.className = 'vot-separator';
 
-        // Download audio button
+        // Download audio
         const downloadBtn = document.createElement('button');
         downloadBtn.className = 'vot-segment vot-segment-only-icon';
         downloadBtn.innerHTML = DOWNLOAD_ICON;
         downloadBtn.title = 'Download audio';
         downloadBtn.style.display = 'none';
-        downloadBtn.onclick = handleDownloadAudioClick;
+        downloadBtn.onclick = () => {
+            if (currentState.translationAudioUrl) {
+                window.open(currentState.translationAudioUrl, '_blank');
+            }
+        };
 
-        // Download video button
+        // Download video
         const downloadVideoBtn = document.createElement('button');
         downloadVideoBtn.className = 'vot-segment';
         downloadVideoBtn.id = 'vot-download-video-btn';
@@ -427,17 +328,16 @@
         downloadVideoBtn.style.display = 'none';
         downloadVideoBtn.onclick = handleDownloadVideoClick;
 
-        // Separator 2
+        // Separator
         const sep2 = document.createElement('div');
         sep2.className = 'vot-separator';
         sep2.id = 'vot-separator-dl';
         sep2.style.display = 'none';
 
-        // PiP button
+        // PiP
         const pipBtn = document.createElement('button');
         pipBtn.className = 'vot-segment vot-segment-only-icon';
         pipBtn.innerHTML = PIP_ICON;
-        pipBtn.title = 'Picture in Picture';
         pipBtn.onclick = async () => {
             const video = document.querySelector('video');
             if (video) {
@@ -449,21 +349,17 @@
             }
         };
 
-        // Separator 3
+        // Separator
         const sep3 = document.createElement('div');
         sep3.className = 'vot-separator';
 
-        // Menu button
+        // Menu
         const menuBtn = document.createElement('button');
         menuBtn.className = 'vot-segment vot-segment-only-icon';
         menuBtn.innerHTML = MENU_ICON;
-        menuBtn.title = 'Settings';
-        menuBtn.onclick = () => alert('Settings: Use GM menu (Tampermonkey icon) to configure');
+        menuBtn.onclick = () => alert('Settings: Use Tampermonkey menu');
 
         container.append(translateBtn, sep1, downloadBtn, downloadVideoBtn, sep2, pipBtn, sep3, menuBtn);
-        
-        console.log('[VOT] Button element created with children:', container.children.length);
-
         return container;
     }
 
@@ -476,7 +372,6 @@
 
         if (currentState.isTranslating) {
             btn.dataset.loading = 'true';
-            btn.dataset.status = 'none';
             if (downloadVideoBtn) {
                 downloadVideoBtn.style.display = 'flex';
                 downloadVideoBtn.querySelector('.vot-segment-label').textContent = 'Translating...';
@@ -504,52 +399,42 @@
         }
     }
 
-    function showQualitySelectionDialog(qualities) {
+    function showQualityDialog(qualities) {
         return new Promise((resolve) => {
             const dialog = document.createElement('div');
             dialog.className = 'vot-quality-dialog';
-            dialog.id = 'vot-quality-dialog';
 
             const qualityList = qualities.map((q, i) => `
                 <label class="vot-quality-option">
                     <input type="radio" name="quality" value="${i}" ${i === 0 ? 'checked' : ''}>
-                    <div class="vot-quality-label">${q.label}</div>
-                    <div class="vot-quality-info">${q.resolution} @ ${q.fps}fps</div>
+                    <div style="flex:1">${q.label}</div>
+                    <div style="font-size:12px;color:#aaa">${q.resolution}</div>
                 </label>
             `).join('');
 
             dialog.innerHTML = `
                 <div class="vot-quality-dialog-content">
                     <h3>Select Video Quality</h3>
-                    <div class="vot-quality-list">
-                        ${qualityList}
-                    </div>
+                    <div class="vot-quality-list">${qualityList}</div>
                     <div class="vot-dialog-buttons">
-                        <button class="vot-dialog-btn secondary" id="vot-cancel-quality">Cancel</button>
-                        <button class="vot-dialog-btn primary" id="vot-confirm-quality">Download</button>
+                        <button class="vot-dialog-btn secondary" id="vot-cancel">Cancel</button>
+                        <button class="vot-dialog-btn primary" id="vot-confirm">Download</button>
                     </div>
                 </div>
             `;
 
             document.body.appendChild(dialog);
 
-            document.getElementById('vot-cancel-quality').onclick = () => {
+            document.getElementById('vot-cancel').onclick = () => {
                 dialog.remove();
                 resolve(null);
             };
 
-            document.getElementById('vot-confirm-quality').onclick = () => {
+            document.getElementById('vot-confirm').onclick = () => {
                 const selected = document.querySelector('input[name="quality"]:checked');
                 const quality = selected ? qualities[parseInt(selected.value)] : null;
                 dialog.remove();
                 resolve(quality);
-            };
-
-            dialog.onclick = (e) => {
-                if (e.target === dialog) {
-                    dialog.remove();
-                    resolve(null);
-                }
             };
         });
     }
@@ -558,29 +443,21 @@
     // EVENT HANDLERS
     // ============================================
     async function handleTranslateClick() {
-        const videoInfo = extractVideoInfo();
-        if (!videoInfo.videoId) {
-            alert('Could not detect video ID');
-            return;
-        }
+        const videoId = getVideoId();
+        if (!videoId) return;
 
         currentState.isTranslating = true;
-        currentState.videoId = videoInfo.videoId;
+        currentState.videoId = videoId;
         updateButtonState();
 
         try {
-            const response = await requestTranslation(videoInfo.videoId, CONFIG.targetLanguage);
-
-            if (response && response.job_id) {
+            const response = await requestTranslation(videoId);
+            if (response?.job_id) {
                 await pollTranslationStatus(response.job_id);
-            } else {
-                throw new Error('Failed to start translation');
             }
         } catch (error) {
-            console.error('Translation error:', error);
-            alert('Translation failed: ' + error.message);
-            const btn = document.getElementById('vot-segmented-button');
-            if (btn) btn.dataset.status = 'error';
+            console.error(error);
+            document.getElementById('vot-segmented-button').dataset.status = 'error';
         } finally {
             currentState.isTranslating = false;
             updateButtonState();
@@ -591,21 +468,13 @@
         return new Promise((resolve, reject) => {
             const interval = setInterval(async () => {
                 const status = await checkTranslationStatus(jobId);
-
-                if (!status) {
-                    clearInterval(interval);
-                    reject(new Error('Failed to check status'));
-                    return;
-                }
-
                 if (status.status === 'completed') {
                     clearInterval(interval);
                     currentState.translationAudioUrl = status.audio_url;
-                    currentState.translatedSegments = status.segments || [];
                     resolve(status);
                 } else if (status.status === 'failed') {
                     clearInterval(interval);
-                    reject(new Error(status.error || 'Translation failed'));
+                    reject(new Error('Failed'));
                 }
             }, 2000);
         });
@@ -615,29 +484,20 @@
         if (currentState.isMakingVideo || currentState.isTranslating) return;
 
         const qualities = await getAvailableQualities(currentState.videoId);
-        if (qualities.length === 0) {
-            alert('Could not fetch video qualities');
-            return;
-        }
+        const selected = await showQualityDialog(qualities);
+        if (!selected) return;
 
-        const selectedQuality = await showQualitySelectionDialog(qualities);
-        if (!selectedQuality) return;
-
-        currentState.selectedQuality = selectedQuality;
         currentState.isMakingVideo = true;
         currentState.downloadProgress = 0;
         updateButtonState();
 
         try {
-            const response = await startVideoDownload(currentState.videoId, selectedQuality);
-            if (response && response.download_id) {
+            const response = await startVideoDownload(currentState.videoId, selected);
+            if (response?.download_id) {
                 await pollDownloadProgress(response.download_id);
-            } else {
-                throw new Error('Failed to start download');
             }
         } catch (error) {
-            console.error('Download error:', error);
-            alert('Download failed: ' + error.message);
+            console.error(error);
         } finally {
             currentState.isMakingVideo = false;
             currentState.downloadProgress = 0;
@@ -649,14 +509,7 @@
         return new Promise((resolve, reject) => {
             const interval = setInterval(async () => {
                 const progress = await checkDownloadProgress(downloadId);
-
-                if (!progress) {
-                    clearInterval(interval);
-                    reject(new Error('Failed to check progress'));
-                    return;
-                }
-
-                currentState.downloadProgress = Math.round(progress.percent || 0);
+                currentState.downloadProgress = Math.round(progress.percent);
                 updateButtonState();
 
                 if (progress.status === 'completed') {
@@ -667,126 +520,64 @@
                     resolve(progress);
                 } else if (progress.status === 'failed') {
                     clearInterval(interval);
-                    reject(new Error(progress.error || 'Download failed'));
+                    reject(new Error('Failed'));
                 }
             }, 1000);
         });
     }
 
-    async function handleDownloadAudioClick() {
-        if (!currentState.translationAudioUrl) {
-            alert('No translation available. Please translate first.');
-            return;
-        }
-        window.open(currentState.translationAudioUrl, '_blank');
-    }
-
     // ============================================
-    // MAIN UI INJECTION - Like original VOT
+    // INJECTION - Proven method from working version
     // ============================================
-    function findVideoContainer() {
-        // For YouTube, VOT uses the video's parent container
-        const selectors = [
-            '#movie_player',
-            '.html5-video-player',
-            '#player-container.ytd-player',
-            'ytd-player#ytd-player',
-            '.ytd-player'
-        ];
-
-        for (const selector of selectors) {
-            const el = document.querySelector(selector);
-            if (el) {
-                console.log('[VOT] Found container:', selector, el);
-                return el;
-            }
-        }
-
-        // Fallback: find video and use its parent
-        const video = document.querySelector('video');
-        if (video) {
-            console.log('[VOT] Found video element, using parent');
-            return video.closest('#movie_player, .html5-video-player') || video.parentElement;
-        }
-        return null;
-    }
-
     function injectVOTButton() {
         const videoId = getVideoId();
-        if (!videoId) {
-            console.log('[VOT] No video ID, skipping injection');
-            return false;
+        if (!videoId) return false;
+
+        if (document.getElementById('vot-segmented-button')) return true;
+
+        // Try YouTube menu bar targets (where Share/Save buttons are)
+        const targets = [
+            '#menu ytd-button-renderer',
+            '#top-level-buttons-computed',
+            '#menu > ytd-menu-renderer > #top-level-buttons',
+            'ytd-watch-metadata #menu',
+            '#actions > #menu',
+            'ytd-menu-renderer[has-items]'
+        ];
+
+        for (const selector of targets) {
+            const target = document.querySelector(selector);
+            if (target) {
+                const button = createVOTButton();
+                target.appendChild(button);
+                console.log('[VOT] Injected into', selector);
+                return true;
+            }
         }
 
-        // Check if already injected
-        if (document.getElementById('vot-segmented-button')) {
-            console.log('[VOT] Already injected');
-            return true;
-        }
-
-        console.log('[VOT] Attempting injection for video:', videoId);
-
-        const container = findVideoContainer();
-        if (container) {
+        // Fallback: inject near title
+        const titleArea = document.querySelector('ytd-watch-metadata #title, h1.ytd-watch-metadata');
+        if (titleArea) {
             const button = createVOTButton();
-            // Make container position-relative if it isn't
-            const computedStyle = window.getComputedStyle(container);
-            if (computedStyle.position === 'static') {
-                console.log('[VOT] Setting container to position: relative');
-                container.style.position = 'relative';
-            }
-            container.appendChild(button);
-            console.log('[VOT] Successfully injected! Button is now in DOM.');
-            
-            // Verify button is visible
-            const btn = document.getElementById('vot-segmented-button');
-            if (btn) {
-                const rect = btn.getBoundingClientRect();
-                console.log('[VOT] Button position:', rect);
-                if (rect.width === 0 || rect.height === 0) {
-                    console.log('[VOT] Warning: Button has zero size!');
-                }
-            }
+            button.style.marginTop = '12px';
+            titleArea.parentNode.insertBefore(button, titleArea.nextSibling);
+            console.log('[VOT] Injected near title');
             return true;
         }
 
-        console.log('[VOT] Could not find video container. Selectors tried: #movie_player, .html5-video-player, video');
         return false;
     }
 
     // ============================================
-    // OBSERVER & INIT
+    // INIT
     // ============================================
     let lastVideoId = null;
-    let injectionAttempts = 0;
-    const MAX_ATTEMPTS = 15;
-
-    function tryInjectWithRetry() {
-        if (injectionAttempts >= MAX_ATTEMPTS) {
-            console.log('[VOT] Max injection attempts reached');
-            return;
-        }
-
-        injectionAttempts++;
-        const success = injectVOTButton();
-
-        if (!success) {
-            console.log(`[VOT] Retry ${injectionAttempts}/${MAX_ATTEMPTS} in 500ms...`);
-            setTimeout(tryInjectWithRetry, 500);
-        } else {
-            injectionAttempts = 0;
-        }
-    }
 
     function onPageChange() {
         const videoId = getVideoId();
 
         if (videoId && videoId !== lastVideoId) {
-            console.log('[VOT] Video changed to:', videoId);
             lastVideoId = videoId;
-            injectionAttempts = 0;
-
-            // Reset state
             currentState = {
                 videoId: videoId,
                 isTranslating: false,
@@ -798,63 +589,59 @@
                 selectedQuality: null
             };
 
-            // Remove old button
             const old = document.getElementById('vot-segmented-button');
             if (old) old.remove();
 
-            // Try to inject with retries
-            tryInjectWithRetry();
+            // Retry injection
+            let attempts = 0;
+            const tryInject = () => {
+                if (attempts++ > 15) return;
+                if (!injectVOTButton()) {
+                    setTimeout(tryInject, 500);
+                }
+            };
+            tryInject();
         } else if (videoId && !document.getElementById('vot-segmented-button')) {
-            // Video hasn't changed but button is missing - reinject
-            console.log('[VOT] Button missing, reinjecting...');
-            tryInjectWithRetry();
+            injectVOTButton();
         }
     }
 
     function init() {
-        console.log('[VOT] Init started');
         injectStyles();
 
-        // Watch for URL and DOM changes
-        const observer = new MutationObserver(() => {
-            onPageChange();
-        });
-
-        observer.observe(document.body, {
+        // Watch for changes
+        new MutationObserver(onPageChange).observe(document.body, {
             childList: true,
             subtree: true
         });
 
-        // Also watch for navigation (YouTube SPA)
+        // Watch for URL changes (SPA)
         let lastUrl = location.href;
         new MutationObserver(() => {
-            const url = location.href;
-            if (url !== lastUrl) {
-                lastUrl = url;
-                console.log('[VOT] URL changed');
+            if (location.href !== lastUrl) {
+                lastUrl = location.href;
                 setTimeout(onPageChange, 500);
             }
         }).observe(document, { subtree: true, childList: true });
 
-        // Initial check
+        // Initial
         setTimeout(onPageChange, 1500);
-        console.log('[VOT] Init complete');
     }
 
-    // GM menu commands
-    GM_registerMenuCommand('Set Button Position: Default', () => {
+    // Menu commands
+    GM_registerMenuCommand('Position: Default', () => {
         GM_setValue('vot_button_position', 'default');
         location.reload();
     });
-    GM_registerMenuCommand('Set Button Position: Left', () => {
+    GM_registerMenuCommand('Position: Left', () => {
         GM_setValue('vot_button_position', 'left');
         location.reload();
     });
-    GM_registerMenuCommand('Set Button Position: Right', () => {
+    GM_registerMenuCommand('Position: Right', () => {
         GM_setValue('vot_button_position', 'right');
         location.reload();
     });
-    GM_registerMenuCommand('Set Button Position: Bottom', () => {
+    GM_registerMenuCommand('Position: Bottom', () => {
         GM_setValue('vot_button_position', 'bottom');
         location.reload();
     });
